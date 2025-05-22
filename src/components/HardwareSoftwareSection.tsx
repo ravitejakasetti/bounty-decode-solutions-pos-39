@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Laptop, Tablet, QrCode, Printer } from 'lucide-react';
+import { Laptop, Tablet, QrCode, Smartphone } from 'lucide-react';
 
 const HardwareSoftwareSection = () => {
   const [activeTab, setActiveTab] = useState("software");
@@ -13,7 +13,7 @@ const HardwareSoftwareSection = () => {
       icon: <Laptop className="w-8 h-8 text-bounty-orange" />,
       title: "User-Friendly Interface",
       description: "Navigate with ease, manage operations intuitively, and access critical data without a steep learning curve.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=800&q=80" // POS software UI image
     },
     {
       icon: <motion.div
@@ -53,10 +53,10 @@ const HardwareSoftwareSection = () => {
       image: "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=800&q=80"
     },
     {
-      icon: <Printer className="w-8 h-8 text-bounty-orange" />,
-      title: "Kitchen Display Systems (KDS)",
-      description: "Streamline communication between front-of-house and kitchen staff for faster, more accurate order fulfillment.",
-      image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80"
+      icon: <Smartphone className="w-8 h-8 text-bounty-orange" />,
+      title: "Your Phone is Your POS",
+      description: "Transform any smartphone into a powerful point-of-sale terminal - take orders, process payments, and manage your business from the palm of your hand.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" // Phone as POS image
     }
   ];
 
@@ -284,7 +284,7 @@ const HardwareSoftwareSection = () => {
               <div className="relative">
                 <div className="w-full max-w-3xl mx-auto">
                   <img 
-                    src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
                     alt="Hardware Integration" 
                     className="w-full h-64 object-cover rounded-xl"
                   />
@@ -307,7 +307,7 @@ const HardwareSoftwareSection = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: 0.2 }}
                   >
-                    <Printer className="w-6 h-6 text-bounty-orange" />
+                    <Smartphone className="w-6 h-6 text-bounty-orange" />
                   </motion.div>
                   
                   <motion.div

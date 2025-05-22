@@ -77,19 +77,6 @@ const IntegrationsSection = () => {
             </div>
           ))}
         </div>
-
-        <motion.div 
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          <h4 className="text-2xl font-bold text-bounty-orange">Seamless Integration</h4>
-          <p className="text-gray-600 max-w-2xl mx-auto mt-2">
-            All integrations work flawlessly with Bounty, providing a unified experience for your restaurant operations.
-          </p>
-        </motion.div>
       </div>
     </section>
   );

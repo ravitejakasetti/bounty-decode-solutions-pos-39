@@ -1,122 +1,154 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
-import DemoModal from './DemoModal';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
+import DemoModal from './DemoModal';
+import { useMediaQuery } from '@/hooks/use-mobile';
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { text: 'Home', path: '/' },
+    { text: 'Services', path: '/services' },
+  ];
+
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-200 z-50 transition-all duration-300 ${scrolled ? 'shadow-md py-2' : 'py-4'}`}>
+      <header
+        className={`fixed w-full z-50 transition-all duration-300 ${
+          isScrolled ? 'py-2 shadow-md bg-bounty-navy' : 'py-4 bg-bounty-navy/90'
+        }`}
+      >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            {/* Logos */}
-            <Link to="/" className="flex items-center space-x-4">
-              <motion.img 
-                src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png" 
-                alt="Bounty Software" 
-                className="h-16 w-auto"
-                whileHover={{ scale: 1.05, rotate: 3 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              />
-              <div className="hidden md:flex items-center space-x-2 text-sm text-gray-600">
-                <span>Powered by</span>
-                <motion.img 
-                  src="/lovable-uploads/2cb91fc4-f3da-490c-aafb-fd931d028671.png" 
-                  alt="Decode Solutions" 
-                  className="h-8 w-auto"
+          <div className="flex justify-between items-center">
+            <Link to="/">
+              <div className="flex items-center gap-2">
+                <motion.img
+                  src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png"
+                  alt="Bounty Software"
+                  className="h-10 w-auto"
                   whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 />
+                <motion.span 
+                  className="font-bold text-xl text-white"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  Bounty
+                </motion.span>
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              <Link to="/" className="text-gray-700 hover:text-bounty-orange transition-colors">Home</Link>
-              <Link to="/services" className="text-gray-700 hover:text-bounty-orange transition-colors">Services</Link>
-              <a href="#about" className="text-gray-700 hover:text-bounty-orange transition-colors">About</a>
-              <a href="#features" className="text-gray-700 hover:text-bounty-orange transition-colors">Features</a>
-              <a href="#hardware" className="text-gray-700 hover:text-bounty-orange transition-colors">Hardware & Software</a>
-              <a href="#integrations" className="text-gray-700 hover:text-bounty-orange transition-colors">Integrations</a>
-              <Button 
+            {/* Desktop Menu */}
+            <nav className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-white hover:text-yellow-300 transition-colors font-medium ${
+                    isActive(link.path) ? 'text-yellow-300' : ''
+                  }`}
+                >
+                  {link.text}
+                </Link>
+              ))}
+              <Button
                 onClick={() => setIsDemoModalOpen(true)}
-                className="bg-bounty-orange hover:bg-bounty-orange/90 text-white"
+                variant="outline"
+                className="border-white text-white hover:bg-white/10"
               >
-                Book Free Demo
+                Book Demo
               </Button>
             </nav>
 
             {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              className="lg:hidden"
+            <motion.button
+              className="md:hidden text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              whileTap={{ scale: 0.9 }}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </Button>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <motion.nav 
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden mt-4 pb-4 border-t border-gray-200 pt-4"
-            >
-              <div className="flex flex-col space-y-4">
-                <Link to="/" className="text-gray-700 hover:text-bounty-orange transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
-                <Link to="/services" className="text-gray-700 hover:text-bounty-orange transition-colors" onClick={() => setIsMenuOpen(false)}>Services</Link>
-                <a href="#about" className="text-gray-700 hover:text-bounty-orange transition-colors" onClick={() => setIsMenuOpen(false)}>About</a>
-                <a href="#features" className="text-gray-700 hover:text-bounty-orange transition-colors" onClick={() => setIsMenuOpen(false)}>Features</a>
-                <a href="#hardware" className="text-gray-700 hover:text-bounty-orange transition-colors" onClick={() => setIsMenuOpen(false)}>Hardware & Software</a>
-                <a href="#integrations" className="text-gray-700 hover:text-bounty-orange transition-colors" onClick={() => setIsMenuOpen(false)}>Integrations</a>
-                <div className="flex items-center space-x-2 text-sm text-gray-600 md:hidden">
-                  <span>Powered by</span>
-                  <img 
-                    src="/lovable-uploads/2cb91fc4-f3da-490c-aafb-fd931d028671.png" 
-                    alt="Decode Solutions" 
-                    className="h-6 w-auto"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
                   />
-                </div>
-                <Button 
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    setIsDemoModalOpen(true);
-                  }}
-                  className="bg-bounty-orange hover:bg-bounty-orange/90 text-white w-full"
-                >
-                  Book Free Demo
-                </Button>
-              </div>
-            </motion.nav>
-          )}
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </motion.button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobile && (
+          <motion.div
+            className={`bg-bounty-navy ${isMenuOpen ? 'block' : 'hidden'}`}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: isMenuOpen ? 'auto' : 0, opacity: isMenuOpen ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="container mx-auto px-4 py-4 space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`block text-white hover:text-yellow-300 transition-colors ${
+                    isActive(link.path) ? 'text-yellow-300' : ''
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.text}
+                </Link>
+              ))}
+              <Button
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setIsDemoModalOpen(true);
+                }}
+                variant="outline"
+                className="w-full border-white text-white hover:bg-white/10"
+              >
+                Book Demo
+              </Button>
+            </div>
+          </motion.div>
+        )}
       </header>
       
-      <DemoModal 
-        isOpen={isDemoModalOpen} 
-        onClose={() => setIsDemoModalOpen(false)} 
-      />
+      <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
     </>
   );
 };

@@ -11,7 +11,7 @@ const BenefitsSection = () => {
       description: "Watch your revenue soar with intelligent pricing, personalized offers, and targeted promotions that turn every interaction into an opportunity.",
       gradient: "from-blue-500 to-cyan-500",
       icon: <TrendingUp className="w-12 h-12" />,
-      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1618598842855-01618b5f8771?auto=format&fit=crop&w=800&q=80" // Dynamic sales chart image
     },
     {
       title: "Seamless Operational Efficiency", 
@@ -25,14 +25,14 @@ const BenefitsSection = () => {
       description: "Recognize, reward, and re-engage your patrons like never before. Build lasting relationships that keep them coming back for more.",
       gradient: "from-purple-500 to-pink-500",
       icon: <Users className="w-12 h-12" />,
-      image: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1537739999004-c9216e1c0ee5?auto=format&fit=crop&w=800&q=80" // Indian customers at restaurant
     },
     {
       title: "Data-Driven Profitability",
       description: "Make informed decisions with real-time insights. Optimize your menu, reduce costs, and maximize your margins effortlessly.",
       gradient: "from-orange-500 to-red-500",
       icon: <BarChart3 className="w-12 h-12" />,
-      image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=800&q=80" // POS with analytics screen
     }
   ];
 
@@ -98,90 +98,6 @@ const BenefitsSection = () => {
               </Card>
             </motion.div>
           ))}
-        </div>
-        
-        {/* Happy Customers Testimonials Section */}
-        <div className="mt-20">
-          <motion.h3
-            className="text-3xl font-bold text-bounty-navy mb-8 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Happy Customers, Real Results
-          </motion.h3>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-gray-50 p-6 rounded-2xl"
-            >
-              <div className="flex items-start mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" 
-                  alt="Testimonial" 
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-bounty-navy">Rajesh Sharma</h4>
-                  <p className="text-sm text-gray-500">Spice Garden Restaurant</p>
-                </div>
-              </div>
-              <p className="text-gray-600 italic">
-                "Since implementing Bounty, we've seen a 30% increase in customer retention and our average order value has grown significantly."
-              </p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-gray-50 p-6 rounded-2xl"
-            >
-              <div className="flex items-start mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" 
-                  alt="Testimonial" 
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-bounty-navy">Priya Patel</h4>
-                  <p className="text-sm text-gray-500">Mumbai Cafe</p>
-                </div>
-              </div>
-              <p className="text-gray-600 italic">
-                "The QR code features have revolutionized how we engage with customers. Our loyalty program participation has tripled in just two months!"
-              </p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-gray-50 p-6 rounded-2xl"
-            >
-              <div className="flex items-start mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" 
-                  alt="Testimonial" 
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-bounty-navy">Amit Singh</h4>
-                  <p className="text-sm text-gray-500">Delhi Street Food</p>
-                </div>
-              </div>
-              <p className="text-gray-600 italic">
-                "Food waste reduced by 25%, inventory management is a breeze, and our profits have never been better. Bounty paid for itself within months."
-              </p>
-            </motion.div>
-          </div>
         </div>
       </div>
     </section>
