@@ -3,11 +3,29 @@ import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { Coffee, Cake, Car, Coffee as DriveIn, Utensils } from 'lucide-react';
+import { Coffee, Cake, Car, Coffee as DriveIn, Utensils, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Services = () => {
   const [activeService, setActiveService] = useState<string | null>(null);
+  
+  // Add a new state for the billing process animation
+  const [animationStep, setAnimationStep] = useState(0);
+  
+  React.useEffect(() => {
+    // Auto-advance the animation steps
+    if (animationStep < 5) {
+      const timer = setTimeout(() => {
+        setAnimationStep(prev => prev + 1);
+      }, 2000);
+      return () => clearTimeout(timer);
+    } else {
+      const resetTimer = setTimeout(() => {
+        setAnimationStep(0);
+      }, 3000);
+      return () => clearTimeout(resetTimer);
+    }
+  }, [animationStep]);
   
   const services = [
     {
@@ -83,6 +101,45 @@ const Services = () => {
     }
   ];
 
+  const billingProcess = [
+    {
+      icon: "📱",
+      title: "Customer Scans Menu QR",
+      image: "https://images.unsplash.com/photo-1596524430615-b46475ddff6e?auto=format&fit=crop&w=800&q=80",
+      description: "Customer scans the QR code on the table to view the digital menu"
+    },
+    {
+      icon: "🍽️",
+      title: "Order Placement",
+      image: "https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?auto=format&fit=crop&w=800&q=80",
+      description: "Customer places order directly through their phone or with wait staff"
+    },
+    {
+      icon: "👨‍🍳",
+      title: "Kitchen Processing",
+      image: "https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?auto=format&fit=crop&w=800&q=80",
+      description: "Order appears instantly on kitchen display system for preparation"
+    },
+    {
+      icon: "🧾",
+      title: "Bill Generation",
+      image: "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?auto=format&fit=crop&w=800&q=80",
+      description: "System calculates bill automatically with all applicable taxes and discounts"
+    },
+    {
+      icon: "💳",
+      title: "Payment Processing",
+      image: "https://images.unsplash.com/photo-1556742393-d75f468bfcb0?auto=format&fit=crop&w=800&q=80",
+      description: "Customer pays via multiple methods: UPI, cards, or cash"
+    },
+    {
+      icon: "📊",
+      title: "Data Analysis",
+      image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&w=800&q=80", 
+      description: "System logs transaction data for inventory, sales analysis and customer insights"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -98,6 +155,61 @@ const Services = () => {
             </p>
           </div>
 
+          {/* Billing Process Animation Section */}
+          <div className="mb-20">
+            <motion.h3 
+              className="text-3xl font-bold text-bounty-navy text-center mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              The Seamless Bounty Billing Process
+            </motion.h3>
+            
+            <div className="relative">
+              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-bounty-orange/30 -translate-y-1/2 rounded-full"></div>
+              <div className="grid md:grid-cols-6 gap-4 relative">
+                {billingProcess.map((step, index) => (
+                  <motion.div
+                    key={index}
+                    className={`flex flex-col items-center z-10 ${animationStep === index ? 'relative z-20' : ''}`}
+                    initial={{ opacity: 0.7, scale: 0.9 }}
+                    animate={animationStep === index ? { opacity: 1, scale: 1.05, y: -10 } : { opacity: 0.7, scale: 0.9, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="relative mb-6">
+                      <motion.div 
+                        className={`w-24 h-24 rounded-full overflow-hidden border-4 ${animationStep === index ? 'border-bounty-orange' : 'border-gray-200'}`}
+                        animate={animationStep === index ? { 
+                          boxShadow: ["0px 0px 0px rgba(255,126,103,0.3)", "0px 0px 20px rgba(255,126,103,0.7)", "0px 0px 0px rgba(255,126,103,0.3)"]
+                        } : {}}
+                        transition={{ duration: 1.5, repeat: animationStep === index ? Infinity : 0 }}
+                      >
+                        <img 
+                          src={step.image} 
+                          alt={step.title} 
+                          className="w-full h-full object-cover"
+                        />
+                      </motion.div>
+                      <div className={`absolute -bottom-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center ${animationStep === index ? 'bg-bounty-orange' : 'bg-gray-200'} text-white`}>
+                        {index + 1}
+                      </div>
+                    </div>
+                    <motion.div
+                      className={`text-center ${animationStep === index ? 'text-bounty-navy font-medium' : 'text-gray-500'}`}
+                      animate={animationStep === index ? { scale: [1, 1.05, 1] } : { scale: 1 }}
+                      transition={{ duration: 0.5, repeat: animationStep === index ? 3 : 0 }}
+                    >
+                      <div className="text-3xl mb-1">{step.icon}</div>
+                      <h4 className="font-semibold text-sm">{step.title}</h4>
+                      <p className="text-xs mt-1 max-w-[150px] mx-auto">{animationStep === index ? step.description : ""}</p>
+                    </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
             {services.map((service) => (
               <motion.div 
@@ -105,6 +217,10 @@ const Services = () => {
                 whileHover={{ y: -5 }}
                 onClick={() => setActiveService(activeService === service.id ? null : service.id)}
                 className={`cursor-pointer ${activeService === service.id ? 'ring-2 ring-bounty-orange' : ''}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
               >
                 <Card className="h-full hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
                   <div 
@@ -135,16 +251,26 @@ const Services = () => {
                 className="overflow-hidden"
               >
                 {services.filter(s => s.id === activeService).map(service => (
-                  <Card key={service.id} className="mt-8 overflow-hidden">
+                  <Card key={service.id} className="mt-8 overflow-hidden border-0 shadow-xl">
                     <div className="grid md:grid-cols-2 gap-6">
-                      <div className="h-80">
+                      <motion.div 
+                        className="h-80"
+                        initial={{ x: -30, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                      >
                         <img 
                           src={service.image} 
                           alt={service.title} 
                           className="w-full h-full object-cover"
                         />
-                      </div>
-                      <div className="p-6">
+                      </motion.div>
+                      <motion.div 
+                        className="p-6"
+                        initial={{ x: 30, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                      >
                         <h3 className="text-2xl font-bold text-bounty-navy mb-4">{service.title}</h3>
                         <p className="text-gray-700 mb-6">{service.description}</p>
                         
@@ -163,13 +289,103 @@ const Services = () => {
                             </motion.li>
                           ))}
                         </ul>
-                      </div>
+                      </motion.div>
                     </div>
                   </Card>
                 ))}
               </motion.div>
             )}
           </AnimatePresence>
+          
+          {/* Testimonials with billing images */}
+          <div className="mt-20">
+            <motion.h3 
+              className="text-3xl font-bold text-bounty-navy text-center mb-10"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              What Our Customers Say
+            </motion.h3>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <motion.div 
+                className="bg-white p-6 rounded-xl shadow-lg relative"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="flex space-x-4 mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" 
+                    alt="Restaurant Owner" 
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div>
+                    <h4 className="font-bold text-lg">Amit Sharma</h4>
+                    <p className="text-sm text-gray-600">Owner, Spice Garden</p>
+                  </div>
+                </div>
+                <p className="italic text-gray-700 mb-6">
+                  "Bounty's billing system has cut our checkout time by 65%. Customers love the quick payment process and digital receipts. The real-time data helps us spot best-selling dishes and optimize our menu accordingly."
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <img 
+                    src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?auto=format&fit=crop&w=400&q=80" 
+                    alt="POS System" 
+                    className="rounded-lg object-cover h-28 w-full"
+                  />
+                  <img 
+                    src="https://images.unsplash.com/photo-1617347454431-f49d7ff5c3b1?auto=format&fit=crop&w=400&q=80" 
+                    alt="Mobile Payment" 
+                    className="rounded-lg object-cover h-28 w-full"
+                  />
+                </div>
+                <div className="absolute -bottom-3 -right-3 text-5xl">
+                  "
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-white p-6 rounded-xl shadow-lg relative"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="flex space-x-4 mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" 
+                    alt="Restaurant Manager" 
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div>
+                    <h4 className="font-bold text-lg">Priya Patel</h4>
+                    <p className="text-sm text-gray-600">Manager, Urban Café</p>
+                  </div>
+                </div>
+                <p className="italic text-gray-700 mb-6">
+                  "The QR-based billing system has transformed our operations. We've reduced paper waste and staff can focus on customer service instead of running back and forth with bills. Our customers appreciate the transparency and convenience."
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <img 
+                    src="https://images.unsplash.com/photo-1534273749985-beb9bff9c3d3?auto=format&fit=crop&w=400&q=80" 
+                    alt="QR Code Billing" 
+                    className="rounded-lg object-cover h-28 w-full"
+                  />
+                  <img 
+                    src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=400&q=80" 
+                    alt="Digital Receipt" 
+                    className="rounded-lg object-cover h-28 w-full"
+                  />
+                </div>
+                <div className="absolute -bottom-3 -right-3 text-5xl">
+                  "
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 

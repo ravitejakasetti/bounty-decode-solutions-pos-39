@@ -24,7 +24,7 @@ const FeaturesSection = () => {
         { icon: "🎁", text: "Custom Offers Generated" },
         { icon: "💰", text: "Increased Sales & Loyalty" },
       ],
-      image: "https://images.unsplash.com/photo-1561736778-92e52a7769ef?auto=format&fit=crop&w=800&q=80" // Restaurant POS image
+      image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=800&q=80" // Restaurant POS image
     },
     {
       icon: <Users className="w-8 h-8 text-bounty-orange" />,
@@ -42,7 +42,7 @@ const FeaturesSection = () => {
         { icon: "👑", text: "Personalized VIP Experience" },
         { icon: "🔄", text: "Repeat Business & Word of Mouth" },
       ],
-      image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=800&q=80" // Customer retention funnel
+      image: "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=800&q=80" // Customer retention funnel
     },
     {
       icon: <Settings className="w-8 h-8 text-bounty-orange" />,
@@ -99,8 +99,24 @@ const FeaturesSection = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 }
+  };
+
   return (
-    <section id="features" className="py-20 bg-gray-50">
+    <section id="features" className="py-20 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.div 
@@ -140,21 +156,24 @@ const FeaturesSection = () => {
           </motion.p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex overflow-x-auto justify-center flex-wrap gap-4 mb-12">
           {featureCategories.map((category, index) => (
             <motion.button
               key={index}
               className={`flex items-center space-x-2 px-4 py-2 rounded-full ${
                 activeFeature === index 
-                  ? 'bg-bounty-navy text-white' 
+                  ? 'bg-bounty-navy text-white shadow-lg' 
                   : 'bg-white text-bounty-navy hover:bg-gray-100'
-              }`}
+              } transition-all duration-300`}
               onClick={() => setActiveFeature(index)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
             >
               {category.icon}
-              <span className="font-medium">{category.title.split(':')[0]}</span>
+              <span className="font-medium whitespace-nowrap">{category.title.split(':')[0]}</span>
             </motion.button>
           ))}
         </div>
@@ -164,12 +183,16 @@ const FeaturesSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.5 }}
         >
-          <Card className="mb-12">
+          <Card className="mb-12 border-0 shadow-xl overflow-hidden">
             <CardContent className="p-6">
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div>
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                <motion.div
+                  initial={{ x: -50, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
                   <div className="flex items-center space-x-3 mb-6">
                     {featureCategories[activeFeature].icon}
                     <h3 className="text-2xl font-bold text-bounty-navy">
@@ -177,39 +200,63 @@ const FeaturesSection = () => {
                     </h3>
                   </div>
 
-                  <ul className="space-y-3">
+                  <motion.ul 
+                    className="space-y-4"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                  >
                     {featureCategories[activeFeature].features.map((feature, idx) => (
                       <motion.li 
                         key={idx} 
                         className="flex items-start space-x-3"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: idx * 0.1 }}
+                        variants={itemVariants}
                       >
-                        <Check className="text-bounty-orange mt-1 flex-shrink-0" />
+                        <div className="bg-bounty-orange/10 p-1 rounded-full mt-1">
+                          <Check className="text-bounty-orange flex-shrink-0" />
+                        </div>
                         <span className="text-gray-700">{feature}</span>
                       </motion.li>
                     ))}
-                  </ul>
-                </div>
+                  </motion.ul>
+                </motion.div>
                 
-                <div className="flex items-center justify-center">
+                <motion.div 
+                  className="flex items-center justify-center"
+                  initial={{ x: 50, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
                   <img 
                     src={featureCategories[activeFeature].image}
                     alt={featureCategories[activeFeature].title}
-                    className="rounded-xl shadow-lg max-w-full max-h-64 object-cover"
+                    className="rounded-xl shadow-lg max-w-full max-h-72 object-cover hover:scale-105 transition-transform duration-300"
                   />
-                </div>
+                </motion.div>
               </div>
               
               {/* Header Icon Feature */}
-              <div className="flex justify-center mb-6">
-                {featureCategories[activeFeature].headerIcon}
+              <div className="flex justify-center mb-10">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                >
+                  {featureCategories[activeFeature].headerIcon}
+                </motion.div>
               </div>
               
               {/* Animated Flow Chart */}
-              <div className="py-8">
-                <h4 className="text-xl font-semibold text-bounty-navy mb-6 text-center">How It Works</h4>
+              <div className="py-8 bg-gray-50 rounded-xl">
+                <motion.h4 
+                  className="text-xl font-semibold text-bounty-navy mb-6 text-center"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  How It Works
+                </motion.h4>
+
                 <div className="flex flex-wrap justify-center items-center">
                   {featureCategories[activeFeature].flowSteps.map((step, idx) => (
                     <React.Fragment key={idx}>
@@ -217,11 +264,20 @@ const FeaturesSection = () => {
                         className="flex flex-col items-center p-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: idx * 0.2 }}
+                        transition={{ delay: idx * 0.2, duration: 0.5 }}
                       >
-                        <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center text-4xl mb-2">
+                        <motion.div 
+                          className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center text-4xl mb-2"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          animate={{ y: [0, -5, 0] }}
+                          transition={{ 
+                            y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
+                            scale: { duration: 0.2 }
+                          }}
+                        >
                           {step.icon}
-                        </div>
+                        </motion.div>
                         <span className="text-center text-sm font-medium text-gray-700">{step.text}</span>
                       </motion.div>
                       
@@ -229,16 +285,79 @@ const FeaturesSection = () => {
                         <motion.div
                           initial={{ opacity: 0, scale: 0 }}
                           animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: idx * 0.2 + 0.1 }}
-                          className="mx-2 hidden md:block"
+                          transition={{ delay: idx * 0.2 + 0.1, duration: 0.3 }}
+                          className="mx-2 hidden md:flex items-center"
                         >
-                          <ArrowRight className="text-bounty-orange" />
+                          <motion.div
+                            animate={{ x: [0, 10, 0] }}
+                            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                          >
+                            <ArrowRight className="text-bounty-orange" />
+                          </motion.div>
                         </motion.div>
                       )}
                     </React.Fragment>
                   ))}
                 </div>
               </div>
+              
+              {/* KPIs Section */}
+              <motion.div 
+                className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="bg-bounty-navy/5 p-4 rounded-lg text-center">
+                  <motion.div 
+                    className="text-3xl font-bold text-bounty-orange mb-1"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.1 }}
+                  >
+                    +42%
+                  </motion.div>
+                  <p className="text-sm text-gray-600">Average Sales Increase</p>
+                </div>
+                <div className="bg-bounty-navy/5 p-4 rounded-lg text-center">
+                  <motion.div 
+                    className="text-3xl font-bold text-bounty-orange mb-1"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  >
+                    -28%
+                  </motion.div>
+                  <p className="text-sm text-gray-600">Reduced Waste</p>
+                </div>
+                <div className="bg-bounty-navy/5 p-4 rounded-lg text-center">
+                  <motion.div 
+                    className="text-3xl font-bold text-bounty-orange mb-1"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                  >
+                    3.2x
+                  </motion.div>
+                  <p className="text-sm text-gray-600">Customer Retention</p>
+                </div>
+                <div className="bg-bounty-navy/5 p-4 rounded-lg text-center">
+                  <motion.div 
+                    className="text-3xl font-bold text-bounty-orange mb-1"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                  >
+                    +54%
+                  </motion.div>
+                  <p className="text-sm text-gray-600">Operational Efficiency</p>
+                </div>
+              </motion.div>
             </CardContent>
           </Card>
         </motion.div>
