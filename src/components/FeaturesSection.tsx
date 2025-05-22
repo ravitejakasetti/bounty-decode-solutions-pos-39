@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { QrCode, Users, Settings, Database, ArrowRight, Check, Computer, Funnel } from 'lucide-react';
+import { QrCode, Users, Settings, Database, ArrowRight, Check, Computer, Funnel, Fuel } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FeaturesSection = () => {
@@ -28,7 +27,7 @@ const FeaturesSection = () => {
     },
     {
       icon: <Users className="w-8 h-8 text-bounty-orange" />,
-      headerIcon: <Funnel className="w-16 h-16 text-bounty-orange" />,
+      headerIcon: <Fuel className="w-16 h-16 text-bounty-orange" />,
       title: "Turn Every Customer into a Loyal Advocate",
       features: [
         "QR Code Revolution: Welcome discounts, easy menu access, on-container offers",
@@ -116,7 +115,7 @@ const FeaturesSection = () => {
                 alt="Animated character at computer"
                 className="w-24 h-24 rounded-full object-cover border-4 border-bounty-orange"
               />
-              <Funnel className="absolute -bottom-2 -right-2 w-10 h-10 text-bounty-orange bg-white rounded-full p-1 shadow-lg" />
+              <Fuel className="absolute -bottom-2 -right-2 w-10 h-10 text-bounty-orange bg-white rounded-full p-1 shadow-lg" />
             </div>
           </motion.div>
           
