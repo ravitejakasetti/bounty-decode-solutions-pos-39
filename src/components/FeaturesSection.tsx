@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { QrCode, Users, Settings, Database, ArrowRight, Check, Computer, Funnel, Fuel } from 'lucide-react';
+import { QrCode, Users, Settings, Database, ArrowRight, Check, Computer, Fuel } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FeaturesSection = () => {
