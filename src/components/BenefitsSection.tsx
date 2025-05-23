@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
@@ -11,7 +10,7 @@ const BenefitsSection = () => {
       description: "Watch your revenue soar with intelligent pricing, personalized offers, and targeted promotions that turn every interaction into an opportunity.",
       gradient: "from-blue-500 to-cyan-500",
       icon: <TrendingUp className="w-12 h-12" />,
-      image: "/lovable-uploads/0125b849-d03f-4131-9aa1-3c5a7a757853.png", // Dynamic pricing image
+      image: "/lovable-uploads/102f597c-25f1-4282-9c5d-a649d399ca6b.png", // Updated Dynamic Sales Amplification image
       stats: [
         { value: "+28%", label: "Average Revenue Increase" },
         { value: "3.2x", label: "Return on Investment" }
@@ -22,7 +21,7 @@ const BenefitsSection = () => {
       description: "From inventory to orders, and vendors to delivery, Bounty streamlines your processes, freeing you to focus on what you do best – delighting your customers.",
       gradient: "from-green-500 to-emerald-500",
       icon: <Clock className="w-12 h-12" />,
-      image: "/lovable-uploads/ee9787db-1b25-4d20-8407-69289622a837.png", // Updated to operational efficiency image
+      image: "/lovable-uploads/068be18d-62c5-4939-b64b-01506aad4535.png", // Updated for operational efficiency image
       stats: [
         { value: "-42%", label: "Reduced Operational Time" },
         { value: "+65%", label: "Staff Productivity" }
@@ -44,7 +43,7 @@ const BenefitsSection = () => {
       description: "Make informed decisions with real-time insights. Optimize your menu, reduce costs, and maximize your margins effortlessly.",
       gradient: "from-orange-500 to-red-500",
       icon: <BarChart3 className="w-12 h-12" />,
-      image: "/lovable-uploads/5d44962b-77d7-4d72-b503-e5460342485a.png", // Updated to data-driven profitability image
+      image: "/lovable-uploads/bd2119b2-058b-4142-8877-b1fbb587a502.png", // Updated to data-driven profitability image
       stats: [
         { value: "+35%", label: "Higher Profit Margins" },
         { value: "-23%", label: "Food Waste Reduction" }

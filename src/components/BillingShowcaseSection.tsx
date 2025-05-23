@@ -6,11 +6,11 @@ import { motion } from 'framer-motion';
 const BillingShowcaseSection = () => {
   const billingImages = [
     {
-      url: "/lovable-uploads/19a308c6-45cb-4077-ab32-0732214bec38.png",
+      url: "/lovable-uploads/87d4e930-ee29-473e-a26d-b71bad3c3399.png",
       title: "Mobile Payment Processing"
     },
     {
-      url: "/lovable-uploads/3f2acb39-7532-49a8-bbb3-8e711490fb72.png",
+      url: "/lovable-uploads/6b884a1c-5776-4b24-9ed2-f7d35cdad36b.png",
       title: "Dynamic Pricing System"
     },
     {

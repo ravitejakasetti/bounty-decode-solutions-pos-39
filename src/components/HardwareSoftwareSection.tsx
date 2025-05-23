@@ -13,7 +13,7 @@ const HardwareSoftwareSection = () => {
       icon: <Laptop className="w-8 h-8 text-bounty-orange" />,
       title: "User-Friendly Interface",
       description: "Navigate with ease, manage operations intuitively, and access critical data without a steep learning curve.",
-      image: "https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=800&q=80" // POS software UI image
+      image: "/lovable-uploads/aadfc52e-8730-47b2-9c31-05f04a0c28b3.png" // Updated User-Friendly Interface image
     },
     {
       icon: <motion.div
@@ -56,7 +56,7 @@ const HardwareSoftwareSection = () => {
       icon: <Smartphone className="w-8 h-8 text-bounty-orange" />,
       title: "Your Phone is Your POS",
       description: "Transform any smartphone into a powerful point-of-sale terminal - take orders, process payments, and manage your business from the palm of your hand.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" // Phone as POS image
+      image: "/lovable-uploads/56224731-23c6-45a5-8e57-3493a691b981.png" // Updated Phone as POS image
     }
   ];
 
@@ -272,56 +272,6 @@ const HardwareSoftwareSection = () => {
                 </motion.div>
               ))}
             </div>
-            
-            {/* Hardware Integration Visualization */}
-            <motion.div
-              className="mt-12 bg-gray-50 p-8 rounded-2xl"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <h3 className="text-2xl font-bold text-center text-bounty-navy mb-8">Integrated Hardware Ecosystem</h3>
-              <div className="relative">
-                <div className="w-full max-w-3xl mx-auto">
-                  <img 
-                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
-                    alt="Hardware Integration" 
-                    className="w-full h-64 object-cover rounded-xl"
-                  />
-                  
-                  {/* Hardware Integration Points */}
-                  <motion.div
-                    className="absolute top-1/4 left-1/4 bg-white p-2 rounded-full shadow-lg"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <QrCode className="w-6 h-6 text-bounty-orange" />
-                  </motion.div>
-                  
-                  <motion.div
-                    className="absolute top-1/2 left-1/3 bg-white p-2 rounded-full shadow-lg"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                  >
-                    <Smartphone className="w-6 h-6 text-bounty-orange" />
-                  </motion.div>
-                  
-                  <motion.div
-                    className="absolute bottom-1/4 right-1/4 bg-white p-2 rounded-full shadow-lg"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.4 }}
-                  >
-                    <Tablet className="w-6 h-6 text-bounty-orange" />
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
           </TabsContent>
         </Tabs>
       </div>

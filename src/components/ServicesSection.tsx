@@ -99,7 +99,7 @@ const ServicesSection = () => {
     initial: { scale: 1 },
     hover: { 
       scale: 1.05,
-      transition: { duration: 3, repeat: Infinity, repeatType: "reverse" }
+      transition: { duration: 3, repeat: Infinity, repeatType: "reverse" as const }
     }
   };
 

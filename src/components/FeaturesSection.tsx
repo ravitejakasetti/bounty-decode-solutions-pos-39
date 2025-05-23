@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { QrCode, Users, Settings, Database, ArrowRight, Check } from 'lucide-react';
@@ -52,7 +53,7 @@ const FeaturesSection = () => {
         "Ingredient-level tracking for recipe costing",
         "Expiry date alerts to minimize waste"
       ],
-      image: "/lovable-uploads/d1252c67-4478-4da3-a38f-7c7300930927.png",
+      image: "/lovable-uploads/068be18d-62c5-4939-b64b-01506aad4535.png", // Updated inventory management image
       stats: [
         { label: "Reduced Food Waste", value: "-32%" },
         { label: "Inventory Cost Savings", value: "+18%" }
@@ -69,7 +70,7 @@ const FeaturesSection = () => {
         "Customer segment-specific offers",
         "Competitor price monitoring and adjustment"
       ],
-      image: "/lovable-uploads/0125b849-d03f-4131-9aa1-3c5a7a757853.png",
+      image: "/lovable-uploads/6b884a1c-5776-4b24-9ed2-f7d35cdad36b.png", // Updated dynamic pricing image
       stats: [
         { label: "Revenue Increase", value: "+28%" },
         { label: "Off-peak Hour Sales", value: "+52%" }

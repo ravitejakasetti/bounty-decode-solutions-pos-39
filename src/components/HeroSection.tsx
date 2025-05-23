@@ -11,8 +11,8 @@ const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const heroImages = [
-    "/lovable-uploads/fdfc69de-9f30-4f5d-a050-bef8c33f21ad.png",
-    "/lovable-uploads/c972e352-51d4-457c-ad0b-75fdcf0edc73.png",
+    "/lovable-uploads/082a61ce-6be5-4dc0-a68d-587eb607823a.png", // First image in first page
+    "/lovable-uploads/bd2119b2-058b-4142-8877-b1fbb587a502.png", // Second image in first page
     "/lovable-uploads/7b80c419-b908-4fe2-bba6-959f08c899aa.png",
     "/lovable-uploads/ae960305-62b4-40ab-aa76-a8a610b0728a.png"
   ];
