@@ -1,49 +1,24 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { ChartContainer, ChartTooltipContent, ChartTooltip } from '@/components/ui/chart';
 import { motion } from 'framer-motion';
-import { BarChart3, LineChart, PieChart as PieChartIcon, TrendingUp, Fuel } from 'lucide-react';
+import { Fuel } from 'lucide-react';
 
 const AnalyticsSection = () => {
-  // Sample data for charts
-  const salesData = [
-    { name: 'Jan', sales: 4000 },
-    { name: 'Feb', sales: 3000 },
-    { name: 'Mar', sales: 5000 },
-    { name: 'Apr', sales: 7000 },
-    { name: 'May', sales: 9000 },
-    { name: 'Jun', sales: 8000 },
-  ];
-
-  const funnelData = [
-    { name: 'Menu Views', value: 5000, color: '#0088FE' },
-    { name: 'Item Selection', value: 4000, color: '#00C49F' },
-    { name: 'Cart Addition', value: 3000, color: '#FFBB28' },
-    { name: 'Checkout', value: 2000, color: '#FF8042' },
-    { name: 'Completed Order', value: 1500, color: '#8884d8' },
-  ];
-
-  const pieData = [
-    { name: 'Food', value: 65, color: '#FF7E67' },
-    { name: 'Beverages', value: 25, color: '#00B0FF' },
-    { name: 'Desserts', value: 10, color: '#67D5B5' },
-  ];
-
-  // Chart configuration for our charts
-  const chartConfig = {
-    sales: { color: '#FF7E67', label: 'Sales' },
-    food: { color: '#FF7E67', label: 'Food' },
-    beverages: { color: '#00B0FF', label: 'Beverages' },
-    desserts: { color: '#67D5B5', label: 'Desserts' },
-  };
-
-  // Animated counter with updated values
+  // Updated counter data with the values the user requested
   const counters = [
     { value: 45, label: 'Average Sales Increase' },
     { value: 70, label: 'Reduced Order Time' },
     { value: 95, label: 'Customer Retention' },
+  ];
+
+  // Data for the funnel visualization
+  const funnelData = [
+    { name: 'Customer Walk-Ins', value: 5000, color: '#0088FE', percentage: '100%' },
+    { name: 'QR Menu Management', value: 4500, color: '#00C49F', percentage: '90%' },
+    { name: 'Personalized Offers', value: 3600, color: '#FFBB28', percentage: '72%' },
+    { name: 'Up-Sales Success', value: 2800, color: '#FF8042', percentage: '56%' },
+    { name: 'Repeat Customer', value: 2000, color: '#8884d8', percentage: '40%' },
   ];
   
   return (
@@ -98,76 +73,7 @@ const AnalyticsSection = () => {
           ))}
         </div>
 
-        {/* Charts Section */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <Card className="border-0 shadow-lg h-full">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <BarChart3 className="w-5 h-5 text-bounty-orange mr-2" />
-                  <h3 className="text-xl font-semibold text-bounty-navy">Monthly Sales Performance</h3>
-                </div>
-                <div className="h-80">
-                  <ChartContainer config={chartConfig}>
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={salesData}>
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="sales" fill="#FF7E67" radius={[4, 4, 0, 0]} />
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </ChartContainer>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <Card className="border-0 shadow-lg h-full">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <PieChartIcon className="w-5 h-5 text-bounty-orange mr-2" />
-                  <h3 className="text-xl font-semibold text-bounty-navy">Sales Distribution</h3>
-                </div>
-                <div className="h-80">
-                  <ChartContainer config={chartConfig}>
-                    <ResponsiveContainer width="100%" height="100%">
-                      <PieChart>
-                        <ChartTooltip content={<ChartTooltipContent />} />
-                        <Pie
-                          data={pieData}
-                          cx="50%"
-                          cy="50%"
-                          innerRadius={60}
-                          outerRadius={120}
-                          paddingAngle={5}
-                          dataKey="value"
-                        >
-                          {pieData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={entry.color} />
-                          ))}
-                        </Pie>
-                      </PieChart>
-                    </ResponsiveContainer>
-                  </ChartContainer>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-
-        {/* Funnel Visualization */}
+        {/* Revenue Growth Funnel */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -178,8 +84,7 @@ const AnalyticsSection = () => {
           <Card className="border-0 shadow-lg overflow-hidden">
             <CardContent className="p-6">
               <div className="flex items-center mb-6">
-                <TrendingUp className="w-5 h-5 text-bounty-orange mr-2" />
-                <h3 className="text-xl font-semibold text-bounty-navy">Customer Conversion Funnel</h3>
+                <h3 className="text-xl font-semibold text-bounty-navy">Revenue Growth Funnel</h3>
               </div>
 
               <div className="flex flex-col items-center gap-3 mb-10">
@@ -199,7 +104,7 @@ const AnalyticsSection = () => {
                         backgroundColor: item.color 
                       }}
                     >
-                      {item.name}: {item.value}
+                      {item.name}: {item.percentage}
                     </div>
                     {index < funnelData.length - 1 && (
                       <div className="w-0 h-0 border-l-[20px] border-l-transparent border-t-[15px] border-r-[20px] border-r-transparent mt-1"
@@ -215,11 +120,11 @@ const AnalyticsSection = () => {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-bounty-orange font-bold">•</span>
-                      <span>70% of menu viewers add items to cart</span>
+                      <span>90% of walk-ins engage with QR menu</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-bounty-orange font-bold">•</span>
-                      <span>37.5% conversion from first view to purchase</span>
+                      <span>40% conversion to repeat customers</span>
                     </li>
                   </ul>
                 </div>
@@ -229,11 +134,11 @@ const AnalyticsSection = () => {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-bounty-orange font-bold">•</span>
-                      <span>Simplify checkout process (+10% conversion)</span>
+                      <span>Improve personalized offers (+15% conversion)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-bounty-orange font-bold">•</span>
-                      <span>Add item suggestions at cart stage (+15% AOV)</span>
+                      <span>Enhance up-selling strategies (+20% AOV)</span>
                     </li>
                   </ul>
                 </div>
@@ -243,7 +148,7 @@ const AnalyticsSection = () => {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-bounty-orange font-bold">•</span>
-                      <span>A/B test menu presentation formats</span>
+                      <span>A/B test personalized offers</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-bounty-orange font-bold">•</span>

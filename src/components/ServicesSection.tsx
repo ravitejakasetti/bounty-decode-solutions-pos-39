@@ -2,6 +2,8 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Coffee, Cake, Car, Coffee as DriveIn, Utensils } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button } from './ui/button';
 
 const ServicesSection = () => {
   const services = [
@@ -55,7 +57,8 @@ const ServicesSection = () => {
         "Multi-mode payment options",
         "Customer car-tagging system"
       ],
-      workflow: "Staff takes orders at the car ➝ Order hits kitchen via POS ➝ Food prepared and delivered ➝ Payment processed in-car ➝ Customer data saved for loyalty programs."
+      workflow: "Staff takes orders at the car ➝ Order hits kitchen via POS ➝ Food prepared and delivered ➝ Payment processed in-car ➝ Customer data saved for loyalty programs.",
+      image: "/lovable-uploads/6e40dab7-d5e7-4309-8046-9b9c09ada9b9.png"
     },
     {
       icon: <Utensils className="w-12 h-12 text-bounty-orange" />,
@@ -100,6 +103,15 @@ const ServicesSection = () => {
                 </p>
               </CardHeader>
               <CardContent className="space-y-4">
+                {service.image && (
+                  <div className="mb-4">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  </div>
+                )}
                 <div>
                   <h4 className="font-semibold text-bounty-navy mb-2">Key Features:</h4>
                   <ul className="space-y-1">

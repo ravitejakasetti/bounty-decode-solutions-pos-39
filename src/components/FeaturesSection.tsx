@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { QrCode, Users, Settings, Database, ArrowRight, Check, Computer, Fuel } from 'lucide-react';
+import { QrCode, Users, Settings, Database, ArrowRight, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FeaturesSection = () => {
@@ -10,92 +10,71 @@ const FeaturesSection = () => {
   const featureCategories = [
     {
       icon: <QrCode className="w-8 h-8 text-bounty-orange" />,
-      headerIcon: <Computer className="w-16 h-16 text-bounty-orange animate-pulse" />,
-      title: "Sell Smarter, Not Harder",
+      title: "QR Integration",
+      description: "Seamlessly connect with customers through QR code technology that enhances ordering, payment, and loyalty experiences.",
       features: [
-        "Dynamic Menu Management: Instantly change MRPs, disable unavailable items, and highlight specials",
-        "Intelligent Discounting & Offers: QR-activated welcome discounts and bill value-based dynamic offers", 
-        "Personalized Combo Creation: Craft irresistible combos based on customer budget and choice",
-        "Welcome Drinks/Offers: Automate a delightful first impression for new and returning guests"
+        "Dynamic QR codes for tableside ordering and payment",
+        "Menu access without app downloads", 
+        "Personalized welcome discounts on first scan",
+        "Digital loyalty program integration",
+        "Menu item ratings and feedback collection"
       ],
-      flowSteps: [
-        { icon: "📱", text: "Customer Scans QR" },
-        { icon: "🔍", text: "Personalization Engine Identifies Customer" },
-        { icon: "🎁", text: "Custom Offers Generated" },
-        { icon: "💰", text: "Increased Sales & Loyalty" },
-      ],
-      image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=800&q=80" // Restaurant POS image
+      image: "/lovable-uploads/c48aa58e-af6c-4973-af27-6bb89086539b.png",
+      stats: [
+        { label: "Increased Order Value", value: "+24%" },
+        { label: "Reduced Wait Times", value: "-35%" }
+      ]
     },
     {
       icon: <Users className="w-8 h-8 text-bounty-orange" />,
-      headerIcon: <Fuel className="w-16 h-16 text-bounty-orange" />,
-      title: "Turn Every Customer into a Loyal Advocate",
+      title: "Customer Loyalty",
+      description: "Build lasting relationships through intelligent customer recognition, personalized experiences, and rewards that keep patrons coming back.",
       features: [
-        "QR Code Revolution: Welcome discounts, easy menu access, on-container offers",
-        "Know Your Customer: Recognize regulars, track visit history, and personalize experiences",
-        "Targeted Communication via WhatsApp Bot: Send enticing messages about new dishes and offers",
-        "Priority Service & Privileges: Offer faster service or special perks to loyal patrons"
+        "Automated recognition of returning customers",
+        "Purchase history tracking for personalized recommendations",
+        "Points-based loyalty program with multiple redemption options",
+        "Customer birthday and anniversary rewards",
+        "Digital membership cards with exclusive benefits"
       ],
-      flowSteps: [
-        { icon: "👋", text: "Customer Recognition" },
-        { icon: "📊", text: "Analysis of Past Visits" },
-        { icon: "👑", text: "Personalized VIP Experience" },
-        { icon: "🔄", text: "Repeat Business & Word of Mouth" },
-      ],
-      image: "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=800&q=80" // Customer retention funnel
+      image: "/lovable-uploads/ca73a960-993d-4792-b91b-6c3dcbe88c1d.png",
+      stats: [
+        { label: "Customer Retention", value: "+45%" },
+        { label: "Repeat Visit Frequency", value: "+85%" }
+      ]
     },
     {
       icon: <Settings className="w-8 h-8 text-bounty-orange" />,
-      headerIcon: <motion.img 
-        src="/lovable-uploads/49caf0a8-0b17-4acd-bb27-85f324adb27b.png"
-        className="w-24 h-24 rounded-full object-cover border-4 border-bounty-orange"
-        animate={{ rotate: [0, 10, 0, -10, 0] }}
-        transition={{ repeat: Infinity, duration: 5 }}
-      />,
-      title: "Streamline, Save, and Scale", 
+      title: "Inventory Management", 
+      description: "Take control of your inventory with real-time tracking, automated ordering, and waste reduction tools.",
       features: [
-        "Smart Inventory Management: Track stock levels in real-time, minimize spoilage",
-        "Vendor Management: Simplify supplier interactions and maintain optimal stock levels",
-        "Dynamic Pricing Engine: Adjust prices based on peak/low hours or demand",
-        "Restaurant Self-Sufficient Delivery System: Manage your own deliveries efficiently"
+        "Real-time stock monitoring across multiple locations",
+        "Automated reordering based on custom thresholds",
+        "Vendor management and price comparison",
+        "Ingredient-level tracking for recipe costing",
+        "Expiry date alerts to minimize waste"
       ],
-      flowSteps: [
-        { icon: "📦", text: "Real-time Inventory Tracking" },
-        { icon: "⚠️", text: "Low Stock Alerts" },
-        { icon: "🛒", text: "Automated Ordering" },
-        { icon: "✅", text: "Optimized Stock Levels" },
-      ],
-      image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=800&q=80" // Inventory management
+      image: "/lovable-uploads/3474cae2-df4f-484e-aa63-f15e71e69fb4.png",
+      stats: [
+        { label: "Reduced Food Waste", value: "-32%" },
+        { label: "Inventory Cost Savings", value: "+18%" }
+      ]
     },
     {
       icon: <Database className="w-8 h-8 text-bounty-orange" />,
-      headerIcon: <motion.div className="relative">
-        <img 
-          src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=400&q=80"
-          className="w-24 h-24 rounded-full object-cover border-4 border-bounty-orange"
-        />
-        <motion.div 
-          className="absolute -bottom-2 -right-2 bg-bounty-navy rounded-full p-1"
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <Database className="w-6 h-6 text-white" />
-        </motion.div>
-      </motion.div>,
-      title: "Step into the Future, Leave Limitations Behind",
+      title: "Dynamic Pricing",
+      description: "Maximize revenue with intelligent pricing strategies that adjust based on demand, time of day, and customer segments.",
       features: [
-        "Beyond Fixed Data: Bounty operates on dynamic, real-time information",
-        "Trackable & Actionable Insights: Understand customer behavior and operational trends",
-        "Control Your Supply Chain: Gain better oversight of inventory and vendor relationships",
-        "Comprehensive Analytics: Make data-driven decisions for maximum profitability"
+        "Time-based pricing for peak/off-peak hours",
+        "Automatic happy hour discounts",
+        "Event-based special pricing",
+        "Customer segment-specific offers",
+        "Competitor price monitoring and adjustment"
       ],
-      flowSteps: [
-        { icon: "📊", text: "Data Collection" },
-        { icon: "🧠", text: "AI Analysis" },
-        { icon: "💡", text: "Actionable Insights" },
-        { icon: "📈", text: "Business Growth" },
-      ],
-      image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&w=800&q=80" // Data analytics dashboard
+      image: "/lovable-uploads/0125b849-d03f-4131-9aa1-3c5a7a757853.png",
+      stats: [
+        { label: "Revenue Increase", value: "+28%" },
+        { label: "Off-peak Hour Sales", value: "+52%" }
+      ]
     }
   ];
 
@@ -119,23 +98,6 @@ const FeaturesSection = () => {
     <section id="features" className="py-20 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <motion.div 
-            className="flex justify-center mb-8"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="relative inline-block">
-              <img
-                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80"
-                alt="Animated character at computer"
-                className="w-24 h-24 rounded-full object-cover border-4 border-bounty-orange"
-              />
-              <Fuel className="absolute -bottom-2 -right-2 w-10 h-10 text-bounty-orange bg-white rounded-full p-1 shadow-lg" />
-            </div>
-          </motion.div>
-          
           <motion.h2 
             className="text-4xl md:text-5xl font-bold text-bounty-navy mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -173,7 +135,7 @@ const FeaturesSection = () => {
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
               {category.icon}
-              <span className="font-medium whitespace-nowrap">{category.title.split(':')[0]}</span>
+              <span className="font-medium whitespace-nowrap">{category.title}</span>
             </motion.button>
           ))}
         </div>
@@ -200,6 +162,10 @@ const FeaturesSection = () => {
                     </h3>
                   </div>
 
+                  <p className="text-gray-600 mb-6">
+                    {featureCategories[activeFeature].description}
+                  </p>
+
                   <motion.ul 
                     className="space-y-4"
                     variants={containerVariants}
@@ -222,7 +188,7 @@ const FeaturesSection = () => {
                 </motion.div>
                 
                 <motion.div 
-                  className="flex items-center justify-center"
+                  className="flex flex-col items-center justify-center space-y-6"
                   initial={{ x: 50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
@@ -232,17 +198,15 @@ const FeaturesSection = () => {
                     alt={featureCategories[activeFeature].title}
                     className="rounded-xl shadow-lg max-w-full max-h-72 object-cover hover:scale-105 transition-transform duration-300"
                   />
-                </motion.div>
-              </div>
-              
-              {/* Header Icon Feature */}
-              <div className="flex justify-center mb-10">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                >
-                  {featureCategories[activeFeature].headerIcon}
+                  
+                  <div className="grid grid-cols-2 gap-4 w-full">
+                    {featureCategories[activeFeature].stats.map((stat, idx) => (
+                      <div key={idx} className="bg-gray-50 p-4 rounded-lg text-center">
+                        <div className="text-2xl font-bold text-bounty-orange">{stat.value}</div>
+                        <div className="text-sm text-gray-600">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
                 </motion.div>
               </div>
               
@@ -254,11 +218,11 @@ const FeaturesSection = () => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  How It Works
+                  Implementation Process
                 </motion.h4>
 
-                <div className="flex flex-wrap justify-center items-center">
-                  {featureCategories[activeFeature].flowSteps.map((step, idx) => (
+                <div className="flex justify-center items-center flex-wrap">
+                  {['Consultation', 'Configuration', 'Training', 'Launch', 'Support'].map((step, idx) => (
                     <React.Fragment key={idx}>
                       <motion.div
                         className="flex flex-col items-center p-4"
@@ -267,21 +231,16 @@ const FeaturesSection = () => {
                         transition={{ delay: idx * 0.2, duration: 0.5 }}
                       >
                         <motion.div 
-                          className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center text-4xl mb-2"
+                          className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center text-xl font-bold mb-2 text-bounty-navy"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          animate={{ y: [0, -5, 0] }}
-                          transition={{ 
-                            y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
-                            scale: { duration: 0.2 }
-                          }}
                         >
-                          {step.icon}
+                          {idx + 1}
                         </motion.div>
-                        <span className="text-center text-sm font-medium text-gray-700">{step.text}</span>
+                        <span className="text-center text-sm font-medium text-gray-700">{step}</span>
                       </motion.div>
                       
-                      {idx < featureCategories[activeFeature].flowSteps.length - 1 && (
+                      {idx < 4 && (
                         <motion.div
                           initial={{ opacity: 0, scale: 0 }}
                           animate={{ opacity: 1, scale: 1 }}
@@ -300,64 +259,6 @@ const FeaturesSection = () => {
                   ))}
                 </div>
               </div>
-              
-              {/* KPIs Section */}
-              <motion.div 
-                className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="bg-bounty-navy/5 p-4 rounded-lg text-center">
-                  <motion.div 
-                    className="text-3xl font-bold text-bounty-orange mb-1"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                  >
-                    +42%
-                  </motion.div>
-                  <p className="text-sm text-gray-600">Average Sales Increase</p>
-                </div>
-                <div className="bg-bounty-navy/5 p-4 rounded-lg text-center">
-                  <motion.div 
-                    className="text-3xl font-bold text-bounty-orange mb-1"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                  >
-                    -28%
-                  </motion.div>
-                  <p className="text-sm text-gray-600">Reduced Waste</p>
-                </div>
-                <div className="bg-bounty-navy/5 p-4 rounded-lg text-center">
-                  <motion.div 
-                    className="text-3xl font-bold text-bounty-orange mb-1"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                  >
-                    3.2x
-                  </motion.div>
-                  <p className="text-sm text-gray-600">Customer Retention</p>
-                </div>
-                <div className="bg-bounty-navy/5 p-4 rounded-lg text-center">
-                  <motion.div 
-                    className="text-3xl font-bold text-bounty-orange mb-1"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                  >
-                    +54%
-                  </motion.div>
-                  <p className="text-sm text-gray-600">Operational Efficiency</p>
-                </div>
-              </motion.div>
             </CardContent>
           </Card>
         </motion.div>

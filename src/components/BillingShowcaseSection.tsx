@@ -6,24 +6,24 @@ import { motion } from 'framer-motion';
 const BillingShowcaseSection = () => {
   const billingImages = [
     {
-      url: "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=800&q=80",
-      title: "Smart Digital Receipts"
+      url: "/lovable-uploads/c48aa58e-af6c-4973-af27-6bb89086539b.png",
+      title: "QR Code Billing Experience"
+    },
+    {
+      url: "/lovable-uploads/0125b849-d03f-4131-9aa1-3c5a7a757853.png",
+      title: "Dynamic Pricing System"
     },
     {
       url: "https://images.unsplash.com/photo-1617347454431-f49d7ff5c3b1?auto=format&fit=crop&w=800&q=80",
       title: "Mobile Payment Processing"
     },
     {
-      url: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=800&q=80", 
+      url: "/lovable-uploads/6e40dab7-d5e7-4309-8046-9b9c09ada9b9.png", 
+      title: "Drive-In Restaurant Billing"
+    },
+    {
+      url: "/lovable-uploads/ca73a960-993d-4792-b91b-6c3dcbe88c1d.png",
       title: "Customer Loyalty Integration"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1534273749985-beb9bff9c3d3?auto=format&fit=crop&w=800&q=80",
-      title: "QR Code Billing Experience"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?auto=format&fit=crop&w=800&q=80",
-      title: "Instant Payment Confirmation"
     }
   ];
 
@@ -77,18 +77,6 @@ const BillingShowcaseSection = () => {
             </div>
           </Carousel>
         </div>
-
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <p className="font-semibold text-bounty-orange">
-            Join the 500+ restaurants already using Bounty to streamline their billing
-          </p>
-        </motion.div>
       </div>
     </section>
   );

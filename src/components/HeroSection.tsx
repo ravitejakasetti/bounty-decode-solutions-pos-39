@@ -11,9 +11,9 @@ const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1609234656501-c5b5ae26d27f?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1534273749985-beb9bff9c3d3?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?auto=format&fit=crop&w=800&q=80",
+    "/lovable-uploads/c48aa58e-af6c-4973-af27-6bb89086539b.png",
+    "/lovable-uploads/0125b849-d03f-4131-9aa1-3c5a7a757853.png",
+    "/lovable-uploads/6e40dab7-d5e7-4309-8046-9b9c09ada9b9.png",
     "https://images.unsplash.com/photo-1617347454431-f49d7ff5c3b1?auto=format&fit=crop&w=800&q=80"
   ];
 
@@ -129,16 +129,9 @@ const HeroSection = () => {
                 <Button 
                   onClick={() => setIsDemoModalOpen(true)}
                   size="lg" 
-                  className="bg-white text-bounty-navy hover:bg-gray-100 text-lg px-8 py-4 font-semibold group"
+                  className="bg-bounty-orange text-white hover:bg-bounty-orange/90 text-lg px-8 py-4 font-semibold group"
                 >
                   <span className="inline-block group-hover:translate-x-1 transition-transform">Book Your Free Bounty Demo</span>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-white text-white hover:bg-white hover:text-bounty-navy text-lg px-8 py-4"
-                >
-                  Watch Demo Video
                 </Button>
               </motion.div>
             </motion.div>

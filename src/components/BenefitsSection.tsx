@@ -11,7 +11,7 @@ const BenefitsSection = () => {
       description: "Watch your revenue soar with intelligent pricing, personalized offers, and targeted promotions that turn every interaction into an opportunity.",
       gradient: "from-blue-500 to-cyan-500",
       icon: <TrendingUp className="w-12 h-12" />,
-      image: "https://images.unsplash.com/photo-1618598842855-01618b5f8771?auto=format&fit=crop&w=800&q=80", // Dynamic sales chart image
+      image: "/lovable-uploads/0125b849-d03f-4131-9aa1-3c5a7a757853.png", // Dynamic pricing image
       stats: [
         { value: "+28%", label: "Average Revenue Increase" },
         { value: "3.2x", label: "Return on Investment" }
@@ -22,7 +22,7 @@ const BenefitsSection = () => {
       description: "From inventory to orders, and vendors to delivery, Bounty streamlines your processes, freeing you to focus on what you do best – delighting your customers.",
       gradient: "from-green-500 to-emerald-500",
       icon: <Clock className="w-12 h-12" />,
-      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/3474cae2-df4f-484e-aa63-f15e71e69fb4.png", // Inventory management image
       stats: [
         { value: "-42%", label: "Reduced Operational Time" },
         { value: "+65%", label: "Staff Productivity" }
@@ -33,7 +33,7 @@ const BenefitsSection = () => {
       description: "Recognize, reward, and re-engage your patrons like never before. Build lasting relationships that keep them coming back for more.",
       gradient: "from-purple-500 to-pink-500",
       icon: <Users className="w-12 h-12" />,
-      image: "https://images.unsplash.com/photo-1537739999004-c9216e1c0ee5?auto=format&fit=crop&w=800&q=80", // Indian customers at restaurant
+      image: "/lovable-uploads/ca73a960-993d-4792-b91b-6c3dcbe88c1d.png", // Customer loyalty image
       stats: [
         { value: "+45%", label: "Customer Retention Rate" },
         { value: "2.7x", label: "Repeat Visit Frequency" }
@@ -44,7 +44,7 @@ const BenefitsSection = () => {
       description: "Make informed decisions with real-time insights. Optimize your menu, reduce costs, and maximize your margins effortlessly.",
       gradient: "from-orange-500 to-red-500",
       icon: <BarChart3 className="w-12 h-12" />,
-      image: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=800&q=80", // POS with analytics screen
+      image: "/lovable-uploads/c48aa58e-af6c-4973-af27-6bb89086539b.png", // QR code billing and analytics image
       stats: [
         { value: "+35%", label: "Higher Profit Margins" },
         { value: "-23%", label: "Food Waste Reduction" }
@@ -184,47 +184,14 @@ const BenefitsSection = () => {
               Ready to Transform Your Restaurant?
             </motion.h3>
             <motion.p 
-              className="text-gray-600 max-w-2xl mx-auto mb-8"
+              className="text-gray-600 max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              Join over 500+ restaurants across India that have revolutionized their operations with Bounty's intelligent solutions
+              Join restaurants across India that have revolutionized their operations with Bounty's intelligent solutions
             </motion.p>
-            
-            <motion.div 
-              className="grid grid-cols-3 md:grid-cols-6 gap-4"
-              variants={{
-                hidden: { opacity: 0 },
-                show: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.1
-                  }
-                }
-              }}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-            >
-              {[...Array(6)].map((_, idx) => (
-                <motion.div 
-                  key={idx}
-                  className="flex items-center justify-center"
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    show: { opacity: 1, y: 0 }
-                  }}
-                >
-                  <img 
-                    src={`https://images.unsplash.com/photo-${1550000000000 + idx * 10000}?auto=format&fit=crop&w=100&q=80`} 
-                    alt="Restaurant logo" 
-                    className="h-12 w-12 object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-300"
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
           </div>
         </div>
       </div>
