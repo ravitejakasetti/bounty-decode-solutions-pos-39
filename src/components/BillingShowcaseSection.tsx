@@ -6,20 +6,20 @@ import { motion } from 'framer-motion';
 const BillingShowcaseSection = () => {
   const billingImages = [
     {
-      url: "/lovable-uploads/fdfc69de-9f30-4f5d-a050-bef8c33f21ad.png",
+      url: "/lovable-uploads/19a308c6-45cb-4077-ab32-0732214bec38.png",
       title: "Mobile Payment Processing"
     },
     {
-      url: "/lovable-uploads/0125b849-d03f-4131-9aa1-3c5a7a757853.png",
+      url: "/lovable-uploads/3f2acb39-7532-49a8-bbb3-8e711490fb72.png",
       title: "Dynamic Pricing System"
     },
     {
-      url: "/lovable-uploads/c48aa58e-af6c-4973-af27-6bb89086539b.png",
-      title: "QR Code Billing Experience"
+      url: "/lovable-uploads/d5275aac-0de5-4845-a30d-b7947013397c.png",
+      title: "POS Billing Software"
     },
     {
-      url: "/lovable-uploads/7b80c419-b908-4fe2-bba6-959f08c899aa.png", 
-      title: "Drive-In Restaurant Billing"
+      url: "/lovable-uploads/4fd01671-5bc0-4a9c-a6e4-7be2b27570da.png", 
+      title: "Interactive Dashboard"
     },
     {
       url: "/lovable-uploads/ca73a960-993d-4792-b91b-6c3dcbe88c1d.png",

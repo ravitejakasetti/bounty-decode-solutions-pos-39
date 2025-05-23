@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Coffee, Cake, Car, Coffee as DriveIn, Utensils } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
+import { motion } from 'framer-motion';
 
 const ServicesSection = () => {
   const services = [
@@ -80,61 +81,114 @@ const ServicesSection = () => {
     }
   ];
 
+  const cardVariants = {
+    initial: { opacity: 0, y: 20 },
+    inView: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    },
+    hover: {
+      scale: 1.02,
+      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      transition: { duration: 0.2 }
+    }
+  };
+
+  const imageVariants = {
+    initial: { scale: 1 },
+    hover: { 
+      scale: 1.05,
+      transition: { duration: 3, repeat: Infinity, repeatType: "reverse" }
+    }
+  };
+
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-bounty-navy mb-6">
             Bounty: Tailored for Every Taste, Every Service
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             From bustling cafes to fine dining establishments, Bounty adapts to your unique restaurant needs with specialized features and workflows.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
-              <CardHeader className="text-center pb-4">
-                <div className="flex justify-center mb-4">
-                  {service.icon}
-                </div>
-                <CardTitle className="text-xl font-bold text-bounty-navy mb-2">
-                  {service.title}
-                </CardTitle>
-                <p className="text-gray-600 text-sm">
-                  {service.description}
-                </p>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {service.image && (
-                  <div className="mb-4">
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="w-full h-48 object-cover rounded-lg"
-                    />
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              initial="initial"
+              whileInView="inView"
+              whileHover="hover"
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <Card className="border-0 shadow-lg h-full">
+                <CardHeader className="text-center pb-4">
+                  <div className="flex justify-center mb-4">
+                    <motion.div
+                      initial={{ rotate: 0 }}
+                      whileHover={{ rotate: 10 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {service.icon}
+                    </motion.div>
                   </div>
-                )}
-                <div>
-                  <h4 className="font-semibold text-bounty-navy mb-2">Key Features:</h4>
-                  <ul className="space-y-1">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="text-sm text-gray-600 flex items-start">
-                        <span className="text-bounty-orange mr-2">•</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-bounty-navy mb-2">Example Workflow:</h4>
-                  <p className="text-sm text-gray-600 italic">
-                    {service.workflow}
+                  <CardTitle className="text-xl font-bold text-bounty-navy mb-2">
+                    {service.title}
+                  </CardTitle>
+                  <p className="text-gray-600 text-sm">
+                    {service.description}
                   </p>
-                </div>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {service.image && (
+                    <div className="mb-4 overflow-hidden rounded-lg">
+                      <motion.img 
+                        variants={imageVariants}
+                        initial="initial"
+                        whileHover="hover"
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-48 object-cover rounded-lg"
+                      />
+                    </div>
+                  )}
+                  <div>
+                    <h4 className="font-semibold text-bounty-navy mb-2">Key Features:</h4>
+                    <ul className="space-y-1">
+                      {service.features.map((feature, idx) => (
+                        <motion.li 
+                          key={idx} 
+                          className="text-sm text-gray-600 flex items-start"
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: idx * 0.1 }}
+                        >
+                          <span className="text-bounty-orange mr-2">•</span>
+                          {feature}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-bounty-navy mb-2">Example Workflow:</h4>
+                    <p className="text-sm text-gray-600 italic">
+                      {service.workflow}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
