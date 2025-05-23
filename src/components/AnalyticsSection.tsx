@@ -31,6 +31,14 @@ const AnalyticsSection = () => {
     { name: 'Desserts', value: 10, color: '#67D5B5' },
   ];
 
+  // Chart configuration for our charts
+  const chartConfig = {
+    sales: { color: '#FF7E67', label: 'Sales' },
+    food: { color: '#FF7E67', label: 'Food' },
+    beverages: { color: '#00B0FF', label: 'Beverages' },
+    desserts: { color: '#67D5B5', label: 'Desserts' },
+  };
+
   // Animated counter
   const counters = [
     { value: 32, label: 'Average Sales Increase' },
@@ -105,14 +113,16 @@ const AnalyticsSection = () => {
                   <h3 className="text-xl font-semibold text-bounty-navy">Monthly Sales Performance</h3>
                 </div>
                 <div className="h-80">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={salesData}>
-                      <XAxis dataKey="name" />
-                      <YAxis />
-                      <ChartTooltip content={<ChartTooltipContent />} />
-                      <Bar dataKey="sales" fill="#FF7E67" radius={[4, 4, 0, 0]} />
-                    </BarChart>
-                  </ResponsiveContainer>
+                  <ChartContainer config={chartConfig}>
+                    <ResponsiveContainer width="100%" height="100%">
+                      <BarChart data={salesData}>
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <ChartTooltip content={<ChartTooltipContent />} />
+                        <Bar dataKey="sales" fill="#FF7E67" radius={[4, 4, 0, 0]} />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </ChartContainer>
                 </div>
               </CardContent>
             </Card>
@@ -131,24 +141,26 @@ const AnalyticsSection = () => {
                   <h3 className="text-xl font-semibold text-bounty-navy">Sales Distribution</h3>
                 </div>
                 <div className="h-80">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <ChartTooltip content={<ChartTooltipContent />} />
-                      <Pie
-                        data={pieData}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={120}
-                        paddingAngle={5}
-                        dataKey="value"
-                      >
-                        {pieData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.color} />
-                        ))}
-                      </Pie>
-                    </PieChart>
-                  </ResponsiveContainer>
+                  <ChartContainer config={chartConfig}>
+                    <ResponsiveContainer width="100%" height="100%">
+                      <PieChart>
+                        <ChartTooltip content={<ChartTooltipContent />} />
+                        <Pie
+                          data={pieData}
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={60}
+                          outerRadius={120}
+                          paddingAngle={5}
+                          dataKey="value"
+                        >
+                          {pieData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.color} />
+                          ))}
+                        </Pie>
+                      </PieChart>
+                    </ResponsiveContainer>
+                  </ChartContainer>
                 </div>
               </CardContent>
             </Card>
