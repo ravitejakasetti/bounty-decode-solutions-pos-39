@@ -75,7 +75,7 @@ const Services = () => {
       icon: <DriveIn className="w-16 h-16 text-bounty-orange" />,
       title: "Drive-Ins: Modernizing Classic Charm",
       description: "Drive-ins require a system that connects multiple touchpoints—from car-side ordering to kitchen communication and quick checkout.",
-      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/49caf0a8-0b17-4acd-bb27-85f324adb27b.png",
       features: [
         "Wireless tablets for car-hop staff",
         "Multiple printers (kitchen, billing, and drinks)",
@@ -296,96 +296,6 @@ const Services = () => {
               </motion.div>
             )}
           </AnimatePresence>
-          
-          {/* Testimonials with billing images */}
-          <div className="mt-20">
-            <motion.h3 
-              className="text-3xl font-bold text-bounty-navy text-center mb-10"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              What Our Customers Say
-            </motion.h3>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <motion.div 
-                className="bg-white p-6 rounded-xl shadow-lg relative"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="flex space-x-4 mb-4">
-                  <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" 
-                    alt="Restaurant Owner" 
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
-                  <div>
-                    <h4 className="font-bold text-lg">Amit Sharma</h4>
-                    <p className="text-sm text-gray-600">Owner, Spice Garden</p>
-                  </div>
-                </div>
-                <p className="italic text-gray-700 mb-6">
-                  "Bounty's billing system has cut our checkout time by 65%. Customers love the quick payment process and digital receipts. The real-time data helps us spot best-selling dishes and optimize our menu accordingly."
-                </p>
-                <div className="grid grid-cols-2 gap-2">
-                  <img 
-                    src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?auto=format&fit=crop&w=400&q=80" 
-                    alt="POS System" 
-                    className="rounded-lg object-cover h-28 w-full"
-                  />
-                  <img 
-                    src="https://images.unsplash.com/photo-1617347454431-f49d7ff5c3b1?auto=format&fit=crop&w=400&q=80" 
-                    alt="Mobile Payment" 
-                    className="rounded-lg object-cover h-28 w-full"
-                  />
-                </div>
-                <div className="absolute -bottom-3 -right-3 text-5xl">
-                  "
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-white p-6 rounded-xl shadow-lg relative"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="flex space-x-4 mb-4">
-                  <img 
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" 
-                    alt="Restaurant Manager" 
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
-                  <div>
-                    <h4 className="font-bold text-lg">Priya Patel</h4>
-                    <p className="text-sm text-gray-600">Manager, Urban Café</p>
-                  </div>
-                </div>
-                <p className="italic text-gray-700 mb-6">
-                  "The QR-based billing system has transformed our operations. We've reduced paper waste and staff can focus on customer service instead of running back and forth with bills. Our customers appreciate the transparency and convenience."
-                </p>
-                <div className="grid grid-cols-2 gap-2">
-                  <img 
-                    src="https://images.unsplash.com/photo-1534273749985-beb9bff9c3d3?auto=format&fit=crop&w=400&q=80" 
-                    alt="QR Code Billing" 
-                    className="rounded-lg object-cover h-28 w-full"
-                  />
-                  <img 
-                    src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=400&q=80" 
-                    alt="Digital Receipt" 
-                    className="rounded-lg object-cover h-28 w-full"
-                  />
-                </div>
-                <div className="absolute -bottom-3 -right-3 text-5xl">
-                  "
-                </div>
-              </motion.div>
-            </div>
-          </div>
         </div>
       </section>
 

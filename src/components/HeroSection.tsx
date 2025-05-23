@@ -141,23 +141,6 @@ const HeroSection = () => {
                   Watch Demo Video
                 </Button>
               </motion.div>
-              
-              <motion.div 
-                className="flex items-center space-x-2 text-gray-300"
-                variants={itemVariants}
-              >
-                <span className="font-medium">Trusted by 500+ restaurants</span>
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((num) => (
-                    <img 
-                      key={num}
-                      src={`https://images.unsplash.com/photo-${1550000000000 + num * 10000}?auto=format&fit=crop&w=150&q=80`} 
-                      alt="Restaurant Customer" 
-                      className="w-8 h-8 rounded-full border-2 border-white"
-                    />
-                  ))}
-                </div>
-              </motion.div>
             </motion.div>
             
             <motion.div 

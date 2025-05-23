@@ -7,8 +7,8 @@ const IntegrationsSection = () => {
     {
       category: "Delivery Partners",
       companies: [
-        { name: "Dunzo", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Dunzo_Logo.png" },
-        { name: "Porter", logo: "https://d1myhw8pp24x4f.cloudfront.net/company_logo/1535025182328_porter.png" }
+        { name: "Dunzo", logo: "/lovable-uploads/397907f3-0b4f-4026-a7a5-cba66b33706f.png" },
+        { name: "Porter", logo: "/lovable-uploads/47a52608-6905-4fb8-906d-6d574a9ce848.png" }
       ]
     },
     {

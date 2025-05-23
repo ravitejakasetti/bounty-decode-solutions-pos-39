@@ -47,7 +47,7 @@ const FeaturesSection = () => {
     {
       icon: <Settings className="w-8 h-8 text-bounty-orange" />,
       headerIcon: <motion.img 
-        src="https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&w=400&q=80"
+        src="/lovable-uploads/49caf0a8-0b17-4acd-bb27-85f324adb27b.png"
         className="w-24 h-24 rounded-full object-cover border-4 border-bounty-orange"
         animate={{ rotate: [0, 10, 0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 5 }}

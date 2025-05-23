@@ -39,11 +39,11 @@ const AnalyticsSection = () => {
     desserts: { color: '#67D5B5', label: 'Desserts' },
   };
 
-  // Animated counter
+  // Animated counter with updated values
   const counters = [
-    { value: 32, label: 'Average Sales Increase' },
-    { value: 45, label: 'Reduced Order Time' },
-    { value: 78, label: 'Customer Retention' },
+    { value: 45, label: 'Average Sales Increase' },
+    { value: 70, label: 'Reduced Order Time' },
+    { value: 95, label: 'Customer Retention' },
   ];
   
   return (
@@ -255,27 +255,6 @@ const AnalyticsSection = () => {
             </CardContent>
           </Card>
         </motion.div>
-
-        <div className="text-center">
-          <motion.p 
-            className="text-bounty-navy/70 italic max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            "Since implementing Bounty's analytics, we've increased our sales by 35% and reduced operational costs by 22% through targeted menu optimizations and staff scheduling."
-          </motion.p>
-          <motion.p 
-            className="font-medium text-bounty-navy mt-2"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            — Rajesh Kumar, Owner, Spice Garden Restaurant
-          </motion.p>
-        </div>
       </div>
     </section>
   );
