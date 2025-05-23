@@ -22,7 +22,7 @@ const BenefitsSection = () => {
       description: "From inventory to orders, and vendors to delivery, Bounty streamlines your processes, freeing you to focus on what you do best – delighting your customers.",
       gradient: "from-green-500 to-emerald-500",
       icon: <Clock className="w-12 h-12" />,
-      image: "/lovable-uploads/3474cae2-df4f-484e-aa63-f15e71e69fb4.png", // Inventory management image
+      image: "/lovable-uploads/ee9787db-1b25-4d20-8407-69289622a837.png", // Updated to operational efficiency image
       stats: [
         { value: "-42%", label: "Reduced Operational Time" },
         { value: "+65%", label: "Staff Productivity" }
@@ -44,7 +44,7 @@ const BenefitsSection = () => {
       description: "Make informed decisions with real-time insights. Optimize your menu, reduce costs, and maximize your margins effortlessly.",
       gradient: "from-orange-500 to-red-500",
       icon: <BarChart3 className="w-12 h-12" />,
-      image: "/lovable-uploads/c48aa58e-af6c-4973-af27-6bb89086539b.png", // QR code billing and analytics image
+      image: "/lovable-uploads/5d44962b-77d7-4d72-b503-e5460342485a.png", // Updated to data-driven profitability image
       stats: [
         { value: "+35%", label: "Higher Profit Margins" },
         { value: "-23%", label: "Food Waste Reduction" }

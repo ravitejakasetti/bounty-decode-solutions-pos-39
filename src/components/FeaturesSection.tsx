@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { QrCode, Users, Settings, Database, ArrowRight, Check } from 'lucide-react';
@@ -53,7 +52,7 @@ const FeaturesSection = () => {
         "Ingredient-level tracking for recipe costing",
         "Expiry date alerts to minimize waste"
       ],
-      image: "/lovable-uploads/3474cae2-df4f-484e-aa63-f15e71e69fb4.png",
+      image: "/lovable-uploads/d1252c67-4478-4da3-a38f-7c7300930927.png",
       stats: [
         { label: "Reduced Food Waste", value: "-32%" },
         { label: "Inventory Cost Savings", value: "+18%" }

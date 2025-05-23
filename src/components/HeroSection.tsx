@@ -11,10 +11,10 @@ const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const heroImages = [
-    "/lovable-uploads/c48aa58e-af6c-4973-af27-6bb89086539b.png",
-    "/lovable-uploads/0125b849-d03f-4131-9aa1-3c5a7a757853.png",
-    "/lovable-uploads/6e40dab7-d5e7-4309-8046-9b9c09ada9b9.png",
-    "https://images.unsplash.com/photo-1617347454431-f49d7ff5c3b1?auto=format&fit=crop&w=800&q=80"
+    "/lovable-uploads/fdfc69de-9f30-4f5d-a050-bef8c33f21ad.png",
+    "/lovable-uploads/c972e352-51d4-457c-ad0b-75fdcf0edc73.png",
+    "/lovable-uploads/7b80c419-b908-4fe2-bba6-959f08c899aa.png",
+    "/lovable-uploads/ae960305-62b4-40ab-aa76-a8a610b0728a.png"
   ];
 
   useEffect(() => {

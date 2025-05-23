@@ -19,7 +19,7 @@ const CTASection = () => {
           <Button 
             onClick={() => setIsDemoModalOpen(true)}
             size="lg" 
-            className="bg-white text-bounty-navy hover:bg-gray-100 text-xl px-12 py-6 font-bold"
+            className="bg-bounty-orange text-white hover:bg-bounty-orange/90 text-xl px-12 py-6 font-bold"
           >
             Book a Demo & Elevate Your Business
           </Button>

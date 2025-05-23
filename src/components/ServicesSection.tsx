@@ -18,7 +18,8 @@ const ServicesSection = () => {
         "Tablet-based POS for tableside ordering",
         "Inventory alerts for coffee beans, syrups, and more"
       ],
-      workflow: "Barista takes an order on a tablet ➝ Customizes the drink ➝ POS sends it to the kitchen or counter ➝ Payment is processed via card, wallet, or UPI ➝ Loyalty points added automatically."
+      workflow: "Barista takes an order on a tablet ➝ Customizes the drink ➝ POS sends it to the kitchen or counter ➝ Payment is processed via card, wallet, or UPI ➝ Loyalty points added automatically.",
+      image: "/lovable-uploads/c972e352-51d4-457c-ad0b-75fdcf0edc73.png"
     },
     {
       icon: <Cake className="w-12 h-12 text-bounty-orange" />,
@@ -31,7 +32,8 @@ const ServicesSection = () => {
         "Advance order booking and delivery scheduling",
         "Customer relationship management (CRM)"
       ],
-      workflow: "Customer selects items ➝ Cashier scans barcodes ➝ Discounts or combos are auto-applied ➝ Customer pays and receives a receipt ➝ Order data syncs with CRM for future promotions."
+      workflow: "Customer selects items ➝ Cashier scans barcodes ➝ Discounts or combos are auto-applied ➝ Customer pays and receives a receipt ➝ Order data syncs with CRM for future promotions.",
+      image: "/lovable-uploads/d1252c67-4478-4da3-a38f-7c7300930927.png"
     },
     {
       icon: <Car className="w-12 h-12 text-bounty-orange" />,
@@ -44,7 +46,8 @@ const ServicesSection = () => {
         "Order and KOT printing",
         "Sales heatmaps for tracking popular time slots and locations"
       ],
-      workflow: "Customer orders from the window ➝ Staff inputs the order ➝ Printed KOT goes to kitchen ➝ Customer pays via phone ➝ Dashboard syncs when online to update analytics."
+      workflow: "Customer orders from the window ➝ Staff inputs the order ➝ Printed KOT goes to kitchen ➝ Customer pays via phone ➝ Dashboard syncs when online to update analytics.",
+      image: "/lovable-uploads/8d788462-6059-4c90-ad48-8e4a1a5351ad.png"
     },
     {
       icon: <DriveIn className="w-12 h-12 text-bounty-orange" />,
@@ -58,7 +61,7 @@ const ServicesSection = () => {
         "Customer car-tagging system"
       ],
       workflow: "Staff takes orders at the car ➝ Order hits kitchen via POS ➝ Food prepared and delivered ➝ Payment processed in-car ➝ Customer data saved for loyalty programs.",
-      image: "/lovable-uploads/6e40dab7-d5e7-4309-8046-9b9c09ada9b9.png"
+      image: "/lovable-uploads/7b80c419-b908-4fe2-bba6-959f08c899aa.png"
     },
     {
       icon: <Utensils className="w-12 h-12 text-bounty-orange" />,
@@ -72,7 +75,8 @@ const ServicesSection = () => {
         "Advanced analytics on dish popularity, peak hours, etc.",
         "Multi-location management from a centralized dashboard"
       ],
-      workflow: "Host seats customer ➝ Server takes order via tablet ➝ Kitchen receives KOT ➝ Courses are timed and delivered ➝ Bill is generated and payment processed ➝ Analytics updated for insights."
+      workflow: "Host seats customer ➝ Server takes order via tablet ➝ Kitchen receives KOT ➝ Courses are timed and delivered ➝ Bill is generated and payment processed ➝ Analytics updated for insights.",
+      image: "/lovable-uploads/ae960305-62b4-40ab-aa76-a8a610b0728a.png"
     }
   ];
 
