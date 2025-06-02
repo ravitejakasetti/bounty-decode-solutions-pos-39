@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import DemoModal from './DemoModal';
@@ -10,8 +11,9 @@ const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const heroImages = [
-    "/lovable-uploads/c0c8e351-302e-4996-a93a-518d76208c3f.png",
-    "/lovable-uploads/18a12a8c-55bc-48f5-841f-76b802efec7f.png"
+    "/lovable-uploads/6b884a1c-5776-4b24-9ed2-f7d35cdad36b.png",
+    "/lovable-uploads/d5275aac-0de5-4845-a30d-b7947013397c.png",
+    "/lovable-uploads/4fd01671-5bc0-4a9c-a6e4-7be2b27570da.png"
   ];
 
   useEffect(() => {
@@ -92,7 +94,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
                 >
-                  <span className="text-yellow-300">P</span>erformance.
+                  <span className="text-blue-500" style={{ color: '#03265c' }}>P</span>erformance,
                 </motion.span>
                 <motion.span 
                   className="block"
@@ -100,7 +102,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
                 >
-                  <span className="text-yellow-300">O</span>ptimize.
+                  <span className="text-blue-500" style={{ color: '#03265c' }}>O</span>ptimize,
                 </motion.span>
                 <motion.span 
                   className="block"
@@ -108,7 +110,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
                 >
-                  <span className="text-yellow-300">S</span>ales.
+                  <span className="text-blue-500" style={{ color: '#03265c' }}>S</span>ales.
                 </motion.span>
               </motion.h1>
               
@@ -116,7 +118,7 @@ const HeroSection = () => {
                 className="text-xl md:text-2xl text-gray-200 leading-relaxed"
                 variants={itemVariants}
               >
-                Step into the new era of restaurant management. Bounti, a specialized solution by Decode Solutions, empowers you with intelligent automation, dynamic customer engagement, and data-driven strategies to significantly boost your revenue and streamline operations.
+                Step into the new era of restaurant management. BOUNTI, a specialized solution by Decode Solutions, empowers you with intelligent automation, dynamic customer engagement, and data-driven strategies to significantly boost your revenue and streamline operations.
               </motion.p>
               
               <motion.div 
@@ -128,7 +130,7 @@ const HeroSection = () => {
                   size="lg" 
                   className="bg-bounty-orange text-white hover:bg-bounty-orange/90 text-lg px-8 py-4 font-semibold group"
                 >
-                  <span className="inline-block group-hover:translate-x-1 transition-transform">Book Your Free Bounti Demo</span>
+                  <span className="inline-block group-hover:translate-x-1 transition-transform">Book Your Free BOUNTI Demo</span>
                 </Button>
               </motion.div>
             </motion.div>

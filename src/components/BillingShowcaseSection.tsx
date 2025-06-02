@@ -30,8 +30,15 @@ const BillingShowcaseSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-white to-gray-100">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-gradient-to-br from-blue-50 via-orange-50 to-blue-100 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-bounty-orange/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-bounty-navy/10 rounded-full blur-xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-yellow-200/20 rounded-full blur-lg"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +50,7 @@ const BillingShowcaseSection = () => {
             Streamlined Restaurant Billing
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Bounti transforms your billing experience with smart, digital solutions that delight customers and increase efficiency
+            BOUNTI transforms your billing experience with smart, digital solutions that delight customers and increase efficiency
           </p>
         </motion.div>
 
@@ -68,7 +75,7 @@ const BillingShowcaseSection = () => {
                     whileHover={{ scale: 1.05, zIndex: 1 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="bg-white rounded-xl overflow-hidden shadow-2xl h-full">
+                    <div className="bg-white rounded-xl overflow-hidden shadow-2xl h-full border border-bounty-orange/20">
                       <div className="aspect-w-16 aspect-h-9 relative">
                         <img 
                           src={image.url} 

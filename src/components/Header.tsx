@@ -39,23 +39,13 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <Link to="/">
-              <div className="flex items-center gap-2">
-                <motion.img
-                  src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png"
-                  alt="Bounti Software"
-                  className="h-20 w-auto md:h-24"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                />
-                <motion.span 
-                  className="font-bold text-2xl md:text-3xl text-white"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  Bounti
-                </motion.span>
-              </div>
+              <motion.img
+                src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png"
+                alt="BOUNTI Software"
+                className="h-20 w-auto md:h-24"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              />
             </Link>
 
             {/* Desktop Menu */}

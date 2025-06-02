@@ -80,7 +80,7 @@ const HardwareSoftwareSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Bounti's Robust Hardware & Intuitive Software
+            BOUNTI's Robust Hardware & Intuitive Software
           </motion.p>
         </div>
 
@@ -88,15 +88,17 @@ const HardwareSoftwareSection = () => {
           <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
             <TabsTrigger 
               value="software"
+              onMouseEnter={() => setActiveTab("software")}
               onClick={() => setActiveTab("software")}
-              className="text-lg py-3"
+              className="text-lg py-3 transition-all duration-300 hover:bg-bounty-orange hover:text-white"
             >
               Software
             </TabsTrigger>
             <TabsTrigger 
               value="hardware"
+              onMouseEnter={() => setActiveTab("hardware")}
               onClick={() => setActiveTab("hardware")}
-              className="text-lg py-3"
+              className="text-lg py-3 transition-all duration-300 hover:bg-bounty-orange hover:text-white"
             >
               Hardware
             </TabsTrigger>
@@ -177,14 +179,14 @@ const HardwareSoftwareSection = () => {
           </TabsContent>
         </Tabs>
 
-        {/* Static How Bounti Works Section */}
+        {/* Static How BOUNTI Works Section */}
         <motion.div
           className="mt-12 bg-gray-50 p-8 rounded-2xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <h3 className="text-2xl font-bold text-center text-bounty-navy mb-8">How Bounti Works</h3>
+          <h3 className="text-2xl font-bold text-center text-bounty-navy mb-8">How BOUNTI Works</h3>
           <div className="relative">
             <div className="flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto">
               <motion.div
@@ -268,7 +270,7 @@ const HardwareSoftwareSection = () => {
                     <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
                   </svg>
                 </div>
-                <h4 className="font-semibold text-bounti-navy">Results</h4>
+                <h4 className="font-semibold text-bounty-navy">Results</h4>
               </motion.div>
             </div>
           </div>

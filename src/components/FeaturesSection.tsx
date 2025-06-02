@@ -53,7 +53,7 @@ const FeaturesSection = () => {
         "Ingredient-level tracking for recipe costing",
         "Expiry date alerts to minimize waste"
       ],
-      image: "/lovable-uploads/068be18d-62c5-4939-b64b-01506aad4535.png", // Updated inventory management image
+      image: "/lovable-uploads/068be18d-62c5-4939-b64b-01506aad4535.png",
       stats: [
         { label: "Reduced Food Waste", value: "-32%" },
         { label: "Inventory Cost Savings", value: "+18%" }
@@ -70,7 +70,7 @@ const FeaturesSection = () => {
         "Customer segment-specific offers",
         "Competitor price monitoring and adjustment"
       ],
-      image: "/lovable-uploads/6b884a1c-5776-4b24-9ed2-f7d35cdad36b.png", // Updated dynamic pricing image
+      image: "/lovable-uploads/6b884a1c-5776-4b24-9ed2-f7d35cdad36b.png",
       stats: [
         { label: "Revenue Increase", value: "+28%" },
         { label: "Off-peak Hour Sales", value: "+52%" }
@@ -105,7 +105,7 @@ const FeaturesSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Explore the Power of Bounty
+            Explore the Power of BOUNTI
           </motion.h2>
           <motion.p 
             className="text-xl text-gray-600 max-w-4xl mx-auto"
@@ -114,7 +114,7 @@ const FeaturesSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Intelligent Features for Unstoppable Growth. Bounty isn't just software; it's your restaurant's central nervous system, intelligently connecting every aspect of your operation.
+            Intelligent Features for Unstoppable Growth. BOUNTI isn't just software; it's your restaurant's central nervous system, intelligently connecting every aspect of your operation.
           </motion.p>
         </div>
 
@@ -122,12 +122,13 @@ const FeaturesSection = () => {
           {featureCategories.map((category, index) => (
             <motion.button
               key={index}
-              className={`flex items-center space-x-2 px-4 py-2 rounded-full ${
+              className={`flex items-center space-x-2 px-6 py-4 rounded-full border-2 transition-all duration-300 ${
                 activeFeature === index 
-                  ? 'bg-bounty-navy text-white shadow-lg' 
-                  : 'bg-white text-bounty-navy hover:bg-gray-100'
-              } transition-all duration-300`}
+                  ? 'bg-gradient-to-r from-bounty-navy to-bounty-orange text-white shadow-xl border-bounty-orange transform scale-105' 
+                  : 'bg-white text-bounty-navy hover:bg-bounty-orange hover:text-white border-bounty-orange/30 hover:border-bounty-orange hover:shadow-lg hover:scale-102'
+              }`}
               onClick={() => setActiveFeature(index)}
+              onMouseEnter={() => setActiveFeature(index)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
@@ -135,7 +136,7 @@ const FeaturesSection = () => {
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
               {category.icon}
-              <span className="font-medium whitespace-nowrap">{category.title}</span>
+              <span className="font-medium whitespace-nowrap text-lg">{category.title}</span>
             </motion.button>
           ))}
         </div>
@@ -147,7 +148,7 @@ const FeaturesSection = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="mb-12 border-0 shadow-xl overflow-hidden">
+          <Card className="mb-12 border-0 shadow-xl overflow-hidden bg-gradient-to-br from-white to-gray-50">
             <CardContent className="p-6">
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <motion.div
@@ -201,7 +202,7 @@ const FeaturesSection = () => {
                   
                   <div className="grid grid-cols-2 gap-4 w-full">
                     {featureCategories[activeFeature].stats.map((stat, idx) => (
-                      <div key={idx} className="bg-gray-50 p-4 rounded-lg text-center">
+                      <div key={idx} className="bg-gray-50 p-4 rounded-lg text-center border border-bounty-orange/20">
                         <div className="text-2xl font-bold text-bounty-orange">{stat.value}</div>
                         <div className="text-sm text-gray-600">{stat.label}</div>
                       </div>
@@ -231,7 +232,7 @@ const FeaturesSection = () => {
                         transition={{ delay: idx * 0.2, duration: 0.5 }}
                       >
                         <motion.div 
-                          className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center text-xl font-bold mb-2 text-bounty-navy"
+                          className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center text-xl font-bold mb-2 text-bounty-navy border-2 border-bounty-orange/30"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                         >
