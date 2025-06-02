@@ -8,34 +8,35 @@ import Autoplay from 'embla-carousel-autoplay';
 const BillingShowcaseSection = () => {
   const billingImages = [
     {
-      url: "/lovable-uploads/6b884a1c-5776-4b24-9ed2-f7d35cdad36b.png",
-      title: "Mobile Payment Processing"
-    },
-    {
-      url: "/lovable-uploads/d5275aac-0de5-4845-a30d-b7947013397c.png",
-      title: "Dynamic Pricing System"
-    },
-    {
-      url: "/lovable-uploads/4fd01671-5bc0-4a9c-a6e4-7be2b27570da.png",
+      url: "/lovable-uploads/9a159203-2596-4619-af15-5b5d5d60c31b.png",
       title: "POS Billing Software"
     },
     {
-      url: "/lovable-uploads/ca73a960-993d-4792-b91b-6c3dcbe88c1d.png", 
+      url: "/lovable-uploads/fbe61a8f-b517-4376-8c4f-1c6703a80df5.png",
+      title: "Dynamic Pricing System"
+    },
+    {
+      url: "/lovable-uploads/69a6f564-accc-4416-b2bc-cb9b1f788f3c.png", 
       title: "Interactive Dashboard"
     },
     {
-      url: "/lovable-uploads/87d4e930-ee29-473e-a26d-b71bad3c3399.png",
+      url: "/lovable-uploads/4c720d4e-ac2d-475c-8fb6-9e695db3289e.png",
+      title: "Mobile Payment Processing"
+    },
+    {
+      url: "/lovable-uploads/d8ba5824-041d-4344-8b8a-8747fd444af8.png",
       title: "Customer Loyalty Integration"
     }
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 via-orange-50 to-blue-100 relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-br from-orange-50 via-yellow-50 to-orange-100 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-bounty-orange/10 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-bounty-navy/10 rounded-full blur-xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-yellow-200/20 rounded-full blur-lg"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-bounty-orange/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-bounty-navy/15 rounded-full blur-xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-yellow-300/30 rounded-full blur-lg animate-bounce"></div>
+        <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-orange-300/20 rounded-full blur-md"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -63,7 +64,8 @@ const BillingShowcaseSection = () => {
             }}
             plugins={[
               Autoplay({
-                delay: 3000,
+                delay: 2500,
+                stopOnInteraction: false,
               }),
             ]}
           >
@@ -73,17 +75,17 @@ const BillingShowcaseSection = () => {
                   <motion.div 
                     className="p-2 h-full"
                     whileHover={{ scale: 1.05, zIndex: 1 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <div className="bg-white rounded-xl overflow-hidden shadow-2xl h-full border border-bounty-orange/20">
+                    <div className="bg-white rounded-xl overflow-hidden shadow-2xl h-full border-2 border-bounty-orange/30 hover:border-bounty-orange hover:shadow-3xl transition-all duration-300">
                       <div className="aspect-w-16 aspect-h-9 relative">
                         <img 
                           src={image.url} 
                           alt={image.title} 
-                          className="w-full h-64 object-cover"
+                          className="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-bounty-navy/80 to-transparent flex items-end p-4">
-                          <h3 className="text-white font-semibold text-sm md:text-base">{image.title}</h3>
+                        <div className="absolute inset-0 bg-gradient-to-t from-bounty-navy/90 to-transparent flex items-end p-4">
+                          <h3 className="text-white font-semibold text-sm md:text-base transform translate-y-0 hover:-translate-y-1 transition-transform duration-300">{image.title}</h3>
                         </div>
                       </div>
                     </div>

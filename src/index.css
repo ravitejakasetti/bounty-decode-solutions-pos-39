@@ -116,3 +116,47 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+.text-bounty-orange {
+  color: #ff7009;
+}
+
+.bg-bounty-orange {
+  background-color: #ff7009;
+}
+
+.hover\:bg-bounty-orange\/90:hover {
+  background-color: rgba(255, 112, 9, 0.9);
+}
+
+.border-bounty-orange {
+  border-color: #ff7009;
+}
+
+.border-bounty-orange\/20 {
+  border-color: rgba(255, 112, 9, 0.2);
+}
+
+.border-bounty-orange\/30 {
+  border-color: rgba(255, 112, 9, 0.3);
+}
+
+.hover\:border-bounty-orange:hover {
+  border-color: #ff7009;
+}
+
+.bg-bounty-orange\/10 {
+  background-color: rgba(255, 112, 9, 0.1);
+}
+
+.bg-bounty-orange\/20 {
+  background-color: rgba(255, 112, 9, 0.2);
+}
+
+.from-bounty-orange {
+  --tw-gradient-from: #ff7009;
+}
+
+.to-orange-600 {
+  --tw-gradient-to: #ea580c;
+}

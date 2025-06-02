@@ -11,9 +11,9 @@ const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const heroImages = [
-    "/lovable-uploads/6b884a1c-5776-4b24-9ed2-f7d35cdad36b.png",
-    "/lovable-uploads/d5275aac-0de5-4845-a30d-b7947013397c.png",
-    "/lovable-uploads/4fd01671-5bc0-4a9c-a6e4-7be2b27570da.png"
+    "/lovable-uploads/08aca9cb-94b0-49aa-9103-aea92484b5c5.png",
+    "/lovable-uploads/1e80177e-b81f-44ee-90c5-029e71834d38.png",
+    "/lovable-uploads/0adf049e-0018-44db-a971-917fcffe39ea.png"
   ];
 
   useEffect(() => {
@@ -94,7 +94,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
                 >
-                  <span className="text-blue-500" style={{ color: '#03265c' }}>P</span>erformance,
+                  <span className="text-bounty-orange">P</span>erformance
                 </motion.span>
                 <motion.span 
                   className="block"
@@ -102,7 +102,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
                 >
-                  <span className="text-blue-500" style={{ color: '#03265c' }}>O</span>ptimize,
+                  <span className="text-bounty-orange">O</span>ptimize
                 </motion.span>
                 <motion.span 
                   className="block"
@@ -110,7 +110,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
                 >
-                  <span className="text-blue-500" style={{ color: '#03265c' }}>S</span>ales.
+                  <span className="text-bounty-orange">S</span>ales.
                 </motion.span>
               </motion.h1>
               

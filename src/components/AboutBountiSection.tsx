@@ -66,25 +66,39 @@ const AboutBountiSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <div className="bg-gradient-to-br from-bounty-navy to-blue-900 text-white p-12 rounded-2xl">
-            <h3 className="text-3xl font-bold mb-8">Our Core Values</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-bounty-orange text-lg font-bold mb-2">Innovation that Serves</div>
-                <p className="text-sm text-gray-200">We constantly explore new ways to make restaurant management smarter and more effective.</p>
-              </div>
-              <div className="text-center">
-                <div className="text-bounty-orange text-lg font-bold mb-2">Customer-Centric Growth</div>
-                <p className="text-sm text-gray-200">Your success is our benchmark. We build tools that deliver tangible results for your business.</p>
-              </div>
-              <div className="text-center">
-                <div className="text-bounty-orange text-lg font-bold mb-2">Efficiency Redefined</div>
-                <p className="text-sm text-gray-200">We streamline complexities, so you can focus on your passion for food and hospitality.</p>
-              </div>
-              <div className="text-center">
-                <div className="text-bounty-orange text-lg font-bold mb-2">Profitable Partnerships</div>
-                <p className="text-sm text-gray-200">We aim to be more than a software provider; we're your strategic ally in achieving greater profitability.</p>
-              </div>
+          <div className="bg-gradient-to-br from-bounty-orange to-orange-600 text-white p-12 rounded-2xl shadow-2xl">
+            <motion.h3 
+              className="text-3xl md:text-4xl font-bold mb-8"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              BOUNTI: Cultivating Growth for Restaurants, One Smart Solution at a Time
+            </motion.h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+              <motion.div 
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="text-white text-lg font-bold mb-3">Innovation that Serves</div>
+                <p className="text-sm text-white/90">We constantly explore new ways to make restaurant management smarter and more effective.</p>
+              </motion.div>
+              <motion.div 
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="text-white text-lg font-bold mb-3">Customer-Centric Growth</div>
+                <p className="text-sm text-white/90">Your success is our benchmark. We build tools that deliver tangible results for your business.</p>
+              </motion.div>
+              <motion.div 
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl md:col-span-2 lg:col-span-1"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="text-white text-lg font-bold mb-3">Profitable Partnerships</div>
+                <p className="text-sm text-white/90">We aim to be more than a software provider; we're your strategic ally in achieving greater profitability.</p>
+              </motion.div>
             </div>
           </div>
         </motion.div>
