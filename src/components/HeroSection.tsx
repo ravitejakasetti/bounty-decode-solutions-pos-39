@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import DemoModal from './DemoModal';
@@ -11,10 +10,8 @@ const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const heroImages = [
-    "/lovable-uploads/082a61ce-6be5-4dc0-a68d-587eb607823a.png", // First image in first page
-    "/lovable-uploads/bd2119b2-058b-4142-8877-b1fbb587a502.png", // Second image in first page
-    "/lovable-uploads/7b80c419-b908-4fe2-bba6-959f08c899aa.png",
-    "/lovable-uploads/ae960305-62b4-40ab-aa76-a8a610b0728a.png"
+    "/lovable-uploads/c0c8e351-302e-4996-a93a-518d76208c3f.png",
+    "/lovable-uploads/18a12a8c-55bc-48f5-841f-76b802efec7f.png"
   ];
 
   useEffect(() => {
@@ -95,7 +92,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
                 >
-                  <span className="text-yellow-300">O</span>ptimize.
+                  <span className="text-yellow-300">P</span>erformance.
                 </motion.span>
                 <motion.span 
                   className="block"
@@ -103,7 +100,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
                 >
-                  <span className="text-yellow-300">P</span>erformance.
+                  <span className="text-yellow-300">O</span>ptimize.
                 </motion.span>
                 <motion.span 
                   className="block"
@@ -119,7 +116,7 @@ const HeroSection = () => {
                 className="text-xl md:text-2xl text-gray-200 leading-relaxed"
                 variants={itemVariants}
               >
-                Step into the new era of restaurant management. Bounty, a specialized solution by Decode Solutions, empowers you with intelligent automation, dynamic customer engagement, and data-driven strategies to significantly boost your revenue and streamline operations.
+                Step into the new era of restaurant management. Bounti, a specialized solution by Decode Solutions, empowers you with intelligent automation, dynamic customer engagement, and data-driven strategies to significantly boost your revenue and streamline operations.
               </motion.p>
               
               <motion.div 
@@ -131,7 +128,7 @@ const HeroSection = () => {
                   size="lg" 
                   className="bg-bounty-orange text-white hover:bg-bounty-orange/90 text-lg px-8 py-4 font-semibold group"
                 >
-                  <span className="inline-block group-hover:translate-x-1 transition-transform">Book Your Free Bounty Demo</span>
+                  <span className="inline-block group-hover:translate-x-1 transition-transform">Book Your Free Bounti Demo</span>
                 </Button>
               </motion.div>
             </motion.div>

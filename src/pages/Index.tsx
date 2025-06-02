@@ -2,15 +2,15 @@
 import React from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import BillingShowcaseSection from '@/components/BillingShowcaseSection';
 import BenefitsSection from '@/components/BenefitsSection';
+import AnalyticsSection from '@/components/AnalyticsSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import HardwareSoftwareSection from '@/components/HardwareSoftwareSection';
 import IntegrationsSection from '@/components/IntegrationsSection';
 import AboutSection from '@/components/AboutSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
-import AnalyticsSection from '@/components/AnalyticsSection';
-import BillingShowcaseSection from '@/components/BillingShowcaseSection';
 
 const Index = () => {
   return (

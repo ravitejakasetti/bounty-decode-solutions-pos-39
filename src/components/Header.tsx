@@ -24,6 +24,7 @@ const Header = () => {
   const navLinks = [
     { text: 'Home', path: '/' },
     { text: 'Services', path: '/services' },
+    { text: 'Pricing', path: '/pricing' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -41,7 +42,7 @@ const Header = () => {
               <div className="flex items-center gap-2">
                 <motion.img
                   src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png"
-                  alt="Bounty Software"
+                  alt="Bounti Software"
                   className="h-10 w-auto"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -52,7 +53,7 @@ const Header = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  Bounty
+                  Bounti
                 </motion.span>
               </div>
             </Link>
@@ -73,7 +74,7 @@ const Header = () => {
               <Button
                 onClick={() => setIsDemoModalOpen(true)}
                 variant="outline"
-                className="border-white text-white hover:bg-white/10"
+                className="border-white text-white hover:bg-white/10 bg-bounty-orange hover:bg-bounty-orange/90"
               >
                 Book Demo
               </Button>
@@ -139,7 +140,7 @@ const Header = () => {
                   setIsDemoModalOpen(true);
                 }}
                 variant="outline"
-                className="w-full border-white text-white hover:bg-white/10"
+                className="w-full border-white text-white hover:bg-white/10 bg-bounty-orange hover:bg-bounty-orange/90"
               >
                 Book Demo
               </Button>
