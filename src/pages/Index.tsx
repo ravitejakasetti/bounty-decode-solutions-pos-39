@@ -7,8 +7,9 @@ import HardwareSoftwareSection from '@/components/HardwareSoftwareSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import BenefitsSection from '@/components/BenefitsSection';
 import AnalyticsSection from '@/components/AnalyticsSection';
-import IntegrationsSection from '@/components/IntegrationsSection';
 import RevenueGrowthSection from '@/components/RevenueGrowthSection';
+import IntegrationsSection from '@/components/IntegrationsSection';
+import AboutBountiSection from '@/components/AboutBountiSection';
 import AboutSection from '@/components/AboutSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
@@ -23,8 +24,9 @@ const Index = () => {
       <FeaturesSection />
       <BenefitsSection />
       <AnalyticsSection />
-      <IntegrationsSection />
       <RevenueGrowthSection />
+      <IntegrationsSection />
+      <AboutBountiSection />
       <AboutSection />
       <CTASection />
       <Footer />

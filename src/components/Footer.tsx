@@ -10,20 +10,20 @@ const Footer = () => {
             <div className="flex items-center space-x-4 mb-4">
               <img 
                 src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png" 
-                alt="Bounty Software" 
-                className="h-12 w-auto"
+                alt="Bounti Software" 
+                className="h-16 w-auto"
               />
               <div className="flex items-center space-x-2 text-sm">
                 <span>Powered by</span>
                 <img 
                   src="/lovable-uploads/2cb91fc4-f3da-490c-aafb-fd931d028671.png" 
                   alt="Decode Solutions" 
-                  className="h-6 w-auto"
+                  className="h-10 w-auto"
                 />
               </div>
             </div>
             <p className="text-gray-300 leading-relaxed">
-              Bounty by Decode Solutions - Revolutionizing restaurant management with intelligent automation, dynamic customer engagement, and data-driven strategies for exponential growth.
+              Bounti by Decode Solutions - Revolutionizing restaurant management with intelligent automation, dynamic customer engagement, and data-driven strategies for exponential growth.
             </p>
           </div>
           
@@ -40,9 +40,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>Email: info@bounty.software</li>
-              <li>Phone: +1 (555) 123-4567</li>
-              <li>Support: support@bounty.software</li>
+              <li>Email: info@bounti.software</li>
+              <li>Phone: +91 9704697947</li>
+              <li>Phone: +91 6309897947</li>
+              <li>Support: support@bounti.software</li>
             </ul>
           </div>
         </div>

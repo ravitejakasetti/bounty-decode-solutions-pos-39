@@ -1,28 +1,30 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { motion } from 'framer-motion';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const BillingShowcaseSection = () => {
   const billingImages = [
     {
-      url: "/lovable-uploads/87d4e930-ee29-473e-a26d-b71bad3c3399.png",
+      url: "/lovable-uploads/6b884a1c-5776-4b24-9ed2-f7d35cdad36b.png",
       title: "Mobile Payment Processing"
     },
     {
-      url: "/lovable-uploads/6b884a1c-5776-4b24-9ed2-f7d35cdad36b.png",
+      url: "/lovable-uploads/d5275aac-0de5-4845-a30d-b7947013397c.png",
       title: "Dynamic Pricing System"
     },
     {
-      url: "/lovable-uploads/d5275aac-0de5-4845-a30d-b7947013397c.png",
+      url: "/lovable-uploads/4fd01671-5bc0-4a9c-a6e4-7be2b27570da.png",
       title: "POS Billing Software"
     },
     {
-      url: "/lovable-uploads/4fd01671-5bc0-4a9c-a6e4-7be2b27570da.png", 
+      url: "/lovable-uploads/ca73a960-993d-4792-b91b-6c3dcbe88c1d.png", 
       title: "Interactive Dashboard"
     },
     {
-      url: "/lovable-uploads/ca73a960-993d-4792-b91b-6c3dcbe88c1d.png",
+      url: "/lovable-uploads/87d4e930-ee29-473e-a26d-b71bad3c3399.png",
       title: "Customer Loyalty Integration"
     }
   ];
@@ -37,16 +39,27 @@ const BillingShowcaseSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-bounty-navy mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-bounty-navy mb-6">
             Streamlined Restaurant Billing
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Bounty transforms your billing experience with smart, digital solutions that delight customers and increase efficiency
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Bounti transforms your billing experience with smart, digital solutions that delight customers and increase efficiency
           </p>
         </motion.div>
 
         <div className="max-w-5xl mx-auto">
-          <Carousel className="w-full">
+          <Carousel 
+            className="w-full"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+              }),
+            ]}
+          >
             <CarouselContent>
               {billingImages.map((image, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -63,7 +76,7 @@ const BillingShowcaseSection = () => {
                           className="w-full h-64 object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-bounty-navy/80 to-transparent flex items-end p-4">
-                          <h3 className="text-white font-semibold">{image.title}</h3>
+                          <h3 className="text-white font-semibold text-sm md:text-base">{image.title}</h3>
                         </div>
                       </div>
                     </div>
@@ -71,10 +84,6 @@ const BillingShowcaseSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center mt-6 gap-4">
-              <CarouselPrevious className="relative inset-0 translate-y-0 mx-0" />
-              <CarouselNext className="relative inset-0 translate-y-0 mx-0" />
-            </div>
           </Carousel>
         </div>
       </div>

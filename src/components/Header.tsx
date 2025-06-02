@@ -43,12 +43,12 @@ const Header = () => {
                 <motion.img
                   src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png"
                   alt="Bounti Software"
-                  className="h-10 w-auto"
+                  className="h-20 w-auto md:h-24"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 />
                 <motion.span 
-                  className="font-bold text-xl text-white"
+                  className="font-bold text-2xl md:text-3xl text-white"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
@@ -73,8 +73,7 @@ const Header = () => {
               ))}
               <Button
                 onClick={() => setIsDemoModalOpen(true)}
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 bg-bounty-orange hover:bg-bounty-orange/90"
+                className="bg-bounty-orange hover:bg-bounty-orange/90 text-white border-none"
               >
                 Book Demo
               </Button>
@@ -139,8 +138,7 @@ const Header = () => {
                   setIsMenuOpen(false);
                   setIsDemoModalOpen(true);
                 }}
-                variant="outline"
-                className="w-full border-white text-white hover:bg-white/10 bg-bounty-orange hover:bg-bounty-orange/90"
+                className="w-full bg-bounty-orange hover:bg-bounty-orange/90 text-white border-none"
               >
                 Book Demo
               </Button>
