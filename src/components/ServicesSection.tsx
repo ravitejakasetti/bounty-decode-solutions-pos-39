@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Coffee, Cake, Car, Coffee as DriveIn, Utensils } from 'lucide-react';
+import { Coffee, Cake, Car, Coffee as DriveIn, Utensils, Wine, Cloud, Building, ChefHat, Users, IceCream, Pizza, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
@@ -9,75 +9,134 @@ import { motion } from 'framer-motion';
 const ServicesSection = () => {
   const services = [
     {
-      icon: <Coffee className="w-12 h-12 text-bounty-orange" />,
-      title: "Cafes: Where Speed Meets Style",
-      description: "Cafes need swift service and smooth customer flow. POS systems help manage high customer volumes without sacrificing quality.",
+      icon: <Utensils className="w-12 h-12 text-bounty-orange" />,
+      title: "Fine Dine",
+      description: "Elevate your fine dining experience with sophisticated POS solutions that match your restaurant's elegance and attention to detail.",
       features: [
-        "Quick billing with modifiers (soy milk, extra shot, sugar-free)",
-        "Order splitting for group customers", 
-        "Loyalty programs and prepaid cards",
-        "Tablet-based POS for tableside ordering",
-        "Inventory alerts for coffee beans, syrups, and more"
+        "Multi-course meal management",
+        "Wine pairing suggestions",
+        "Premium customer profiles",
+        "Advanced table reservation system",
+        "Chef's special tracking"
       ],
-      workflow: "Barista takes an order on a tablet ➝ Customizes the drink ➝ POS sends it to the kitchen or counter ➝ Payment is processed via card, wallet, or UPI ➝ Loyalty points added automatically.",
-      image: "/lovable-uploads/c972e352-51d4-457c-ad0b-75fdcf0edc73.png"
+      workflow: "Host welcomes guests ➝ Sommelier recommendations via POS ➝ Course-wise ordering ➝ Kitchen coordination ➝ Premium service delivery ➝ Elegant billing process."
+    },
+    {
+      icon: <Wine className="w-12 h-12 text-bounty-orange" />,
+      title: "Bar & Restaurants",
+      description: "Manage complex operations with integrated bar and kitchen systems, ensuring seamless service from cocktails to main courses.",
+      features: [
+        "Integrated bar and kitchen POS",
+        "Cocktail recipe management",
+        "Age verification system",
+        "Happy hour pricing automation",
+        "Inventory tracking for liquor and food"
+      ],
+      workflow: "Customer orders drinks and food ➝ Split billing between bar and kitchen ➝ Synchronized preparation ➝ Combined service delivery ➝ Integrated payment processing."
+    },
+    {
+      icon: <Cloud className="w-12 h-12 text-bounty-orange" />,
+      title: "Cloud Kitchens",
+      description: "Optimize delivery-only operations with cloud-based solutions designed for maximum efficiency and multi-platform order management.",
+      features: [
+        "Multi-platform order aggregation",
+        "Delivery partner integration",
+        "Kitchen display optimization",
+        "Real-time order tracking",
+        "Performance analytics by platform"
+      ],
+      workflow: "Orders from multiple apps ➝ Centralized order management ➝ Kitchen preparation ➝ Delivery coordination ➝ Customer satisfaction tracking."
+    },
+    {
+      icon: <Building className="w-12 h-12 text-bounty-orange" />,
+      title: "Chain Restaurants",
+      description: "Centralized management system for multiple locations with standardized operations, reporting, and brand consistency across all outlets.",
+      features: [
+        "Multi-location management dashboard",
+        "Standardized menu and pricing",
+        "Centralized inventory control",
+        "Performance comparison tools",
+        "Brand consistency enforcement"
+      ],
+      workflow: "Centralized menu updates ➝ Location-specific customization ➝ Real-time performance monitoring ➝ Consolidated reporting ➝ Chain-wide analytics."
+    },
+    {
+      icon: <ChefHat className="w-12 h-12 text-bounty-orange" />,
+      title: "Central Kitchens",
+      description: "Streamline large-scale food production with specialized systems for bulk preparation, quality control, and distribution management.",
+      features: [
+        "Bulk production planning",
+        "Quality control checkpoints",
+        "Distribution scheduling",
+        "Batch tracking and traceability",
+        "Waste management optimization"
+      ],
+      workflow: "Production planning ➝ Bulk preparation monitoring ➝ Quality assurance ➝ Distribution coordination ➝ Delivery tracking to outlets."
+    },
+    {
+      icon: <Users className="w-12 h-12 text-bounty-orange" />,
+      title: "Caterers",
+      description: "Manage complex catering operations with event-specific pricing, advance booking systems, and large-scale order coordination.",
+      features: [
+        "Event-based order management",
+        "Custom menu creation",
+        "Advance booking calendar",
+        "Large quantity calculations",
+        "Delivery scheduling and tracking"
+      ],
+      workflow: "Event consultation ➝ Custom menu planning ➝ Advance order confirmation ➝ Large-scale preparation ➝ Event delivery and setup."
     },
     {
       icon: <Cake className="w-12 h-12 text-bounty-orange" />,
-      title: "Bakeries: Delightfully Organized",
-      description: "In bakeries, every pastry and loaf matters. POS software helps manage daily stock, track expiry dates, and even pre-order seasonal items.",
+      title: "Bakeries",
+      description: "Perfect for bakeries with fresh product tracking, batch management, and customer pre-order systems for special occasions.",
       features: [
-        "Barcode scanning for packaged goods",
-        "Real-time stock updates",
-        "Batch tracking for perishables", 
-        "Advance order booking and delivery scheduling",
-        "Customer relationship management (CRM)"
+        "Fresh product lifecycle management",
+        "Custom cake order system",
+        "Batch production tracking",
+        "Expiry date monitoring",
+        "Special occasion calendar"
       ],
-      workflow: "Customer selects items ➝ Cashier scans barcodes ➝ Discounts or combos are auto-applied ➝ Customer pays and receives a receipt ➝ Order data syncs with CRM for future promotions.",
-      image: "/lovable-uploads/d1252c67-4478-4da3-a38f-7c7300930927.png"
+      workflow: "Daily production planning ➝ Batch preparation ➝ Fresh product display ➝ Custom order management ➝ Quality-assured sales."
     },
     {
-      icon: <Car className="w-12 h-12 text-bounty-orange" />,
-      title: "Food Trucks: Mobility & Efficiency Combined",
-      description: "Food trucks need POS systems that are fast, compact, and capable of working offline.",
+      icon: <Coffee className="w-12 h-12 text-bounty-orange" />,
+      title: "Cafes & Pizzaria",
+      description: "Combining cafe efficiency with pizza kitchen management, perfect for establishments offering both quick service and made-to-order items.",
       features: [
-        "Cloud-based POS with offline functionality",
-        "Compact hardware with touch interfaces",
-        "Integrated mobile payment and QR-code support",
-        "Order and KOT printing",
-        "Sales heatmaps for tracking popular time slots and locations"
+        "Dual service model management",
+        "Pizza customization system",
+        "Coffee preparation tracking",
+        "Combined inventory management",
+        "Quick service optimization"
       ],
-      workflow: "Customer orders from the window ➝ Staff inputs the order ➝ Printed KOT goes to kitchen ➝ Customer pays via phone ➝ Dashboard syncs when online to update analytics.",
-      image: "/lovable-uploads/8d788462-6059-4c90-ad48-8e4a1a5351ad.png"
+      workflow: "Customer orders coffee and pizza ➝ Parallel preparation ➝ Timing coordination ➝ Combined service delivery ➝ Integrated billing."
     },
     {
-      icon: <DriveIn className="w-12 h-12 text-bounty-orange" />,
-      title: "Drive-Ins: Modernizing Classic Charm",
-      description: "Drive-ins require a system that connects multiple touchpoints—from car-side ordering to kitchen communication and quick checkout.",
+      icon: <IceCream className="w-12 h-12 text-bounty-orange" />,
+      title: "Ice Cream Parlours",
+      description: "Specialized for frozen treat businesses with temperature monitoring, flavor management, and seasonal menu adjustments.",
       features: [
-        "Wireless tablets for car-hop staff",
-        "Multiple printers (kitchen, billing, and drinks)",
-        "Token system for order pickup",
-        "Multi-mode payment options",
-        "Customer car-tagging system"
+        "Flavor inventory tracking",
+        "Temperature monitoring alerts",
+        "Seasonal menu management",
+        "Topping and mix-in options",
+        "Customer preference tracking"
       ],
-      workflow: "Staff takes orders at the car ➝ Order hits kitchen via POS ➝ Food prepared and delivered ➝ Payment processed in-car ➝ Customer data saved for loyalty programs.",
-      image: "/lovable-uploads/7b80c419-b908-4fe2-bba6-959f08c899aa.png"
+      workflow: "Flavor selection ➝ Customization options ➝ Portion control ➝ Temperature maintenance ➝ Quick service delivery."
     },
     {
-      icon: <Utensils className="w-12 h-12 text-bounty-orange" />,
-      title: "Restaurants: Full-Service, Fully Digital",
-      description: "Restaurants deal with complex operations, large teams, and diverse menus. POS systems offer the backbone needed for excellence.",
+      icon: <Zap className="w-12 h-12 text-bounty-orange" />,
+      title: "Quick Service Restaurants",
+      description: "High-speed operations with optimized workflows for maximum customer throughput while maintaining food quality and service standards.",
       features: [
-        "Table management with reservation integration",
-        "Course-wise billing (appetizer, main, dessert)",
-        "Kitchen Display Systems (KDS) and KOT",
-        "Staff performance tracking",
-        "Advanced analytics on dish popularity, peak hours, etc.",
-        "Multi-location management from a centralized dashboard"
+        "Speed-optimized ordering",
+        "Rapid kitchen communication",
+        "Queue management system",
+        "Mobile ordering integration",
+        "Drive-thru optimization"
       ],
-      workflow: "Host seats customer ➝ Server takes order via tablet ➝ Kitchen receives KOT ➝ Courses are timed and delivered ➝ Bill is generated and payment processed ➝ Analytics updated for insights.",
-      image: "/lovable-uploads/ae960305-62b4-40ab-aa76-a8a610b0728a.png"
+      workflow: "Quick order input ➝ Instant kitchen notification ➝ Rapid preparation ➝ Fast service delivery ➝ Efficient payment processing."
     }
   ];
 
@@ -95,14 +154,6 @@ const ServicesSection = () => {
     }
   };
 
-  const imageVariants = {
-    initial: { scale: 1 },
-    hover: { 
-      scale: 1.05,
-      transition: { duration: 3, repeat: Infinity, repeatType: "reverse" as const }
-    }
-  };
-
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -114,10 +165,10 @@ const ServicesSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-bounty-navy mb-6">
-            Bounty: Tailored for Every Taste, Every Service
+            Bounty: Tailored for Every Restaurant Type
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From bustling cafes to fine dining establishments, Bounty adapts to your unique restaurant needs with specialized features and workflows.
+            From intimate fine dining to high-volume quick service, Bounty adapts to your unique restaurant needs with specialized features and workflows.
           </p>
         </motion.div>
 
@@ -150,18 +201,6 @@ const ServicesSection = () => {
                   </p>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {service.image && (
-                    <div className="mb-4 overflow-hidden rounded-lg">
-                      <motion.img 
-                        variants={imageVariants}
-                        initial="initial"
-                        whileHover="hover"
-                        src={service.image} 
-                        alt={service.title}
-                        className="w-full h-48 object-cover rounded-lg"
-                      />
-                    </div>
-                  )}
                   <div>
                     <h4 className="font-semibold text-bounty-navy mb-2">Key Features:</h4>
                     <ul className="space-y-1">

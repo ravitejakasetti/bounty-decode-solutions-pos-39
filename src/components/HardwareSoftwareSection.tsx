@@ -53,12 +53,6 @@ const HardwareSoftwareSection = () => {
       title: "Your Phone is Your POS",
       description: "Transform any smartphone or tablet into a powerful POS terminal",
       features: ["Mobile flexibility", "Cloud synchronization", "Remote access"]
-    },
-    {
-      icon: <Cloud className="w-6 h-6 md:w-8 md:h-8 text-bounty-orange" />,
-      title: "Smart Peripherals",
-      description: "Connected devices that integrate seamlessly with your POS",
-      features: ["Smart printers", "Digital scales", "Inventory scanners"]
     }
   ];
 
@@ -158,6 +152,23 @@ const HardwareSoftwareSection = () => {
           </div>
         </div>
 
+        {/* Software/Hardware Images */}
+        <motion.div
+          className="flex justify-center mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="w-full max-w-4xl">
+            <img 
+              src={activeTab === 'software' ? "/api/placeholder/800/400" : "/api/placeholder/800/400"}
+              alt={`${activeTab === 'software' ? 'Software' : 'Hardware'} Solutions`}
+              className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
+            />
+          </div>
+        </motion.div>
+
         {/* Content */}
         <motion.div
           key={activeTab}
@@ -166,7 +177,7 @@ const HardwareSoftwareSection = () => {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {(activeTab === 'software' ? softwareFeatures : hardwareFeatures).map((feature, index) => (
               <motion.div
                 key={index}
@@ -230,36 +241,36 @@ const HardwareSoftwareSection = () => {
 
           <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-4 max-w-6xl mx-auto px-4">
             {bountiWorkflow.map((item, index) => (
-              <motion.div
-                key={index}
-                className="flex flex-col items-center text-center group w-full md:flex-1"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="bg-gradient-to-r from-bounty-navy to-bounty-orange text-white p-4 md:p-6 rounded-full mb-3 md:mb-4 group-hover:shadow-xl transition-all duration-300">
-                  {item.icon}
-                </div>
-                <h4 className="text-lg md:text-xl font-bold text-bounty-navy mb-2 group-hover:text-bounty-orange transition-colors duration-300">
-                  {item.step}
-                </h4>
-                <p className="text-gray-600 text-xs md:text-sm max-w-32 md:max-w-40">
-                  {item.description}
-                </p>
+              <div key={index} className="flex flex-col items-center relative w-full md:flex-1">
+                <motion.div
+                  className="flex flex-col items-center text-center group"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="bg-gradient-to-r from-bounty-navy to-bounty-orange text-white p-4 md:p-6 rounded-full mb-3 md:mb-4 group-hover:shadow-xl transition-all duration-300">
+                    {item.icon}
+                  </div>
+                  <h4 className="text-lg md:text-xl font-bold text-bounty-navy mb-2 group-hover:text-bounty-orange transition-colors duration-300">
+                    {item.step}
+                  </h4>
+                  <p className="text-gray-600 text-xs md:text-sm max-w-32 md:max-w-40">
+                    {item.description}
+                  </p>
+                </motion.div>
                 
                 {index < bountiWorkflow.length - 1 && (
                   <motion.div 
-                    className="hidden md:block absolute mt-6"
-                    style={{ transform: 'translateX(120px)' }}
+                    className="hidden md:block absolute right-0 top-8 transform translate-x-1/2"
                     animate={{ x: [0, 10, 0] }}
                     transition={{ repeat: Infinity, duration: 2 }}
                   >
                     <ArrowRight className="w-6 h-6 text-bounty-orange" />
                   </motion.div>
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
         </motion.div>
