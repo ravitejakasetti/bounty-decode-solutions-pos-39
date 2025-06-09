@@ -13,7 +13,7 @@ const RevenueGrowthSection = () => {
       description: "Average increase in monthly revenue"
     },
     {
-      icon: <DollarSign className="w-6 h-6 md:w-8 md:h-8 text-bounty-orange" />,
+      icon: <span className="w-6 h-6 md:w-8 md:h-8 text-bounty-orange text-2xl font-bold">₹</span>,
       title: "Cost Reduction",
       value: "28%",
       description: "Operational cost savings"

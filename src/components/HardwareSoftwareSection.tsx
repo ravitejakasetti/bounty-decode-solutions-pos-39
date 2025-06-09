@@ -1,67 +1,69 @@
 
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { motion } from 'framer-motion';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Laptop, Tablet, QrCode, Smartphone } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Smartphone, Monitor, Wifi, Shield, Zap, Cloud } from 'lucide-react';
 
 const HardwareSoftwareSection = () => {
-  const [activeTab, setActiveTab] = useState("software");
+  const [activeTab, setActiveTab] = useState('software');
 
   const softwareFeatures = [
     {
-      icon: <Laptop className="w-8 h-8 text-bounty-orange" />,
-      title: "User-Friendly Interface",
-      description: "Navigate with ease, manage operations intuitively, and access critical data without a steep learning curve.",
-      image: "/lovable-uploads/aadfc52e-8730-47b2-9c31-05f04a0c28b3.png"
+      icon: <Monitor className="w-8 h-8 text-bounty-orange" />,
+      title: "Cloud-Based POS System",
+      description: "Access your restaurant data from anywhere with our secure cloud infrastructure",
+      features: ["Real-time synchronization", "Automatic backups", "Multi-location support"]
     },
     {
-      icon: <motion.div
-        animate={{ rotate: [0, 15, 0, -15, 0] }}
-        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-      >
-        <Tablet className="w-8 h-8 text-bounty-orange" />
-      </motion.div>,
-      title: "Robust & Reliable",
-      description: "Built for performance, ensuring uptime and seamless operation even during your busiest hours.",
-      image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=800&q=80"
+      icon: <Smartphone className="w-8 h-8 text-bounty-orange" />,
+      title: "Mobile-First Design",
+      description: "Optimized for tablets and smartphones for seamless operation",
+      features: ["Touch-friendly interface", "Offline capability", "Quick order processing"]
     },
     {
-      icon: <motion.div
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-      >
-        <QrCode className="w-8 h-8 text-bounty-orange" />
-      </motion.div>,
-      title: "Real-time Analytics",
-      description: "Access dashboards and reports that provide actionable insights into sales, customer behavior, and operational efficiency.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+      icon: <Zap className="w-8 h-8 text-bounty-orange" />,
+      title: "Lightning Fast Performance",
+      description: "Built for speed with advanced caching and optimization",
+      features: ["Sub-second response times", "Efficient database queries", "Optimized workflows"]
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-bounty-orange" />,
+      title: "Enterprise Security",
+      description: "Bank-grade security to protect your sensitive business data",
+      features: ["End-to-end encryption", "PCI compliance", "Role-based access"]
     }
   ];
 
   const hardwareFeatures = [
     {
-      icon: <Tablet className="w-8 h-8 text-bounty-orange" />,
-      title: "POS Integration",
-      description: "Works with a variety of modern Point of Sale systems for seamless operation.",
-      image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=80"
+      icon: <Monitor className="w-8 h-8 text-bounty-orange" />,
+      title: "POS Terminals",
+      description: "Professional-grade terminals designed for restaurant environments",
+      features: ["Spill-resistant design", "High-resolution displays", "Fast processors"]
     },
     {
-      icon: <QrCode className="w-8 h-8 text-bounty-orange" />,
-      title: "QR Scanners & Printers",
-      description: "Compatible hardware to ensure your QR code strategies and order printing run flawlessly.",
-      image: "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=800&q=80"
+      icon: <Wifi className="w-8 h-8 text-bounty-orange" />,
+      title: "Wireless Connectivity",
+      description: "Reliable wireless solutions for seamless operations",
+      features: ["Wi-Fi 6 support", "Bluetooth integration", "4G/5G backup"]
     },
     {
       icon: <Smartphone className="w-8 h-8 text-bounty-orange" />,
-      title: "Your Phone is Your POS",
-      description: "Transform any smartphone into a powerful point-of-sale terminal - take orders, process payments, and manage your business from the palm of your hand.",
-      image: "/lovable-uploads/56224731-23c6-45a5-8e57-3493a691b981.png"
+      title: "Mobile Devices",
+      description: "Tablets and handhelds for tableside ordering and payments",
+      features: ["Rugged construction", "Long battery life", "Payment integration"]
+    },
+    {
+      icon: <Cloud className="w-8 h-8 text-bounty-orange" />,
+      title: "Smart Peripherals",
+      description: "Connected devices that integrate seamlessly with your POS",
+      features: ["Smart printers", "Digital scales", "Inventory scanners"]
     }
   ];
 
   return (
-    <section id="hardware" className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2 
@@ -74,205 +76,154 @@ const HardwareSoftwareSection = () => {
             The Engine Behind Your Success
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-600"
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            BOUNTI's Robust Hardware & Intuitive Software
+            Powerful software meets reliable hardware to create the perfect restaurant management ecosystem
           </motion.p>
         </div>
 
-        <Tabs defaultValue="software" className="mb-12">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
-            <TabsTrigger 
-              value="software"
-              onMouseEnter={() => setActiveTab("software")}
-              onClick={() => setActiveTab("software")}
-              className="text-lg py-3 transition-all duration-300 hover:bg-bounty-orange hover:text-white"
+        {/* Enhanced Dynamic Tab Buttons */}
+        <div className="flex justify-center mb-12">
+          <div className="bg-white p-2 rounded-full shadow-lg border border-gray-200">
+            <motion.button
+              onClick={() => setActiveTab('software')}
+              className={`px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 relative overflow-hidden ${
+                activeTab === 'software' 
+                  ? 'bg-gradient-to-r from-bounty-navy to-bounty-orange text-white shadow-xl transform scale-105' 
+                  : 'text-bounty-navy hover:bg-gray-50'
+              }`}
+              whileHover={{ 
+                scale: activeTab === 'software' ? 1.05 : 1.1,
+                boxShadow: activeTab === 'software' ? "0 10px 30px rgba(3, 38, 92, 0.3)" : "0 5px 15px rgba(0,0,0,0.1)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
             >
-              Software
-            </TabsTrigger>
-            <TabsTrigger 
-              value="hardware"
-              onMouseEnter={() => setActiveTab("hardware")}
-              onClick={() => setActiveTab("hardware")}
-              className="text-lg py-3 transition-all duration-300 hover:bg-bounty-orange hover:text-white"
+              {activeTab === 'software' && (
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-bounty-navy to-bounty-orange rounded-full"
+                  layoutId="activeTab"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10 flex items-center gap-2">
+                <Monitor className="w-5 h-5" />
+                Software Solutions
+              </span>
+            </motion.button>
+            
+            <motion.button
+              onClick={() => setActiveTab('hardware')}
+              className={`px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 relative overflow-hidden ${
+                activeTab === 'hardware' 
+                  ? 'bg-gradient-to-r from-bounty-navy to-bounty-orange text-white shadow-xl transform scale-105' 
+                  : 'text-bounty-navy hover:bg-gray-50'
+              }`}
+              whileHover={{ 
+                scale: activeTab === 'hardware' ? 1.05 : 1.1,
+                boxShadow: activeTab === 'hardware' ? "0 10px 30px rgba(3, 38, 92, 0.3)" : "0 5px 15px rgba(0,0,0,0.1)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
             >
-              Hardware
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="software" className="mt-8">
-            <div className="grid md:grid-cols-3 gap-8">
-              {softwareFeatures.map((feature, index) => (
+              {activeTab === 'hardware' && (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <Card className="h-full hover:shadow-xl transition-all duration-300">
-                    <CardHeader className="pb-2">
-                      <div className="flex justify-center mb-4">
-                        {feature.icon}
-                      </div>
-                      <CardTitle className="text-xl font-bold text-center text-bounty-navy">
-                        {feature.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="overflow-hidden rounded-lg">
-                        <img 
-                          src={feature.image} 
-                          alt={feature.title} 
-                          className="w-full h-48 object-cover transition-all duration-500 hover:scale-105"
-                        />
-                      </div>
-                      <p className="text-gray-600 text-center">
-                        {feature.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </TabsContent>
+                  className="absolute inset-0 bg-gradient-to-r from-bounty-navy to-bounty-orange rounded-full"
+                  layoutId="activeTab"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10 flex items-center gap-2">
+                <Smartphone className="w-5 h-5" />
+                Hardware Solutions
+              </span>
+            </motion.button>
+          </div>
+        </div>
 
-          <TabsContent value="hardware" className="mt-8">
-            <div className="grid md:grid-cols-3 gap-8">
-              {hardwareFeatures.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <Card className="h-full hover:shadow-xl transition-all duration-300">
-                    <CardHeader className="pb-2">
-                      <div className="flex justify-center mb-4">
-                        {feature.icon}
-                      </div>
-                      <CardTitle className="text-xl font-bold text-center text-bounty-navy">
-                        {feature.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="overflow-hidden rounded-lg">
-                        <img 
-                          src={feature.image} 
-                          alt={feature.title} 
-                          className="w-full h-48 object-cover transition-all duration-500 hover:scale-105"
-                        />
-                      </div>
-                      <p className="text-gray-600 text-center">
-                        {feature.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-
-        {/* Static How BOUNTI Works Section */}
+        {/* Content */}
         <motion.div
-          className="mt-12 bg-gray-50 p-8 rounded-2xl"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          key={activeTab}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
         >
-          <h3 className="text-2xl font-bold text-center text-bounty-navy mb-8">How BOUNTI Works</h3>
-          <div className="relative">
-            <div className="flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {(activeTab === 'software' ? softwareFeatures : hardwareFeatures).map((feature, index) => (
               <motion.div
-                className="bg-white p-4 rounded-xl shadow-lg text-center mb-4 md:mb-0 md:w-1/5"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -10, scale: 1.02 }}
               >
-                <div className="bg-bounty-orange/10 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                  <Laptop className="w-8 h-8 text-bounty-orange" />
-                </div>
-                <h4 className="font-semibold text-bounty-navy">Data Input</h4>
+                <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group bg-white overflow-hidden">
+                  <CardContent className="p-6">
+                    <motion.div 
+                      className="flex items-center justify-center w-16 h-16 bg-bounty-orange/10 rounded-full mb-4 group-hover:bg-bounty-orange/20 transition-colors duration-300"
+                      whileHover={{ rotate: 15, scale: 1.1 }}
+                    >
+                      {feature.icon}
+                    </motion.div>
+                    <h3 className="text-lg font-bold text-bounty-navy mb-3 group-hover:text-bounty-orange transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 text-sm">
+                      {feature.description}
+                    </p>
+                    <div className="space-y-2">
+                      {feature.features.map((item, idx) => (
+                        <motion.div 
+                          key={idx}
+                          className="flex items-center space-x-2"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.5 + idx * 0.1 }}
+                        >
+                          <Badge variant="secondary" className="text-xs bg-bounty-orange/10 text-bounty-navy hover:bg-bounty-orange/20">
+                            {item}
+                          </Badge>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
-              
-              <motion.div 
-                className="hidden md:block h-1 bg-gradient-to-r from-bounty-orange to-bounty-navy flex-1 mx-2"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.5 }}
-              />
-              
-              <motion.div
-                className="bg-white p-4 rounded-xl shadow-lg text-center mb-4 md:mb-0 md:w-1/5"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <div className="bg-bounty-orange/10 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-bounty-orange">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                    <line x1="12" y1="17" x2="12" y2="21"></line>
-                  </svg>
-                </div>
-                <h4 className="font-semibold text-bounty-navy">Processing</h4>
-              </motion.div>
-              
-              <motion.div 
-                className="hidden md:block h-1 bg-gradient-to-r from-bounty-orange to-bounty-navy flex-1 mx-2"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.8 }}
-              />
-              
-              <motion.div
-                className="bg-white p-4 rounded-xl shadow-lg text-center mb-4 md:mb-0 md:w-1/5"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-              >
-                <div className="bg-bounty-orange/10 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-bounty-orange">
-                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                  </svg>
-                </div>
-                <h4 className="font-semibold text-bounty-navy">Analysis</h4>
-              </motion.div>
-              
-              <motion.div 
-                className="hidden md:block h-1 bg-gradient-to-r from-bounty-orange to-bounty-navy flex-1 mx-2"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 1.1 }}
-              />
-              
-              <motion.div
-                className="bg-white p-4 rounded-xl shadow-lg text-center md:w-1/5"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.9 }}
-              >
-                <div className="bg-bounty-orange/10 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-bounty-orange">
-                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-                  </svg>
-                </div>
-                <h4 className="font-semibold text-bounty-navy">Results</h4>
-              </motion.div>
-            </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Bottom CTA */}
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="bg-gradient-to-r from-bounty-navy to-bounty-orange p-8 rounded-2xl text-white">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Complete Integration, Maximum Performance
+            </h3>
+            <p className="text-lg mb-6 text-white/90">
+              Our software and hardware work seamlessly together to deliver unmatched restaurant management capabilities
+            </p>
+            <motion.button 
+              className="bg-white text-bounty-navy px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explore Full Solutions
+            </motion.button>
           </div>
         </motion.div>
       </div>

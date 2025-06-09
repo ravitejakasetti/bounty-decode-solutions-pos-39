@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { QrCode, Users, Settings, Database, ArrowRight, Check } from 'lucide-react';
+import { QrCode, Users, Settings, Database, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FeaturesSection = () => {
@@ -118,25 +118,64 @@ const FeaturesSection = () => {
           </motion.p>
         </div>
 
+        {/* Enhanced Dynamic Feature Buttons */}
         <div className="flex overflow-x-auto justify-center flex-wrap gap-4 mb-12">
           {featureCategories.map((category, index) => (
             <motion.button
               key={index}
-              className={`flex items-center space-x-2 px-6 py-4 rounded-full border-2 transition-all duration-300 ${
+              className={`flex items-center space-x-3 px-8 py-5 rounded-2xl border-3 transition-all duration-500 relative overflow-hidden group ${
                 activeFeature === index 
-                  ? 'bg-gradient-to-r from-bounty-navy to-bounty-orange text-white shadow-xl border-bounty-orange transform scale-105' 
-                  : 'bg-white text-bounty-navy hover:bg-bounty-orange hover:text-white border-bounty-orange/30 hover:border-bounty-orange hover:shadow-lg hover:scale-102'
+                  ? 'bg-gradient-to-r from-bounty-navy via-bounty-orange to-bounty-navy text-white shadow-2xl border-bounty-orange transform scale-110 z-10' 
+                  : 'bg-white text-bounty-navy hover:bg-gradient-to-r hover:from-bounty-orange hover:to-orange-600 hover:text-white border-bounty-orange/30 hover:border-bounty-orange hover:shadow-xl hover:scale-105'
               }`}
               onClick={() => setActiveFeature(index)}
               onMouseEnter={() => setActiveFeature(index)}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ 
+                scale: activeFeature === index ? 1.1 : 1.08,
+                rotateY: 5,
+                boxShadow: "0 20px 40px rgba(255, 112, 9, 0.3)"
+              }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {category.icon}
-              <span className="font-medium whitespace-nowrap text-lg">{category.title}</span>
+              {/* Animated background */}
+              {activeFeature === index && (
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-bounty-navy via-bounty-orange to-bounty-navy"
+                  layoutId="activeFeatureBackground"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
+              
+              {/* Glow effect on hover */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-bounty-orange to-orange-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+              />
+              
+              <motion.div
+                className="relative z-10"
+                whileHover={{ rotate: 15 }}
+                transition={{ duration: 0.3 }}
+              >
+                {category.icon}
+              </motion.div>
+              <span className="font-bold whitespace-nowrap text-lg md:text-xl relative z-10">
+                {category.title}
+              </span>
+              
+              {/* Highlight indicator */}
+              {activeFeature === index && (
+                <motion.div
+                  className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                />
+              )}
             </motion.button>
           ))}
         </div>
@@ -148,27 +187,32 @@ const FeaturesSection = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="mb-12 border-0 shadow-xl overflow-hidden bg-gradient-to-br from-white to-gray-50">
-            <CardContent className="p-6">
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <Card className="mb-12 border-0 shadow-2xl overflow-hidden bg-gradient-to-br from-white to-gray-50 hover:shadow-3xl transition-shadow duration-500">
+            <CardContent className="p-8">
+              <div className="grid md:grid-cols-2 gap-12 mb-12">
                 <motion.div
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="flex items-center space-x-3 mb-6">
-                    {featureCategories[activeFeature].icon}
-                    <h3 className="text-2xl font-bold text-bounty-navy">
+                  <div className="flex items-center space-x-4 mb-8">
+                    <motion.div
+                      className="p-3 bg-bounty-orange/10 rounded-2xl"
+                      whileHover={{ rotate: 15, scale: 1.1 }}
+                    >
+                      {featureCategories[activeFeature].icon}
+                    </motion.div>
+                    <h3 className="text-3xl font-bold text-bounty-navy">
                       {featureCategories[activeFeature].title}
                     </h3>
                   </div>
 
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-600 mb-8 text-lg leading-relaxed">
                     {featureCategories[activeFeature].description}
                   </p>
 
                   <motion.ul 
-                    className="space-y-4"
+                    className="space-y-5"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
@@ -176,89 +220,46 @@ const FeaturesSection = () => {
                     {featureCategories[activeFeature].features.map((feature, idx) => (
                       <motion.li 
                         key={idx} 
-                        className="flex items-start space-x-3"
+                        className="flex items-start space-x-4 group"
                         variants={itemVariants}
+                        whileHover={{ x: 5 }}
                       >
-                        <div className="bg-bounty-orange/10 p-1 rounded-full mt-1">
-                          <Check className="text-bounty-orange flex-shrink-0" />
+                        <div className="bg-bounty-orange/20 p-2 rounded-full mt-1 group-hover:bg-bounty-orange/30 transition-colors">
+                          <Check className="text-bounty-orange flex-shrink-0 w-4 h-4" />
                         </div>
-                        <span className="text-gray-700">{feature}</span>
+                        <span className="text-gray-700 text-lg">{feature}</span>
                       </motion.li>
                     ))}
                   </motion.ul>
                 </motion.div>
                 
                 <motion.div 
-                  className="flex flex-col items-center justify-center space-y-6"
+                  className="flex flex-col items-center justify-center space-y-8"
                   initial={{ x: 50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  <img 
+                  <motion.img 
                     src={featureCategories[activeFeature].image}
                     alt={featureCategories[activeFeature].title}
-                    className="rounded-xl shadow-lg max-w-full max-h-72 object-cover hover:scale-105 transition-transform duration-300"
+                    className="rounded-2xl shadow-2xl max-w-full max-h-80 object-cover border-4 border-bounty-orange/20"
+                    whileHover={{ scale: 1.05, rotateY: 5 }}
+                    transition={{ duration: 0.3 }}
                   />
                   
-                  <div className="grid grid-cols-2 gap-4 w-full">
+                  <div className="grid grid-cols-2 gap-6 w-full">
                     {featureCategories[activeFeature].stats.map((stat, idx) => (
-                      <div key={idx} className="bg-gray-50 p-4 rounded-lg text-center border border-bounty-orange/20">
-                        <div className="text-2xl font-bold text-bounty-orange">{stat.value}</div>
-                        <div className="text-sm text-gray-600">{stat.label}</div>
-                      </div>
+                      <motion.div 
+                        key={idx} 
+                        className="bg-gradient-to-br from-bounty-orange/10 to-orange-100 p-6 rounded-2xl text-center border-2 border-bounty-orange/30 hover:border-bounty-orange transition-all duration-300"
+                        whileHover={{ scale: 1.05, y: -5 }}
+                      >
+                        <div className="text-3xl font-bold text-bounty-orange mb-2">{stat.value}</div>
+                        <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                      </motion.div>
                     ))}
                   </div>
                 </motion.div>
-              </div>
-              
-              {/* Animated Flow Chart */}
-              <div className="py-8 bg-gray-50 rounded-xl">
-                <motion.h4 
-                  className="text-xl font-semibold text-bounty-navy mb-6 text-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  Implementation Process
-                </motion.h4>
-
-                <div className="flex justify-center items-center flex-wrap">
-                  {['Consultation', 'Configuration', 'Training', 'Launch', 'Support'].map((step, idx) => (
-                    <React.Fragment key={idx}>
-                      <motion.div
-                        className="flex flex-col items-center p-4"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: idx * 0.2, duration: 0.5 }}
-                      >
-                        <motion.div 
-                          className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center text-xl font-bold mb-2 text-bounty-navy border-2 border-bounty-orange/30"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          {idx + 1}
-                        </motion.div>
-                        <span className="text-center text-sm font-medium text-gray-700">{step}</span>
-                      </motion.div>
-                      
-                      {idx < 4 && (
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: idx * 0.2 + 0.1, duration: 0.3 }}
-                          className="mx-2 hidden md:flex items-center"
-                        >
-                          <motion.div
-                            animate={{ x: [0, 10, 0] }}
-                            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                          >
-                            <ArrowRight className="text-bounty-orange" />
-                          </motion.div>
-                        </motion.div>
-                      )}
-                    </React.Fragment>
-                  ))}
-                </div>
               </div>
             </CardContent>
           </Card>

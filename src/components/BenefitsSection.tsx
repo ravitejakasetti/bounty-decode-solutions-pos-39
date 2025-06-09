@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
@@ -10,7 +11,7 @@ const BenefitsSection = () => {
       description: "Watch your revenue soar with intelligent pricing, personalized offers, and targeted promotions that turn every interaction into an opportunity.",
       gradient: "from-blue-500 to-cyan-500",
       icon: <TrendingUp className="w-12 h-12" />,
-      image: "/lovable-uploads/102f597c-25f1-4282-9c5d-a649d399ca6b.png", // Updated Dynamic Sales Amplification image
+      image: "/lovable-uploads/102f597c-25f1-4282-9c5d-a649d399ca6b.png", // Keep existing
       stats: [
         { value: "+28%", label: "Average Revenue Increase" },
         { value: "3.2x", label: "Return on Investment" }
@@ -21,7 +22,7 @@ const BenefitsSection = () => {
       description: "From inventory to orders, and vendors to delivery, Bounty streamlines your processes, freeing you to focus on what you do best – delighting your customers.",
       gradient: "from-green-500 to-emerald-500",
       icon: <Clock className="w-12 h-12" />,
-      image: "/lovable-uploads/068be18d-62c5-4939-b64b-01506aad4535.png", // Updated for operational efficiency image
+      image: "/lovable-uploads/bef8faa7-aa86-446c-8ce2-e8b2d0d080e9.png", // Updated with first image
       stats: [
         { value: "-42%", label: "Reduced Operational Time" },
         { value: "+65%", label: "Staff Productivity" }
@@ -32,7 +33,7 @@ const BenefitsSection = () => {
       description: "Recognize, reward, and re-engage your patrons like never before. Build lasting relationships that keep them coming back for more.",
       gradient: "from-purple-500 to-pink-500",
       icon: <Users className="w-12 h-12" />,
-      image: "/lovable-uploads/ca73a960-993d-4792-b91b-6c3dcbe88c1d.png", // Customer loyalty image
+      image: "/lovable-uploads/4857311a-9eec-463f-a6ca-c1f3195268f0.png", // Updated with third image
       stats: [
         { value: "+45%", label: "Customer Retention Rate" },
         { value: "2.7x", label: "Repeat Visit Frequency" }
@@ -43,7 +44,7 @@ const BenefitsSection = () => {
       description: "Make informed decisions with real-time insights. Optimize your menu, reduce costs, and maximize your margins effortlessly.",
       gradient: "from-orange-500 to-red-500",
       icon: <BarChart3 className="w-12 h-12" />,
-      image: "/lovable-uploads/bd2119b2-058b-4142-8877-b1fbb587a502.png", // Updated to data-driven profitability image
+      image: "/lovable-uploads/10e5a81b-106f-45b9-b1c0-eca9271cdfff.png", // Updated with second image
       stats: [
         { value: "+35%", label: "Higher Profit Margins" },
         { value: "-23%", label: "Food Waste Reduction" }

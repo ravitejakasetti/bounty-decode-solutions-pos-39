@@ -13,7 +13,7 @@ const HeroSection = () => {
   const heroImages = [
     "/lovable-uploads/08aca9cb-94b0-49aa-9103-aea92484b5c5.png",
     "/lovable-uploads/1e80177e-b81f-44ee-90c5-029e71834d38.png",
-    "/lovable-uploads/0adf049e-0018-44db-a971-917fcffe39ea.png"
+    "/lovable-uploads/988dc8cb-e5f0-49d5-ad61-03845891e0f9.png" // Updated with fourth image
   ];
 
   useEffect(() => {
