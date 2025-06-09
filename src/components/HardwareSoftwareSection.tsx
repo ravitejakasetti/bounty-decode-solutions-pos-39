@@ -13,25 +13,29 @@ const HardwareSoftwareSection = () => {
       icon: <Monitor className="w-6 h-6 md:w-8 md:h-8 text-bounty-orange" />,
       title: "User Friendly Interface",
       description: "Intuitive design that makes restaurant management effortless for all team members",
-      features: ["Easy navigation", "Quick learning curve", "Touch-optimized controls"]
+      features: ["Easy navigation", "Quick learning curve", "Touch-optimized controls"],
+      image: "/lovable-uploads/36b65f91-415c-41cb-97d4-6f8297df370b.png"
     },
     {
       icon: <Shield className="w-6 h-6 md:w-8 md:h-8 text-bounty-orange" />,
       title: "Robust and Reliable",
       description: "Built to handle high-volume operations with maximum uptime and stability",
-      features: ["99.9% uptime guarantee", "Automatic failover", "Data redundancy"]
+      features: ["99.9% uptime guarantee", "Automatic failover", "Data redundancy"],
+      image: "/lovable-uploads/79179749-073c-4d6d-ac23-23cfeb64b0b2.png"
     },
     {
       icon: <BarChart3 className="w-6 h-6 md:w-8 md:h-8 text-bounty-orange" />,
       title: "Real Time Analytics",
       description: "Get instant insights into your restaurant's performance and customer behavior",
-      features: ["Live dashboards", "Instant reporting", "Performance tracking"]
+      features: ["Live dashboards", "Instant reporting", "Performance tracking"],
+      image: "/lovable-uploads/2f8468f9-596e-4540-ab77-eb72b00625ce.png"
     },
     {
       icon: <Zap className="w-6 h-6 md:w-8 md:h-8 text-bounty-orange" />,
       title: "Lightning Fast Performance",
       description: "Built for speed with advanced optimization for quick order processing",
-      features: ["Sub-second response", "Optimized workflows", "Fast checkout process"]
+      features: ["Sub-second response", "Optimized workflows", "Fast checkout process"],
+      image: "/lovable-uploads/d540678e-d3bf-4661-ad54-b0f718cec385.png"
     }
   ];
 
@@ -40,19 +44,22 @@ const HardwareSoftwareSection = () => {
       icon: <Monitor className="w-6 h-6 md:w-8 md:h-8 text-bounty-orange" />,
       title: "POS Integration",
       description: "Seamlessly integrate with existing POS systems for unified operations",
-      features: ["Universal compatibility", "Easy setup", "Synchronized data"]
+      features: ["Universal compatibility", "Easy setup", "Synchronized data"],
+      image: "/lovable-uploads/6585af85-0005-4e6d-af72-c7b423fdb843.png"
     },
     {
       icon: <QrCode className="w-6 h-6 md:w-8 md:h-8 text-bounty-orange" />,
       title: "QR Scanners and Printers",
       description: "High-quality scanning and printing solutions for efficient operations",
-      features: ["Fast scanning", "Thermal printing", "Durable hardware"]
+      features: ["Fast scanning", "Thermal printing", "Durable hardware"],
+      image: "/lovable-uploads/93020aa6-febd-4679-a076-587bdf675613.png"
     },
     {
       icon: <Smartphone className="w-6 h-6 md:w-8 md:h-8 text-bounty-orange" />,
       title: "Your Phone is Your POS",
       description: "Transform any smartphone or tablet into a powerful POS terminal",
-      features: ["Mobile flexibility", "Cloud synchronization", "Remote access"]
+      features: ["Mobile flexibility", "Cloud synchronization", "Remote access"],
+      image: "/lovable-uploads/02546268-d488-48fa-be25-62472e82137f.png"
     }
   ];
 
@@ -152,23 +159,6 @@ const HardwareSoftwareSection = () => {
           </div>
         </div>
 
-        {/* Software/Hardware Images */}
-        <motion.div
-          className="flex justify-center mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="w-full max-w-4xl">
-            <img 
-              src={activeTab === 'software' ? "/api/placeholder/800/400" : "/api/placeholder/800/400"}
-              alt={`${activeTab === 'software' ? 'Software' : 'Hardware'} Solutions`}
-              className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg"
-            />
-          </div>
-        </motion.div>
-
         {/* Content */}
         <motion.div
           key={activeTab}
@@ -177,7 +167,7 @@ const HardwareSoftwareSection = () => {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {(activeTab === 'software' ? softwareFeatures : hardwareFeatures).map((feature, index) => (
               <motion.div
                 key={index}
@@ -187,6 +177,14 @@ const HardwareSoftwareSection = () => {
                 whileHover={{ y: -10, scale: 1.02 }}
               >
                 <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group bg-white overflow-hidden">
+                  <div className="relative">
+                    <img 
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  </div>
                   <CardContent className="p-4 md:p-6">
                     <motion.div 
                       className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-bounty-orange/10 rounded-full mb-3 md:mb-4 group-hover:bg-bounty-orange/20 transition-colors duration-300"
@@ -250,8 +248,18 @@ const HardwareSoftwareSection = () => {
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="bg-gradient-to-r from-bounty-navy to-bounty-orange text-white p-4 md:p-6 rounded-full mb-3 md:mb-4 group-hover:shadow-xl transition-all duration-300">
+                  <div className="bg-gradient-to-r from-bounty-navy to-bounty-orange text-white p-4 md:p-6 rounded-full mb-3 md:mb-4 group-hover:shadow-xl transition-all duration-300 relative">
                     {item.icon}
+                    {/* Arrow positioned at each workflow item */}
+                    {index < bountiWorkflow.length - 1 && (
+                      <motion.div 
+                        className="absolute left-full top-1/2 transform -translate-y-1/2 ml-4 hidden md:block"
+                        animate={{ x: [0, 10, 0] }}
+                        transition={{ repeat: Infinity, duration: 2 }}
+                      >
+                        <ArrowRight className="w-6 h-6 text-bounty-orange" />
+                      </motion.div>
+                    )}
                   </div>
                   <h4 className="text-lg md:text-xl font-bold text-bounty-navy mb-2 group-hover:text-bounty-orange transition-colors duration-300">
                     {item.step}
@@ -260,16 +268,6 @@ const HardwareSoftwareSection = () => {
                     {item.description}
                   </p>
                 </motion.div>
-                
-                {index < bountiWorkflow.length - 1 && (
-                  <motion.div 
-                    className="hidden md:block absolute right-0 top-8 transform translate-x-1/2"
-                    animate={{ x: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                  >
-                    <ArrowRight className="w-6 h-6 text-bounty-orange" />
-                  </motion.div>
-                )}
               </div>
             ))}
           </div>

@@ -19,7 +19,8 @@ const ServicesSection = () => {
         "Advanced table reservation system",
         "Chef's special tracking"
       ],
-      workflow: "Host welcomes guests ➝ Sommelier recommendations via POS ➝ Course-wise ordering ➝ Kitchen coordination ➝ Premium service delivery ➝ Elegant billing process."
+      workflow: "Host welcomes guests ➝ Sommelier recommendations via POS ➝ Course-wise ordering ➝ Kitchen coordination ➝ Premium service delivery ➝ Elegant billing process.",
+      image: "/lovable-uploads/02546268-d488-48fa-be25-62472e82137f.png"
     },
     {
       icon: <Wine className="w-12 h-12 text-bounty-orange" />,
@@ -32,7 +33,8 @@ const ServicesSection = () => {
         "Happy hour pricing automation",
         "Inventory tracking for liquor and food"
       ],
-      workflow: "Customer orders drinks and food ➝ Split billing between bar and kitchen ➝ Synchronized preparation ➝ Combined service delivery ➝ Integrated payment processing."
+      workflow: "Customer orders drinks and food ➝ Split billing between bar and kitchen ➝ Synchronized preparation ➝ Combined service delivery ➝ Integrated payment processing.",
+      image: "/lovable-uploads/59788541-b2be-4350-8505-f8696df7cfe2.png"
     },
     {
       icon: <Cloud className="w-12 h-12 text-bounty-orange" />,
@@ -45,7 +47,8 @@ const ServicesSection = () => {
         "Real-time order tracking",
         "Performance analytics by platform"
       ],
-      workflow: "Orders from multiple apps ➝ Centralized order management ➝ Kitchen preparation ➝ Delivery coordination ➝ Customer satisfaction tracking."
+      workflow: "Orders from multiple apps ➝ Centralized order management ➝ Kitchen preparation ➝ Delivery coordination ➝ Customer satisfaction tracking.",
+      image: "/lovable-uploads/ec04254c-2a39-40c9-b9a0-511a2c636ec7.png"
     },
     {
       icon: <Building className="w-12 h-12 text-bounty-orange" />,
@@ -58,7 +61,8 @@ const ServicesSection = () => {
         "Performance comparison tools",
         "Brand consistency enforcement"
       ],
-      workflow: "Centralized menu updates ➝ Location-specific customization ➝ Real-time performance monitoring ➝ Consolidated reporting ➝ Chain-wide analytics."
+      workflow: "Centralized menu updates ➝ Location-specific customization ➝ Real-time performance monitoring ➝ Consolidated reporting ➝ Chain-wide analytics.",
+      image: "/lovable-uploads/537d89f3-a122-42a7-a92b-a4bd0c2628f4.png"
     },
     {
       icon: <ChefHat className="w-12 h-12 text-bounty-orange" />,
@@ -182,7 +186,17 @@ const ServicesSection = () => {
               whileHover="hover"
               viewport={{ once: true, margin: "-50px" }}
             >
-              <Card className="border-0 shadow-lg h-full">
+              <Card className="border-0 shadow-lg h-full overflow-hidden">
+                {service.image && (
+                  <div className="relative h-48 w-full">
+                    <img 
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  </div>
+                )}
                 <CardHeader className="text-center pb-4">
                   <div className="flex justify-center mb-4">
                     <motion.div
