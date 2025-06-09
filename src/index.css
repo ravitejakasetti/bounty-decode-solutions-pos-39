@@ -96,9 +96,23 @@
     @apply border-border;
   }
 
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    min-width: 100vw;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
   }
 }
 
@@ -115,6 +129,30 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.text-bounty-navy {
+  color: #03265c;
+}
+
+.bg-bounty-navy {
+  background-color: #03265c;
+}
+
+.bg-bounty-navy\/90 {
+  background-color: rgba(3, 38, 92, 0.9);
+}
+
+.bg-bounty-navy\/80 {
+  background-color: rgba(3, 38, 92, 0.8);
+}
+
+.from-bounty-navy {
+  --tw-gradient-from: #03265c;
+}
+
+.to-blue-900 {
+  --tw-gradient-to: #1e3a8a;
 }
 
 .text-bounty-orange {
@@ -159,4 +197,27 @@
 
 .to-orange-600 {
   --tw-gradient-to: #ea580c;
+}
+
+/* Mobile responsiveness fixes */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  body, html {
+    overflow-x: hidden;
+  }
+  
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Ensure no horizontal overflow */
+.overflow-x-hidden {
+  overflow-x: hidden !important;
 }
