@@ -1,13 +1,12 @@
 
 import React from 'react';
 import Header from '@/components/Header';
-import ServicesSection from '@/components/ServicesSection';
-import FeaturesSection from '@/components/FeaturesSection';
+import AboutBountiSection from '@/components/AboutBountiSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 
-const Services = () => {
+const About = () => {
   return (
     <div className="min-h-screen">
       <Header />
@@ -37,24 +36,6 @@ const Services = () => {
             }}
             transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
           />
-          
-          {/* Floating Elements */}
-          <motion.div 
-            className="absolute top-1/3 left-1/4 w-20 h-20 bg-white/5 rounded-full"
-            animate={{ 
-              y: [-10, 10, -10],
-              opacity: [0.3, 0.6, 0.3]
-            }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div 
-            className="absolute top-2/3 right-1/3 w-16 h-16 bg-bounty-orange/10 rounded-full"
-            animate={{ 
-              y: [10, -10, 10],
-              opacity: [0.2, 0.5, 0.2]
-            }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -64,7 +45,7 @@ const Services = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-bounty-orange bg-clip-text text-transparent">
-              Our Services
+              About BOUNTI
             </h1>
             <motion.p 
               className="text-xl md:text-2xl text-gray-200 max-w-3xl"
@@ -72,17 +53,16 @@ const Services = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Comprehensive restaurant management solutions tailored for every business type and size
+              Revolutionizing restaurant management with cutting-edge technology and innovative solutions
             </motion.p>
           </motion.div>
         </div>
       </motion.div>
-      <ServicesSection />
-      <FeaturesSection />
+      <AboutBountiSection />
       <CTASection />
       <Footer />
     </div>
   );
 };
 
-export default Services;
+export default About;

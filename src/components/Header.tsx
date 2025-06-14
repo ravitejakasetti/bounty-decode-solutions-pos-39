@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -25,11 +26,17 @@ const Header = () => {
     text: 'Home',
     path: '/'
   }, {
+    text: 'About',
+    path: '/about'
+  }, {
     text: 'Services',
     path: '/services'
   }, {
     text: 'Pricing',
     path: '/pricing'
+  }, {
+    text: 'Blogs',
+    path: '/blogs'
   }];
 
   const isActive = (path: string) => location.pathname === path;
@@ -91,10 +98,8 @@ const Header = () => {
                   >
                     <Link 
                       to={link.path} 
-                      className={`relative font-semibold text-base transition-all duration-300 drop-shadow-sm ${
-                        isScrolled 
-                          ? `text-white hover:text-[#ff7009] ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
-                          : `text-white hover:text-[#ff7009] ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
+                      className={`relative font-semibold text-base transition-all duration-300 drop-shadow-sm text-white hover:text-[#ff7009] ${
+                        isActive(link.path) ? 'text-[#ff7009]' : ''
                       }`}
                     >
                       <motion.span
@@ -122,7 +127,11 @@ const Header = () => {
                 >
                   <Button 
                     onClick={() => setIsDemoModalOpen(true)} 
-                    className="bg-gradient-to-r from-bounty-orange to-yellow-500 hover:from-bounty-orange/90 hover:to-yellow-500/90 text-white border-none shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold px-6 py-2 rounded-full backdrop-blur-sm"
+                    className="bg-[#ff7009] hover:bg-[#ff7009]/90 text-white border-none shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 font-bold px-8 py-3 rounded-full backdrop-blur-sm glow-effect"
+                    style={{
+                      background: 'linear-gradient(45deg, #ff7009, #ff8533)',
+                      boxShadow: '0 0 30px rgba(255, 112, 9, 0.6), 0 0 60px rgba(255, 112, 9, 0.3)'
+                    }}
                   >
                     Book Demo
                   </Button>
@@ -166,8 +175,8 @@ const Header = () => {
                   >
                     <Link 
                       to={link.path} 
-                      className={`block text-white hover:text-bounty-orange transition-colors duration-300 font-semibold text-lg py-2 px-4 rounded-lg hover:bg-white/10 ${
-                        isActive(link.path) ? 'text-bounty-orange bg-white/10' : ''
+                      className={`block text-white hover:text-[#ff7009] transition-colors duration-300 font-semibold text-lg py-2 px-4 rounded-lg hover:bg-white/10 ${
+                        isActive(link.path) ? 'text-[#ff7009] bg-white/10' : ''
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -186,7 +195,7 @@ const Header = () => {
                       setIsMenuOpen(false);
                       setIsDemoModalOpen(true);
                     }} 
-                    className="w-full bg-gradient-to-r from-bounty-orange to-yellow-500 hover:from-bounty-orange/90 hover:to-yellow-500/90 text-white border-none shadow-md font-semibold py-3 rounded-full"
+                    className="w-full bg-[#ff7009] hover:bg-[#ff7009]/90 text-white border-none shadow-md font-semibold py-3 rounded-full"
                   >
                     Book Demo
                   </Button>
