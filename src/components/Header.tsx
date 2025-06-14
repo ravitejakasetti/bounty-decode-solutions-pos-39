@@ -36,7 +36,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return <>
-      <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-2 shadow-md bg-bounty-navy' : 'py-4 bg-bounty-navy/90'}`}>
+      <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 shadow-md bg-bounty-navy' : 'py-6 bg-bounty-navy/90'}`}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <Link to="/">
@@ -51,7 +51,7 @@ const Header = () => {
                   stiffness: 400,
                   damping: 10
                 }} 
-                className="max-h-10 md:max-h-12 lg:max-h-14 w-auto object-contain"
+                className="h-16 md:h-20 lg:h-24 w-auto object-contain"
                 style={{ width: '1080px', height: '383px' }}
               />
             </Link>
