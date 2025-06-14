@@ -39,7 +39,7 @@ const Header = () => {
               type: "spring",
               stiffness: 400,
               damping: 10
-            }} className="h-16 w-auto md:h-20 lg:h-24 object-fill" />
+            }} className="h-16 w-auto md:h-20 lg:h-24 object-cover" />
             </Link>
 
             {/* Desktop Menu */}
