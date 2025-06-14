@@ -43,18 +43,25 @@ const Header = () => {
               ? 'bg-transparent backdrop-blur-xl shadow-2xl border border-white/20' 
               : 'shadow-2xl border border-white/30'
           }`}>
-            {/* Dynamic gradient background */}
+            {/* Dynamic gradient background - stronger #03265c on the right */}
             <div className={`absolute inset-0 transition-all duration-500 ${
               isScrolled
-                ? 'bg-gradient-to-r from-white/10 via-white/5 to-[#03265c]/30'
-                : 'bg-gradient-to-r from-white/95 via-white/70 via-white/50 to-[#03265c]/90'
+                ? 'bg-gradient-to-r from-white/15 via-white/8 via-[#03265c]/20 to-[#03265c]/40'
+                : 'bg-gradient-to-r from-white/95 via-white/60 via-[#03265c]/30 to-[#03265c]/80'
             }`} />
             
-            {/* Animated overlay for extra depth */}
+            {/* Additional overlay for deeper right-side darkness */}
             <div className={`absolute inset-0 transition-all duration-700 ${
               isScrolled
-                ? 'bg-gradient-to-r from-transparent via-transparent to-[#03265c]/20'
-                : 'bg-gradient-to-r from-transparent via-transparent to-[#03265c]/40'
+                ? 'bg-gradient-to-r from-transparent via-transparent via-[#03265c]/15 to-[#03265c]/35'
+                : 'bg-gradient-to-r from-transparent via-transparent via-[#03265c]/20 to-[#03265c]/60'
+            }`} />
+            
+            {/* Third layer for maximum right-side intensity */}
+            <div className={`absolute inset-0 transition-all duration-1000 ${
+              isScrolled
+                ? 'bg-gradient-to-r from-transparent from-60% via-[#03265c]/10 to-[#03265c]/25'
+                : 'bg-gradient-to-r from-transparent from-50% via-[#03265c]/25 to-[#03265c]/70'
             }`} />
             
             <div className="relative flex justify-between items-center px-6 py-4 backdrop-blur-sm">
@@ -87,7 +94,7 @@ const Header = () => {
                       to={link.path} 
                       className={`relative font-semibold text-base transition-all duration-300 drop-shadow-sm ${
                         isScrolled 
-                          ? `text-white hover:text-[#ff7009] ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
+                          ? `${link.path === '/' ? 'text-white' : 'text-[#03265c]'} hover:text-[#ff7009] ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
                           : `text-white hover:text-[#ff7009] ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
                       }`}
                     >
