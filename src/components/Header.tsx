@@ -54,9 +54,10 @@ const Header = () => {
             className="relative rounded-2xl transition-all duration-500 border border-white/20"
             style={{
               background: `linear-gradient(to right, 
-                rgba(0, 0, 0, ${backgroundOpacity * 0.9}) 0%, 
-                rgba(3, 38, 92, ${backgroundOpacity * 0.95}) 50%, 
-                rgba(3, 38, 92, ${backgroundOpacity}) 100%)`,
+                rgba(255, 255, 255, 0.95) 0%, 
+                rgba(255, 255, 255, 0.8) 25%, 
+                rgba(0, 0, 0, ${backgroundOpacity * 0.7}) 60%, 
+                rgba(3, 15, 40, ${backgroundOpacity * 0.9}) 100%)`,
               backdropFilter: 'blur(20px)',
               boxShadow: `0 8px 32px rgba(0, 0, 0, ${backgroundOpacity * 0.3})`
             }}
@@ -67,12 +68,17 @@ const Header = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="relative"
                 >
+                  {/* White background specifically for logo */}
+                  <div 
+                    className="absolute inset-0 bg-white rounded-xl -m-2"
+                    style={{ opacity: Math.max(0.9, backgroundOpacity) }}
+                  />
                   <img 
                     src="/lovable-uploads/39a22824-d992-4235-a6e4-f4e01d73707a.png" 
                     alt="BOUNTI Software" 
-                    className="h-12 md:h-14 w-auto object-contain"
-                    style={{ filter: `brightness(${Math.max(0.7, backgroundOpacity)})` }}
+                    className="h-12 md:h-14 w-auto object-contain relative z-10"
                   />
                 </motion.div>
               </Link>
@@ -94,7 +100,7 @@ const Header = () => {
                         isActive(link.path) ? 'text-bounty-orange' : ''
                       }`}
                       style={{ 
-                        color: isActive(link.path) ? '#ff7009' : `rgba(255, 255, 255, ${Math.max(0.8, backgroundOpacity)})` 
+                        color: isActive(link.path) ? '#ff7009' : `rgba(255, 255, 255, ${Math.max(0.9, backgroundOpacity)})` 
                       }}
                     >
                       <motion.span
