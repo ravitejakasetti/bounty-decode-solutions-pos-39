@@ -36,14 +36,28 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return <>
-      <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
+      <header className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'py-2' : 'py-4'}`}>
         <div className="container mx-auto px-4">
-          <div className={`relative rounded-2xl transition-all duration-500 ${
+          <div className={`relative rounded-2xl transition-all duration-500 overflow-hidden ${
             isScrolled 
-              ? 'bg-transparent backdrop-blur-md shadow-xl border border-white/10' 
-              : 'bg-gradient-to-r from-white/90 via-white/60 to-[#03265c]/80 backdrop-blur-lg shadow-2xl border border-white/20'
+              ? 'bg-transparent backdrop-blur-xl shadow-2xl border border-white/20' 
+              : 'shadow-2xl border border-white/30'
           }`}>
-            <div className="flex justify-between items-center px-6 py-4">
+            {/* Dynamic gradient background */}
+            <div className={`absolute inset-0 transition-all duration-500 ${
+              isScrolled
+                ? 'bg-gradient-to-r from-white/10 via-white/5 to-[#03265c]/30'
+                : 'bg-gradient-to-r from-white/95 via-white/70 via-white/50 to-[#03265c]/90'
+            }`} />
+            
+            {/* Animated overlay for extra depth */}
+            <div className={`absolute inset-0 transition-all duration-700 ${
+              isScrolled
+                ? 'bg-gradient-to-r from-transparent via-transparent to-[#03265c]/20'
+                : 'bg-gradient-to-r from-transparent via-transparent to-[#03265c]/40'
+            }`} />
+            
+            <div className="relative flex justify-between items-center px-6 py-4 backdrop-blur-sm">
               <Link to="/">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -53,7 +67,7 @@ const Header = () => {
                   <img 
                     src="/lovable-uploads/309dfa71-bb72-4c85-9e37-44630e6897e0.png" 
                     alt="BOUNTI Software" 
-                    className="h-12 md:h-14 w-auto object-contain drop-shadow-lg"
+                    className="h-12 md:h-14 w-auto object-contain drop-shadow-2xl filter brightness-110"
                   />
                 </motion.div>
               </Link>
@@ -71,10 +85,10 @@ const Header = () => {
                   >
                     <Link 
                       to={link.path} 
-                      className={`relative font-semibold text-base transition-all duration-300 ${
-                        link.text === 'Services' || link.text === 'Pricing' 
-                          ? `${isScrolled ? 'text-[#03265c]' : 'text-white'} ${hoveredItem === link.path ? 'text-[#ff7009]' : ''} ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
-                          : `text-white hover:text-bounty-orange ${isActive(link.path) ? 'text-bounty-orange' : ''}`
+                      className={`relative font-semibold text-base transition-all duration-300 drop-shadow-sm ${
+                        isScrolled 
+                          ? `text-white hover:text-[#ff7009] ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
+                          : `text-white hover:text-[#ff7009] ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
                       }`}
                     >
                       <motion.span
@@ -85,9 +99,7 @@ const Header = () => {
                       </motion.span>
                       
                       <motion.span 
-                        className={`absolute -bottom-1 left-0 h-0.5 rounded-full ${
-                          link.text === 'Services' || link.text === 'Pricing' ? 'bg-[#ff7009]' : 'bg-bounty-orange'
-                        }`}
+                        className="absolute -bottom-1 left-0 h-0.5 rounded-full bg-[#ff7009] shadow-sm"
                         initial={{ width: 0 }}
                         animate={{ 
                           width: isActive(link.path) ? '100%' : hoveredItem === link.path ? '100%' : 0 
@@ -104,7 +116,7 @@ const Header = () => {
                 >
                   <Button 
                     onClick={() => setIsDemoModalOpen(true)} 
-                    className="bg-gradient-to-r from-bounty-orange to-yellow-500 hover:from-bounty-orange/90 hover:to-yellow-500/90 text-white border-none shadow-lg hover:shadow-xl transition-all duration-300 font-semibold px-6 py-2 rounded-full"
+                    className="bg-gradient-to-r from-bounty-orange to-yellow-500 hover:from-bounty-orange/90 hover:to-yellow-500/90 text-white border-none shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold px-6 py-2 rounded-full backdrop-blur-sm"
                   >
                     Book Demo
                   </Button>
@@ -113,7 +125,7 @@ const Header = () => {
 
               {/* Mobile Menu Button */}
               <motion.button 
-                className="md:hidden z-20 relative p-2 text-white"
+                className="md:hidden z-20 relative p-2 text-white drop-shadow-lg"
                 onClick={() => setIsMenuOpen(!isMenuOpen)} 
                 whileTap={{ scale: 0.9 }}
               >
@@ -132,7 +144,7 @@ const Header = () => {
         <AnimatePresence>
           {isMobile && isMenuOpen && (
             <motion.div 
-              className="mt-2 mx-4 bg-[#03265c]/95 backdrop-blur-md rounded-2xl shadow-xl border border-white/20"
+              className="mt-2 mx-4 bg-gradient-to-r from-[#03265c]/95 to-[#03265c]/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/30"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
