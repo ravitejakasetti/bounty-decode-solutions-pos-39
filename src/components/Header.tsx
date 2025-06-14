@@ -40,8 +40,8 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className={`relative rounded-2xl transition-all duration-500 ${
             isScrolled 
-              ? 'bg-gradient-to-r from-white/95 via-[#03265c]/95 to-[#03265c]/95 backdrop-blur-md shadow-xl border border-white/30' 
-              : 'bg-gradient-to-r from-white/90 via-[#03265c]/90 to-[#03265c]/90 backdrop-blur-lg shadow-2xl border border-white/20'
+              ? 'bg-transparent backdrop-blur-md shadow-xl border border-white/10' 
+              : 'bg-gradient-to-r from-white/20 via-[#03265c]/90 to-[#03265c]/90 backdrop-blur-lg shadow-2xl border border-white/20'
           }`}>
             <div className="flex justify-between items-center px-6 py-4">
               <Link to="/">
@@ -49,7 +49,6 @@ const Header = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="bg-white/95 rounded-lg px-3 py-2"
                 >
                   <img 
                     src="/lovable-uploads/39a22824-d992-4235-a6e4-f4e01d73707a.png" 
