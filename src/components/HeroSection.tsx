@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import DemoModal from './DemoModal';
@@ -76,8 +75,22 @@ const HeroSection = () => {
           ))}
         </div>
 
+        {/* New BOUNTI Logo positioned at top center */}
+        <motion.div 
+          className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <img 
+            src="/lovable-uploads/ef161091-2f44-4374-96cb-68d564b5039f.png" 
+            alt="BOUNTI Logo" 
+            className="h-16 md:h-20 lg:h-24 w-auto"
+          />
+        </motion.div>
+
         <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mt-16">
             <motion.div 
               className="space-y-8"
               variants={containerVariants}
