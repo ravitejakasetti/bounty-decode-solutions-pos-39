@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
@@ -41,7 +40,7 @@ const Header = () => {
           <div className="flex justify-between items-center">
             <Link to="/">
               <motion.img 
-                src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png" 
+                src="/lovable-uploads/01aeee9b-9e2f-4125-bfc6-46fa06af632d.png" 
                 alt="BOUNTI Software" 
                 whileHover={{
                   scale: 1.05
@@ -52,7 +51,6 @@ const Header = () => {
                   damping: 10
                 }} 
                 className="h-16 md:h-20 lg:h-24 w-auto object-contain"
-                style={{ width: '1080px', height: '383px' }}
               />
             </Link>
 
@@ -106,4 +104,3 @@ const Header = () => {
 };
 
 export default Header;
-
