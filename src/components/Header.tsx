@@ -41,7 +41,7 @@ const Header = () => {
           <div className={`relative rounded-2xl transition-all duration-500 ${
             isScrolled 
               ? 'bg-transparent backdrop-blur-md shadow-xl border border-white/10' 
-              : 'bg-gradient-to-r from-white/20 via-[#03265c]/90 to-[#03265c]/90 backdrop-blur-lg shadow-2xl border border-white/20'
+              : 'bg-gradient-to-r from-white/80 via-[#03265c]/60 to-[#03265c]/90 backdrop-blur-lg shadow-2xl border border-white/20'
           }`}>
             <div className="flex justify-between items-center px-6 py-4">
               <Link to="/">
@@ -53,7 +53,7 @@ const Header = () => {
                   <img 
                     src="/lovable-uploads/39a22824-d992-4235-a6e4-f4e01d73707a.png" 
                     alt="BOUNTI Software" 
-                    className="h-12 md:h-14 w-auto object-contain"
+                    className="h-12 md:h-14 w-auto object-contain drop-shadow-lg"
                   />
                 </motion.div>
               </Link>
@@ -71,8 +71,10 @@ const Header = () => {
                   >
                     <Link 
                       to={link.path} 
-                      className={`relative font-semibold text-base transition-all duration-300 text-white hover:text-bounty-orange ${
-                        isActive(link.path) ? 'text-bounty-orange' : ''
+                      className={`relative font-semibold text-base transition-all duration-300 ${
+                        link.text === 'Services' || link.text === 'Pricing' 
+                          ? `text-[#03265c] ${hoveredItem === link.path ? 'text-[#ff7009]' : ''} ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
+                          : `text-white hover:text-bounty-orange ${isActive(link.path) ? 'text-bounty-orange' : ''}`
                       }`}
                     >
                       <motion.span
@@ -83,7 +85,9 @@ const Header = () => {
                       </motion.span>
                       
                       <motion.span 
-                        className="absolute -bottom-1 left-0 h-0.5 bg-bounty-orange rounded-full"
+                        className={`absolute -bottom-1 left-0 h-0.5 rounded-full ${
+                          link.text === 'Services' || link.text === 'Pricing' ? 'bg-[#ff7009]' : 'bg-bounty-orange'
+                        }`}
                         initial={{ width: 0 }}
                         animate={{ 
                           width: isActive(link.path) ? '100%' : hoveredItem === link.path ? '100%' : 0 
