@@ -40,8 +40,8 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className={`relative rounded-2xl transition-all duration-500 ${
             isScrolled 
-              ? 'bg-white/95 backdrop-blur-md shadow-lg border border-white/20' 
-              : 'bg-gradient-to-r from-white/90 to-[#03265c]/90 backdrop-blur-sm'
+              ? 'bg-gradient-to-r from-white/95 via-white/95 to-[#03265c]/95 backdrop-blur-md shadow-xl border border-white/30' 
+              : 'bg-gradient-to-r from-white/90 via-white/80 to-[#03265c]/90 backdrop-blur-lg shadow-2xl border border-white/20'
           }`}>
             <div className="flex justify-between items-center px-6 py-4">
               <Link to="/">
@@ -71,11 +71,9 @@ const Header = () => {
                   >
                     <Link 
                       to={link.path} 
-                      className={`relative font-semibold text-base transition-all duration-300 ${
-                        isScrolled 
-                          ? 'text-[#03265c] hover:text-bounty-orange' 
-                          : 'text-white hover:text-bounty-orange'
-                      } ${isActive(link.path) ? 'text-bounty-orange' : ''}`}
+                      className={`relative font-semibold text-base transition-all duration-300 text-white hover:text-bounty-orange ${
+                        isActive(link.path) ? 'text-bounty-orange' : ''
+                      }`}
                     >
                       <motion.span
                         whileHover={{ y: -1 }}
@@ -102,7 +100,7 @@ const Header = () => {
                 >
                   <Button 
                     onClick={() => setIsDemoModalOpen(true)} 
-                    className="bg-gradient-to-r from-bounty-orange to-yellow-500 hover:from-bounty-orange/90 hover:to-yellow-500/90 text-white border-none shadow-md hover:shadow-lg transition-all duration-300 font-semibold px-6 py-2 rounded-full"
+                    className="bg-gradient-to-r from-bounty-orange to-yellow-500 hover:from-bounty-orange/90 hover:to-yellow-500/90 text-white border-none shadow-lg hover:shadow-xl transition-all duration-300 font-semibold px-6 py-2 rounded-full"
                   >
                     Book Demo
                   </Button>
@@ -111,9 +109,7 @@ const Header = () => {
 
               {/* Mobile Menu Button */}
               <motion.button 
-                className={`md:hidden z-20 relative p-2 ${
-                  isScrolled ? 'text-[#03265c]' : 'text-white'
-                }`}
+                className="md:hidden z-20 relative p-2 text-white"
                 onClick={() => setIsMenuOpen(!isMenuOpen)} 
                 whileTap={{ scale: 0.9 }}
               >
@@ -132,7 +128,7 @@ const Header = () => {
         <AnimatePresence>
           {isMobile && isMenuOpen && (
             <motion.div 
-              className="mt-2 mx-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-white/20"
+              className="mt-2 mx-4 bg-gradient-to-r from-white/95 to-[#03265c]/95 backdrop-blur-md rounded-2xl shadow-xl border border-white/20"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -148,8 +144,8 @@ const Header = () => {
                   >
                     <Link 
                       to={link.path} 
-                      className={`block text-[#03265c] hover:text-bounty-orange transition-colors duration-300 font-semibold text-lg py-2 px-4 rounded-lg hover:bg-gray-50 ${
-                        isActive(link.path) ? 'text-bounty-orange bg-gray-50' : ''
+                      className={`block text-white hover:text-bounty-orange transition-colors duration-300 font-semibold text-lg py-2 px-4 rounded-lg hover:bg-white/10 ${
+                        isActive(link.path) ? 'text-bounty-orange bg-white/10' : ''
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
