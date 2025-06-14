@@ -4,12 +4,14 @@ import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import DemoModal from './DemoModal';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const location = useLocation();
   const isMobile = useIsMobile();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -17,6 +19,7 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const navLinks = [{
     text: 'Home',
     path: '/'
@@ -27,19 +30,28 @@ const Header = () => {
     text: 'Pricing',
     path: '/pricing'
   }];
+
   const isActive = (path: string) => location.pathname === path;
+
   return <>
       <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-2 shadow-md bg-bounty-navy' : 'py-4 bg-bounty-navy/90'}`}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <Link to="/">
-              <motion.img src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png" alt="BOUNTI Software" whileHover={{
-              scale: 1.05
-            }} transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 10
-            }} className="h-16 w-auto md:h-20 lg:h-24 object-cover" />
+              <motion.img 
+                src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png" 
+                alt="BOUNTI Software" 
+                whileHover={{
+                  scale: 1.05
+                }} 
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10
+                }} 
+                className="h-16 md:h-20 lg:h-24 object-cover"
+                style={{ width: '1080px', height: '383px', maxWidth: '100%', maxHeight: '100%' }}
+              />
             </Link>
 
             {/* Desktop Menu */}
@@ -90,4 +102,5 @@ const Header = () => {
       <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
     </>;
 };
+
 export default Header;
