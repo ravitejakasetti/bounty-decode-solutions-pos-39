@@ -41,7 +41,7 @@ const Header = () => {
           <div className={`relative rounded-2xl transition-all duration-500 ${
             isScrolled 
               ? 'bg-transparent backdrop-blur-md shadow-xl border border-white/10' 
-              : 'bg-gradient-to-r from-white/90 via-white/70 to-white/40 backdrop-blur-lg shadow-2xl border border-white/20'
+              : 'bg-gradient-to-r from-white/90 via-white/60 to-[#03265c]/80 backdrop-blur-lg shadow-2xl border border-white/20'
           }`}>
             <div className="flex justify-between items-center px-6 py-4">
               <Link to="/">
