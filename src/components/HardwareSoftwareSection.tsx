@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
@@ -52,14 +51,14 @@ const HardwareSoftwareSection = () => {
       title: "QR Scanners and Printers",
       description: "High-quality scanning and printing solutions for efficient operations",
       features: ["Fast scanning", "Thermal printing", "Durable hardware"],
-      image: "/lovable-uploads/93020aa6-febd-4679-a076-587bdf675613.png"
+      image: "/lovable-uploads/68c32f1d-2e59-4568-b562-ffba5f2c0cfa.png"
     },
     {
       icon: <Smartphone className="w-6 h-6 md:w-8 md:h-8 text-bounty-orange" />,
       title: "Your Phone is Your POS",
       description: "Transform any smartphone or tablet into a powerful POS terminal",
       features: ["Mobile flexibility", "Cloud synchronization", "Remote access"],
-      image: "/lovable-uploads/02546268-d488-48fa-be25-62472e82137f.png"
+      image: "/lovable-uploads/3f8b887b-6593-4840-b739-f869eb518038.png"
     }
   ];
 
