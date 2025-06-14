@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -94,7 +93,7 @@ const Header = () => {
                       to={link.path} 
                       className={`relative font-semibold text-base transition-all duration-300 drop-shadow-sm ${
                         isScrolled 
-                          ? `${link.path === '/' ? 'text-white' : 'text-[#03265c]'} hover:text-[#ff7009] ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
+                          ? `text-white hover:text-[#ff7009] ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
                           : `text-white hover:text-[#ff7009] ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
                       }`}
                     >
