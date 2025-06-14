@@ -35,7 +35,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return <>
-      <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 shadow-md bg-slate-700' : 'py-6 bg-slate-600/90'}`}>
+      <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 shadow-md' : 'py-6'}`} style={{ backgroundColor: '#fefdfd' }}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <Link to="/">
@@ -56,7 +56,7 @@ const Header = () => {
 
             {/* Desktop Menu */}
             <nav className="hidden md:flex items-center space-x-8">
-              {navLinks.map(link => <Link key={link.path} to={link.path} className={`text-white hover:text-yellow-300 transition-colors font-medium ${isActive(link.path) ? 'text-yellow-300' : ''}`}>
+              {navLinks.map(link => <Link key={link.path} to={link.path} className={`hover:text-bounty-orange transition-colors font-medium ${isActive(link.path) ? 'text-bounty-orange' : ''}`} style={{ color: '#03265c' }}>
                   {link.text}
                 </Link>)}
               <Button onClick={() => setIsDemoModalOpen(true)} className="bg-bounty-orange hover:bg-bounty-orange/90 text-white border-none">
@@ -65,7 +65,7 @@ const Header = () => {
             </nav>
 
             {/* Mobile Menu Button */}
-            <motion.button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)} whileTap={{
+            <motion.button className="md:hidden" style={{ color: '#03265c' }} onClick={() => setIsMenuOpen(!isMenuOpen)} whileTap={{
             scale: 0.9
           }}>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -76,7 +76,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMobile && <motion.div className={`bg-slate-700 ${isMenuOpen ? 'block' : 'hidden'}`} initial={{
+        {isMobile && <motion.div className={`${isMenuOpen ? 'block' : 'hidden'}`} style={{ backgroundColor: '#fefdfd' }} initial={{
         height: 0,
         opacity: 0
       }} animate={{
@@ -86,7 +86,7 @@ const Header = () => {
         duration: 0.3
       }}>
             <div className="container mx-auto px-4 py-4 space-y-4">
-              {navLinks.map(link => <Link key={link.path} to={link.path} className={`block text-white hover:text-yellow-300 transition-colors ${isActive(link.path) ? 'text-yellow-300' : ''}`} onClick={() => setIsMenuOpen(false)}>
+              {navLinks.map(link => <Link key={link.path} to={link.path} className={`block hover:text-bounty-orange transition-colors ${isActive(link.path) ? 'text-bounty-orange' : ''}`} style={{ color: '#03265c' }} onClick={() => setIsMenuOpen(false)}>
                   {link.text}
                 </Link>)}
               <Button onClick={() => {
