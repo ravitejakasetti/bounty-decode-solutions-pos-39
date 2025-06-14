@@ -41,7 +41,7 @@ const Header = () => {
           <div className={`relative rounded-2xl transition-all duration-500 ${
             isScrolled 
               ? 'bg-transparent backdrop-blur-md shadow-xl border border-white/10' 
-              : 'bg-gradient-to-r from-white/80 via-[#03265c]/60 to-[#03265c]/90 backdrop-blur-lg shadow-2xl border border-white/20'
+              : 'bg-gradient-to-r from-white/90 via-white/70 to-white/40 backdrop-blur-lg shadow-2xl border border-white/20'
           }`}>
             <div className="flex justify-between items-center px-6 py-4">
               <Link to="/">
@@ -51,7 +51,7 @@ const Header = () => {
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   <img 
-                    src="/lovable-uploads/48ce2c42-4b2f-44b4-9afb-b2368f4b009a.png" 
+                    src="/lovable-uploads/309dfa71-bb72-4c85-9e37-44630e6897e0.png" 
                     alt="BOUNTI Software" 
                     className="h-12 md:h-14 w-auto object-contain drop-shadow-lg"
                   />
@@ -73,7 +73,7 @@ const Header = () => {
                       to={link.path} 
                       className={`relative font-semibold text-base transition-all duration-300 ${
                         link.text === 'Services' || link.text === 'Pricing' 
-                          ? `text-[#03265c] ${hoveredItem === link.path ? 'text-[#ff7009]' : ''} ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
+                          ? `${isScrolled ? 'text-[#03265c]' : 'text-white'} ${hoveredItem === link.path ? 'text-[#ff7009]' : ''} ${isActive(link.path) ? 'text-[#ff7009]' : ''}`
                           : `text-white hover:text-bounty-orange ${isActive(link.path) ? 'text-bounty-orange' : ''}`
                       }`}
                     >
