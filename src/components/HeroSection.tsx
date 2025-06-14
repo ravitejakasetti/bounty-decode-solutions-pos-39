@@ -75,7 +75,7 @@ const HeroSection = () => {
           ))}
         </div>
 
-        {/* BOUNTI Logo positioned at top center with 1080x383 aspect ratio */}
+        {/* BOUNTI Logo positioned at top center */}
         <motion.div 
           className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20"
           initial={{ opacity: 0, y: -20 }}
@@ -85,8 +85,7 @@ const HeroSection = () => {
           <img 
             src="/lovable-uploads/ef161091-2f44-4374-96cb-68d564b5039f.png" 
             alt="BOUNTI Logo" 
-            className="w-64 h-[90px] md:w-80 md:h-[113px] lg:w-96 lg:h-[136px] object-contain"
-            style={{ aspectRatio: '1080/383' }}
+            className="h-16 md:h-20 lg:h-24 w-auto"
           />
         </motion.div>
 
