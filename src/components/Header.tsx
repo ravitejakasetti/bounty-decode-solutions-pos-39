@@ -42,7 +42,7 @@ const Header = () => {
               <motion.img
                 src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png"
                 alt="BOUNTI Software"
-                className="h-40 w-auto md:h-48 lg:h-56"
+                className="h-16 w-auto md:h-20 lg:h-24"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               />

@@ -12,7 +12,7 @@ const PricingSection = () => {
   const pricingPlans = [
     {
       name: "Starter",
-      price: "₹2,999",
+      price: "₹4,999",
       period: "/month",
       description: "Perfect for small cafes and food trucks",
       features: [
@@ -27,7 +27,7 @@ const PricingSection = () => {
     },
     {
       name: "Growth",
-      price: "₹4,999",
+      price: "₹6,999",
       period: "/month",
       description: "Ideal for growing restaurants",
       features: [
@@ -43,7 +43,7 @@ const PricingSection = () => {
     },
     {
       name: "Professional",
-      price: "₹6,999",
+      price: "₹11,999",
       period: "/month",
       description: "For established restaurant chains",
       features: [
@@ -59,7 +59,7 @@ const PricingSection = () => {
     },
     {
       name: "Enterprise",
-      price: "₹11,999",
+      price: "₹24,999",
       period: "/month",
       description: "For large restaurant operations",
       features: [
@@ -70,22 +70,6 @@ const PricingSection = () => {
         "Custom training",
         "API access",
         "Up to 15 locations"
-      ],
-      popular: false
-    },
-    {
-      name: "Enterprise Plus",
-      price: "₹24,999",
-      period: "/month",
-      description: "For nationwide restaurant chains",
-      features: [
-        "White-label solution",
-        "Unlimited locations",
-        "Custom development",
-        "Dedicated support team",
-        "SLA guarantee",
-        "Advanced security",
-        "Custom contracts"
       ],
       popular: false
     }
@@ -110,7 +94,7 @@ const PricingSection = () => {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 xl:grid-cols-5 gap-8">
+          <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8">
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={index}

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Coffee, Cake, Car, Coffee as DriveIn, Utensils, Wine, Cloud, Building, ChefHat, Users, IceCream, Pizza, Zap } from 'lucide-react';
@@ -75,7 +74,8 @@ const ServicesSection = () => {
         "Batch tracking and traceability",
         "Waste management optimization"
       ],
-      workflow: "Production planning ➝ Bulk preparation monitoring ➝ Quality assurance ➝ Distribution coordination ➝ Delivery tracking to outlets."
+      workflow: "Production planning ➝ Bulk preparation monitoring ➝ Quality assurance ➝ Distribution coordination ➝ Delivery tracking to outlets.",
+      image: "/lovable-uploads/02f468b9-d786-4f4b-a094-b42940d4f498.png"
     },
     {
       icon: <Users className="w-12 h-12 text-bounty-orange" />,
@@ -88,7 +88,8 @@ const ServicesSection = () => {
         "Large quantity calculations",
         "Delivery scheduling and tracking"
       ],
-      workflow: "Event consultation ➝ Custom menu planning ➝ Advance order confirmation ➝ Large-scale preparation ➝ Event delivery and setup."
+      workflow: "Event consultation ➝ Custom menu planning ➝ Advance order confirmation ➝ Large-scale preparation ➝ Event delivery and setup.",
+      image: "/lovable-uploads/6137f15f-ceb9-4bc3-baeb-bc6ca95d10cd.png"
     },
     {
       icon: <Cake className="w-12 h-12 text-bounty-orange" />,
@@ -101,7 +102,8 @@ const ServicesSection = () => {
         "Expiry date monitoring",
         "Special occasion calendar"
       ],
-      workflow: "Daily production planning ➝ Batch preparation ➝ Fresh product display ➝ Custom order management ➝ Quality-assured sales."
+      workflow: "Daily production planning ➝ Batch preparation ➝ Fresh product display ➝ Custom order management ➝ Quality-assured sales.",
+      image: "/lovable-uploads/bf87d363-f0a6-4f1e-8a96-6411517cf34c.png"
     },
     {
       icon: <Coffee className="w-12 h-12 text-bounty-orange" />,
@@ -114,7 +116,8 @@ const ServicesSection = () => {
         "Combined inventory management",
         "Quick service optimization"
       ],
-      workflow: "Customer orders coffee and pizza ➝ Parallel preparation ➝ Timing coordination ➝ Combined service delivery ➝ Integrated billing."
+      workflow: "Customer orders coffee and pizza ➝ Parallel preparation ➝ Timing coordination ➝ Combined service delivery ➝ Integrated billing.",
+      image: "/lovable-uploads/fc55ee63-2343-45c7-8943-18e54d24727d.png"
     },
     {
       icon: <IceCream className="w-12 h-12 text-bounty-orange" />,
@@ -127,7 +130,8 @@ const ServicesSection = () => {
         "Topping and mix-in options",
         "Customer preference tracking"
       ],
-      workflow: "Flavor selection ➝ Customization options ➝ Portion control ➝ Temperature maintenance ➝ Quick service delivery."
+      workflow: "Flavor selection ➝ Customization options ➝ Portion control ➝ Temperature maintenance ➝ Quick service delivery.",
+      image: "/lovable-uploads/397daf7d-ed66-49be-a368-846ef97e67bd.png"
     },
     {
       icon: <Zap className="w-12 h-12 text-bounty-orange" />,
@@ -140,7 +144,8 @@ const ServicesSection = () => {
         "Mobile ordering integration",
         "Drive-thru optimization"
       ],
-      workflow: "Quick order input ➝ Instant kitchen notification ➝ Rapid preparation ➝ Fast service delivery ➝ Efficient payment processing."
+      workflow: "Quick order input ➝ Instant kitchen notification ➝ Rapid preparation ➝ Fast service delivery ➝ Efficient payment processing.",
+      image: "/lovable-uploads/be258696-4f71-4055-8849-396da0815d49.png"
     }
   ];
 

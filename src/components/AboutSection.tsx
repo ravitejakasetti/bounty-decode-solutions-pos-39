@@ -35,9 +35,9 @@ const AboutSection = () => {
       description: "Developing enterprise solutions"
     },
     {
-      number: "500+",
-      label: "Projects Delivered",
-      description: "Across multiple industries"
+      number: "50+",
+      label: "Restaurant Partners",
+      description: "Successfully implemented BOUNTI"
     },
     {
       number: "50+",
