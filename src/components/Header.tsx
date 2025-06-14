@@ -40,7 +40,7 @@ const Header = () => {
           <div className="flex justify-between items-center">
             <Link to="/">
               <motion.img 
-                src="/lovable-uploads/01aeee9b-9e2f-4125-bfc6-46fa06af632d.png" 
+                src="/lovable-uploads/39a22824-d992-4235-a6e4-f4e01d73707a.png" 
                 alt="BOUNTI Software" 
                 whileHover={{
                   scale: 1.05
