@@ -35,7 +35,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return <>
-      <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 shadow-md bg-bounty-navy' : 'py-6 bg-bounty-navy/90'}`}>
+      <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 shadow-md bg-slate-700' : 'py-6 bg-slate-600/90'}`}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <Link to="/">
@@ -76,7 +76,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMobile && <motion.div className={`bg-bounty-navy ${isMenuOpen ? 'block' : 'hidden'}`} initial={{
+        {isMobile && <motion.div className={`bg-slate-700 ${isMenuOpen ? 'block' : 'hidden'}`} initial={{
         height: 0,
         opacity: 0
       }} animate={{
