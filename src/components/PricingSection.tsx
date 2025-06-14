@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -58,7 +57,7 @@ const PricingSection = () => {
       popular: false
     },
     {
-      name: "Enterprise",
+      name: "Customise",
       price: "₹24,999",
       period: "/month",
       description: "For large restaurant operations",

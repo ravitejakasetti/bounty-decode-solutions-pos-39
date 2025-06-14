@@ -18,7 +18,7 @@ const Footer = () => {
                 <img 
                   src="/lovable-uploads/2cb91fc4-f3da-490c-aafb-fd931d028671.png" 
                   alt="Decode Solutions" 
-                  className="h-10 w-auto"
+                  className="h-16 w-auto"
                 />
               </div>
             </div>
@@ -40,10 +40,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>Email: info@bounti.software</li>
+              <li>Email: Info@bountiapps.com</li>
               <li>Phone: +91 9704697947</li>
               <li>Phone: +91 6309897947</li>
-              <li>Support: support@bounti.software</li>
+              <li>Support: Support@bountiapps.com</li>
             </ul>
           </div>
         </div>
