@@ -51,7 +51,7 @@ const Header = () => {
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   <img 
-                    src="/lovable-uploads/39a22824-d992-4235-a6e4-f4e01d73707a.png" 
+                    src="/lovable-uploads/48ce2c42-4b2f-44b4-9afb-b2368f4b009a.png" 
                     alt="BOUNTI Software" 
                     className="h-12 md:h-14 w-auto object-contain drop-shadow-lg"
                   />
