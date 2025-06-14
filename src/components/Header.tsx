@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
@@ -50,7 +51,8 @@ const Header = () => {
                   stiffness: 400,
                   damping: 10
                 }} 
-                className="h-10 md:h-12 lg:h-14 w-auto object-contain"
+                className="max-h-10 md:max-h-12 lg:max-h-14 w-auto object-contain"
+                style={{ width: '1080px', height: '383px' }}
               />
             </Link>
 
@@ -104,3 +106,4 @@ const Header = () => {
 };
 
 export default Header;
+
