@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Blogs = () => {
   const blogPosts = [
@@ -201,13 +202,15 @@ const Blogs = () => {
                         <Calendar className="w-4 h-4" />
                         <span>{new Date(post.date).toLocaleDateString()}</span>
                       </div>
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        className="text-bounty-orange hover:text-bounty-orange/80 hover:bg-bounty-orange/10 p-0"
-                      >
-                        Read More <ArrowRight className="w-4 h-4 ml-1" />
-                      </Button>
+                      <Link to={`/blog/${post.id}`}>
+                        <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          className="text-bounty-orange hover:text-bounty-orange/80 hover:bg-bounty-orange/10 p-0"
+                        >
+                          Read More <ArrowRight className="w-4 h-4 ml-1" />
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
