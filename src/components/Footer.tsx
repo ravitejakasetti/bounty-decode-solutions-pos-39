@@ -9,16 +9,16 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-4 mb-4">
               <img 
-                src="/lovable-uploads/55367eb8-b6a6-4733-b171-addeb903f8aa.png" 
+                src="/lovable-uploads/4070a0c5-b541-4558-a125-7b8bc650fc06.png" 
                 alt="Bounti Software" 
-                className="h-16 w-auto"
+                className="h-12 w-auto"
               />
               <div className="flex items-center space-x-2 text-sm">
                 <span>Powered by</span>
                 <img 
-                  src="/lovable-uploads/2cb91fc4-f3da-490c-aafb-fd931d028671.png" 
+                  src="/lovable-uploads/073bd684-06ff-415e-8d0e-89fec6e40584.png" 
                   alt="Decode Solutions" 
-                  className="h-16 w-auto"
+                  className="h-12 w-auto"
                 />
               </div>
             </div>

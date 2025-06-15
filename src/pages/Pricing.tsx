@@ -115,7 +115,7 @@ const Pricing = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             {[
-              { number: "500+", label: "Restaurants Served" },
+              { number: "Approached 500+", label: "Restaurants" },
               { number: "99.9%", label: "Uptime Guarantee" },
               { number: "24/7", label: "Support Available" }
             ].map((stat, index) => (
