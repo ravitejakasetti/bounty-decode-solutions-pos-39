@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,80 +7,6 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-
-  const [validationErrors, setValidationErrors] = useState({
-    email: '',
-    phone: ''
-  });
-
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const validatePhone = (phone: string) => {
-    const cleanPhone = phone.replace(/\D/g, '');
-    return cleanPhone.length === 10;
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    
-    // Phone number validation and restriction
-    if (name === 'phone') {
-      const cleanValue = value.replace(/\D/g, '');
-      if (cleanValue.length <= 10) {
-        setFormData(prev => ({ ...prev, [name]: cleanValue }));
-        
-        // Real-time validation for phone number
-        if (cleanValue.length > 0) {
-          if (validatePhone(cleanValue)) {
-            setValidationErrors(prev => ({ ...prev, phone: 'Valid phone number' }));
-          } else {
-            setValidationErrors(prev => ({ ...prev, phone: 'Invalid phone number (must be exactly 10 digits)' }));
-          }
-        } else {
-          setValidationErrors(prev => ({ ...prev, phone: '' }));
-        }
-      }
-      return;
-    }
-
-    // Email validation
-    if (name === 'email') {
-      setFormData(prev => ({ ...prev, [name]: value }));
-      
-      // Real-time validation for email
-      if (value.length > 0) {
-        if (validateEmail(value)) {
-          setValidationErrors(prev => ({ ...prev, email: 'Valid email address' }));
-        } else {
-          setValidationErrors(prev => ({ ...prev, email: 'Invalid email address' }));
-        }
-      } else {
-        setValidationErrors(prev => ({ ...prev, email: '' }));
-      }
-      return;
-    }
-
-    // Regular input handling for other fields
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
-
   return (
     <div className="min-h-screen">
       <Header />
@@ -172,8 +98,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-bounty-navy">Phone</h3>
-                    <p className="text-gray-600">+91 9704697947</p>
-                    <p className="text-gray-600">+91 6309897947</p>
+                    <p className="text-gray-600">+91 98765 43210</p>
                   </div>
                 </motion.div>
 
@@ -186,7 +111,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-bounty-navy">Email</h3>
-                    <p className="text-gray-600">Info@bountiapps.com</p>
+                    <p className="text-gray-600">info@bountisoftware.com</p>
                   </div>
                 </motion.div>
 
@@ -225,8 +150,8 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="bg-white rounded-lg shadow-lg p-8"
             >
-              <h3 className="text-2xl font-bold text-bounty-navy mb-6">Book Your Free Demo</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <h3 className="text-2xl font-bold text-bounty-navy mb-6">Send us a Message</h3>
+              <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -234,9 +159,6 @@ const Contact = () => {
                     </label>
                     <input
                       type="text"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bounty-orange focus:border-transparent transition-all duration-300"
                       placeholder="Your first name"
                     />
@@ -247,9 +169,6 @@ const Contact = () => {
                     </label>
                     <input
                       type="text"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bounty-orange focus:border-transparent transition-all duration-300"
                       placeholder="Your last name"
                     />
@@ -262,45 +181,20 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bounty-orange focus:border-transparent transition-all duration-300"
                     placeholder="your.email@example.com"
                   />
-                  {validationErrors.email && (
-                    <p className={`text-sm mt-1 ${
-                      validationErrors.email === 'Valid email address' 
-                        ? 'text-green-600' 
-                        : 'text-red-600'
-                    }`}>
-                      {validationErrors.email}
-                    </p>
-                  )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone (10 digits)
+                    Phone
                   </label>
                   <input
                     type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bounty-orange focus:border-transparent transition-all duration-300"
-                    placeholder="9876543210"
-                    maxLength={10}
+                    placeholder="+91 98765 43210"
                   />
-                  {validationErrors.phone && (
-                    <p className={`text-sm mt-1 ${
-                      validationErrors.phone === 'Valid phone number' 
-                        ? 'text-green-600' 
-                        : 'text-red-600'
-                    }`}>
-                      {validationErrors.phone}
-                    </p>
-                  )}
                 </div>
 
                 <div>
@@ -309,9 +203,6 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bounty-orange focus:border-transparent transition-all duration-300"
                     placeholder="How can we help you?"
                   />
@@ -323,9 +214,6 @@ const Contact = () => {
                   </label>
                   <textarea
                     rows={5}
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bounty-orange focus:border-transparent transition-all duration-300"
                     placeholder="Tell us about your restaurant and how we can help..."
                   ></textarea>

@@ -1,8 +1,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 const AboutBountiSection = () => {
   return (
@@ -16,131 +14,92 @@ const AboutBountiSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-bounty-navy mb-6">
-            How BOUNTI Works
+            About BOUNTI: Engineering Your Restaurant's Success Story
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-            Discover our comprehensive restaurant management ecosystem designed to streamline operations and maximize profits
-          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {/* Step 1 */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-16">
           <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.5 }}
+            className="bg-gray-50 p-8 rounded-2xl"
           >
-            <div className="w-20 h-20 bg-gradient-to-r from-bounty-orange to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-white text-2xl font-bold">1</span>
-            </div>
-            <h3 className="text-2xl font-bold text-bounty-navy mb-4">Setup & Integration</h3>
-            <p className="text-gray-600">
-              Quick setup with seamless integration to your existing systems. Our team ensures smooth transition with minimal downtime.
+            <h3 className="text-2xl font-bold text-bounty-navy mb-6">
+              BOUNTI: Restaurant Billing Software that Drives Performance, Optimization, and Sales
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              At BOUNTI, we're transforming how restaurants operate with a modern, performance-driven POS (Point of Sale) system designed to empower businesses of all sizes. More than just a billing tool, BOUNTI is built to streamline operations, optimize workflows, and maximize sales — all from a single, intuitive platform.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              Whether you're managing a bustling café or a fine-dining restaurant, BOUNTI gives you the clarity and control you need to run smarter and grow faster. Our software is designed to adapt to your needs — reducing wait times, preventing billing errors, and delivering real-time sales insights that help you make informed decisions.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              With BOUNTI, it's not just about transactions — it's about transformation. We're here to help you unlock your restaurant's full potential and serve success every day.
             </p>
           </motion.div>
 
-          {/* Step 2 */}
           <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-gray-50 p-8 rounded-2xl"
           >
-            <div className="w-20 h-20 bg-gradient-to-r from-bounty-navy to-blue-700 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-white text-2xl font-bold">2</span>
-            </div>
-            <h3 className="text-2xl font-bold text-bounty-navy mb-4">Smart Operations</h3>
-            <p className="text-gray-600">
-              AI-powered billing, inventory management, and real-time analytics work together to optimize your restaurant operations.
+            <h3 className="text-2xl font-bold text-bounty-navy mb-6">
+              The Decode Solutions Foundation
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              BOUNTI is a proud offering from Decode Solutions, a company with a rich heritage of developing cutting-edge technological solutions for diverse industries and multinational corporations. This deep well of experience in software engineering, data analytics, and user-centric design is the bedrock upon which BOUNTI is built.
             </p>
-          </motion.div>
-
-          {/* Step 3 */}
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <div className="w-20 h-20 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-white text-2xl font-bold">3</span>
-            </div>
-            <h3 className="text-2xl font-bold text-bounty-navy mb-4">Growth & Success</h3>
-            <p className="text-gray-600">
-              Watch your business grow with data-driven insights, improved efficiency, and enhanced customer satisfaction.
+            <p className="text-gray-700 leading-relaxed">
+              While Decode Solutions explores a wide spectrum of technological advancements for various sectors, BOUNTI represents our specialized commitment to revolutionizing the restaurant industry.
             </p>
           </motion.div>
         </div>
 
-        {/* Average Results Section */}
         <motion.div
-          className="bg-gradient-to-r from-bounty-navy to-blue-900 rounded-2xl p-12 text-white relative overflow-hidden"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
         >
-          {/* Background Pattern */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full"></div>
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-bounty-orange/20 rounded-full"></div>
-          </div>
-
-          <div className="relative z-10">
+          <div className="bg-gradient-to-br from-bounty-orange to-orange-600 text-white p-12 rounded-2xl shadow-2xl">
             <motion.h3 
-              className="text-3xl md:text-4xl font-bold text-center mb-12"
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              className="text-3xl md:text-4xl font-bold mb-8"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
             >
-              Average Results with BOUNTI
+              BOUNTI: Cultivating Growth for Restaurants, One Smart Solution at a Time
             </motion.h3>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {[
-                { number: "35%", label: "Increase in Revenue", icon: "📈" },
-                { number: "50%", label: "Reduction in Wait Time", icon: "⏱️" },
-                { number: "25%", label: "Cost Savings", icon: "💰" }
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center"
-                  initial={{ y: 30, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="text-4xl mb-4">{stat.icon}</div>
-                  <div className="text-4xl md:text-5xl font-bold text-bounty-orange mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-lg text-gray-200">{stat.label}</div>
-                </motion.div>
-              ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+              <motion.div 
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="text-white text-lg font-bold mb-3">Innovation that Serves</div>
+                <p className="text-sm text-white/90">We constantly explore new ways to make restaurant management smarter and more effective.</p>
+              </motion.div>
+              <motion.div 
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="text-white text-lg font-bold mb-3">Customer-Centric Growth</div>
+                <p className="text-sm text-white/90">Your success is our benchmark. We build tools that deliver tangible results for your business.</p>
+              </motion.div>
+              <motion.div 
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl md:col-span-2 lg:col-span-1"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="text-white text-lg font-bold mb-3">Profitable Partnerships</div>
+                <p className="text-sm text-white/90">We aim to be more than a software provider; we're your strategic ally in achieving greater profitability.</p>
+              </motion.div>
             </div>
-
-            <motion.div 
-              className="text-center"
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-            >
-              <Link to="/contact">
-                <Button 
-                  size="lg" 
-                  className="bg-bounty-orange text-white hover:bg-bounty-orange/90 text-xl px-12 py-6 font-bold transition-all duration-300 hover:scale-105"
-                >
-                  Explore Full Solutions
-                </Button>
-              </Link>
-            </motion.div>
           </div>
         </motion.div>
       </div>

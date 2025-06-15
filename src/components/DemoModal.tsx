@@ -17,23 +17,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
     phone: '',
     email: ''
   });
-
-  const [validationErrors, setValidationErrors] = useState({
-    email: '',
-    phone: ''
-  });
-
   const { toast } = useToast();
-
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const validatePhone = (phone: string) => {
-    const cleanPhone = phone.replace(/\D/g, '');
-    return cleanPhone.length === 10;
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,52 +32,15 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
     
     // Reset form and close modal
     setFormData({ name: '', phone: '', email: '' });
-    setValidationErrors({ email: '', phone: '' });
     onClose();
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    
-    // Phone number validation and restriction
-    if (name === 'phone') {
-      const cleanValue = value.replace(/\D/g, '');
-      if (cleanValue.length <= 10) {
-        setFormData(prev => ({ ...prev, [name]: cleanValue }));
-        
-        // Real-time validation for phone number
-        if (cleanValue.length > 0) {
-          if (validatePhone(cleanValue)) {
-            setValidationErrors(prev => ({ ...prev, phone: 'Valid phone number' }));
-          } else {
-            setValidationErrors(prev => ({ ...prev, phone: 'Invalid phone number (must be exactly 10 digits)' }));
-          }
-        } else {
-          setValidationErrors(prev => ({ ...prev, phone: '' }));
-        }
-      }
-      return;
-    }
-
-    // Email validation
-    if (name === 'email') {
-      setFormData(prev => ({ ...prev, [name]: value }));
-      
-      // Real-time validation for email
-      if (value.length > 0) {
-        if (validateEmail(value)) {
-          setValidationErrors(prev => ({ ...prev, email: 'Valid email address' }));
-        } else {
-          setValidationErrors(prev => ({ ...prev, email: 'Invalid email address' }));
-        }
-      } else {
-        setValidationErrors(prev => ({ ...prev, email: '' }));
-      }
-      return;
-    }
-
-    // Regular input handling for other fields
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   return (
@@ -121,7 +68,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
           </div>
           
           <div>
-            <Label htmlFor="phone">Phone Number (10 digits) *</Label>
+            <Label htmlFor="phone">Phone Number *</Label>
             <Input
               id="phone"
               name="phone"
@@ -129,19 +76,9 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
               value={formData.phone}
               onChange={handleInputChange}
               required
-              placeholder="9876543210"
+              placeholder="Enter your phone number"
               className="mt-1"
-              maxLength={10}
             />
-            {validationErrors.phone && (
-              <p className={`text-sm mt-1 ${
-                validationErrors.phone === 'Valid phone number' 
-                  ? 'text-green-600' 
-                  : 'text-red-600'
-              }`}>
-                {validationErrors.phone}
-              </p>
-            )}
           </div>
           
           <div>
@@ -153,18 +90,9 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
               value={formData.email}
               onChange={handleInputChange}
               required
-              placeholder="your.email@example.com"
+              placeholder="Enter your email address"
               className="mt-1"
             />
-            {validationErrors.email && (
-              <p className={`text-sm mt-1 ${
-                validationErrors.email === 'Valid email address' 
-                  ? 'text-green-600' 
-                  : 'text-red-600'
-              }`}>
-                {validationErrors.email}
-              </p>
-            )}
           </div>
           
           <div className="flex gap-3 pt-4">

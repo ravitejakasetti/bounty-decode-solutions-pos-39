@@ -27,8 +27,7 @@ const PricingSection = () => {
         "Single location"
       ],
       popular: false,
-      color: "from-blue-500 to-blue-600",
-      isCustom: false
+      color: "from-blue-500 to-blue-600"
     },
     {
       name: "Growth",
@@ -45,8 +44,7 @@ const PricingSection = () => {
         "Up to 2 locations"
       ],
       popular: true,
-      color: "from-bounty-orange to-orange-600",
-      isCustom: false
+      color: "from-bounty-orange to-orange-600"
     },
     {
       name: "Professional",
@@ -63,14 +61,13 @@ const PricingSection = () => {
         "Up to 5 locations"
       ],
       popular: false,
-      color: "from-purple-500 to-purple-600",
-      isCustom: false
+      color: "from-purple-500 to-purple-600"
     },
     {
       name: "Customise",
-      price: "",
-      period: "",
-      description: "For large restaurant operations with custom needs",
+      price: "₹24,999",
+      period: "/month",
+      description: "For large restaurant operations",
       features: [
         "Enterprise-grade features",
         "Custom integrations",
@@ -78,11 +75,10 @@ const PricingSection = () => {
         "Dedicated account manager",
         "Custom training",
         "API access",
-        "Unlimited locations"
+        "Up to 15 locations"
       ],
       popular: false,
-      color: "from-emerald-500 to-emerald-600",
-      isCustom: true
+      color: "from-emerald-500 to-emerald-600"
     }
   ];
 
@@ -203,39 +199,26 @@ const PricingSection = () => {
                       <CardTitle className="text-xl font-bold text-bounty-navy mb-2">
                         {plan.name}
                       </CardTitle>
-                      
-                      {plan.isCustom ? (
-                        <div className="mb-4">
-                          <Button 
-                            onClick={() => setIsDemoModalOpen(true)}
-                            className="bg-bounty-orange hover:bg-bounty-orange/90 text-white px-6 py-2 rounded-lg font-semibold"
-                          >
-                            Book a Demo
-                          </Button>
-                        </div>
-                      ) : (
-                        <motion.div 
-                          className="mb-4"
-                          animate={hoveredPlan === index ? { scale: 1.1 } : { scale: 1 }}
-                          transition={{ duration: 0.3 }}
+                      <motion.div 
+                        className="mb-4"
+                        animate={hoveredPlan === index ? { scale: 1.1 } : { scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <motion.span 
+                          className="text-3xl font-bold text-bounty-navy"
+                          animate={hoveredPlan === index ? {
+                            textShadow: [
+                              '0 0 5px rgba(3, 38, 92, 0.3)',
+                              '0 0 10px rgba(3, 38, 92, 0.5)',
+                              '0 0 5px rgba(3, 38, 92, 0.3)'
+                            ]
+                          } : {}}
+                          transition={{ duration: 1, repeat: Infinity }}
                         >
-                          <motion.span 
-                            className="text-3xl font-bold text-bounty-navy"
-                            animate={hoveredPlan === index ? {
-                              textShadow: [
-                                '0 0 5px rgba(3, 38, 92, 0.3)',
-                                '0 0 10px rgba(3, 38, 92, 0.5)',
-                                '0 0 5px rgba(3, 38, 92, 0.3)'
-                              ]
-                            } : {}}
-                            transition={{ duration: 1, repeat: Infinity }}
-                          >
-                            {plan.price}
-                          </motion.span>
-                          <span className="text-gray-600">{plan.period}</span>
-                        </motion.div>
-                      )}
-                      
+                          {plan.price}
+                        </motion.span>
+                        <span className="text-gray-600">{plan.period}</span>
+                      </motion.div>
                       <p className="text-gray-600 text-sm">{plan.description}</p>
                     </CardHeader>
                     
@@ -261,28 +244,26 @@ const PricingSection = () => {
                         ))}
                       </ul>
                       
-                      {!plan.isCustom && (
-                        <motion.div
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
+                      <motion.div
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <Button
+                          onClick={() => setIsDemoModalOpen(true)}
+                          className={`w-full mt-6 transition-all duration-300 ${
+                            plan.popular 
+                              ? 'bg-bounty-orange hover:bg-bounty-orange/90 shadow-lg hover:shadow-xl' 
+                              : 'bg-bounty-navy hover:bg-bounty-navy/90 hover:shadow-lg'
+                          }`}
+                          style={hoveredPlan === index ? {
+                            boxShadow: plan.popular 
+                              ? '0 10px 30px rgba(255, 112, 9, 0.4)' 
+                              : '0 10px 30px rgba(3, 38, 92, 0.4)'
+                          } : {}}
                         >
-                          <Button
-                            onClick={() => setIsDemoModalOpen(true)}
-                            className={`w-full mt-6 transition-all duration-300 ${
-                              plan.popular 
-                                ? 'bg-bounty-orange hover:bg-bounty-orange/90 shadow-lg hover:shadow-xl' 
-                                : 'bg-bounty-navy hover:bg-bounty-navy/90 hover:shadow-lg'
-                            }`}
-                            style={hoveredPlan === index ? {
-                              boxShadow: plan.popular 
-                                ? '0 10px 30px rgba(255, 112, 9, 0.4)' 
-                                : '0 10px 30px rgba(3, 38, 92, 0.4)'
-                            } : {}}
-                          >
-                            Get Started
-                          </Button>
-                        </motion.div>
-                      )}
+                          Get Started
+                        </Button>
+                      </motion.div>
                     </CardContent>
                   </Card>
                 </motion.div>
