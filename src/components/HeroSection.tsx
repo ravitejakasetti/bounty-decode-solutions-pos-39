@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import DemoModal from './DemoModal';
@@ -211,7 +210,7 @@ const HeroSection = () => {
             <img 
               src="/lovable-uploads/2cb91fc4-f3da-490c-aafb-fd931d028671.png" 
               alt="Decode Solutions" 
-              className="h-10 w-auto" 
+              className="h-16 w-auto" 
             />
           </motion.div>
 
