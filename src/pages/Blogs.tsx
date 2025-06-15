@@ -18,7 +18,7 @@ const Blogs = () => {
       date: "2024-06-10",
       readTime: "5 min read",
       category: "Technology",
-      image: "/lovable-uploads/68c32f1d-2e59-4568-b562-ffba5f2c0cfa.png"
+      image: "/lovable-uploads/a45d20c3-cd8e-46c9-9767-36fe6657b29a.png"
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ const Blogs = () => {
       date: "2024-06-08",
       readTime: "7 min read",
       category: "Analytics",
-      image: "/lovable-uploads/69a6f564-accc-4416-b2bc-cb9b1f788f3c.png"
+      image: "/lovable-uploads/2866bc59-3c38-4240-afac-d8c0a481be2c.png"
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const Blogs = () => {
       date: "2024-06-05",
       readTime: "6 min read",
       category: "Operations",
-      image: "/lovable-uploads/ec04254c-2a39-40c9-b9a0-511a2c636ec7.png"
+      image: "/lovable-uploads/1daf4833-cb41-4343-b7d4-4d63e9af7fd9.png"
     },
     {
       id: 4,
@@ -48,7 +48,7 @@ const Blogs = () => {
       date: "2024-06-03",
       readTime: "4 min read",
       category: "Customer Experience",
-      image: "/lovable-uploads/6b884a1c-5776-4b24-9ed2-f7d35cdad36b.png"
+      image: "/lovable-uploads/7cac0aae-c7a0-467c-af8a-7cb59ffda010.png"
     },
     {
       id: 5,
@@ -58,7 +58,7 @@ const Blogs = () => {
       date: "2024-06-01",
       readTime: "8 min read",
       category: "Management",
-      image: "/lovable-uploads/537d89f3-a122-42a7-a92b-a4bd0c2628f4.png"
+      image: "/lovable-uploads/5de71c65-bfe8-4281-9d0a-90be8a60a189.png"
     },
     {
       id: 6,
@@ -68,7 +68,7 @@ const Blogs = () => {
       date: "2024-05-28",
       readTime: "9 min read",
       category: "Scaling",
-      image: "/lovable-uploads/537d89f3-a122-42a7-a92b-a4bd0c2628f4.png"
+      image: "/lovable-uploads/8ae05009-ee34-40be-9650-0e3a84e37152.png"
     }
   ];
 
