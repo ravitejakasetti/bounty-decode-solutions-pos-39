@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const AboutBountiSection = () => {
   return (
@@ -74,7 +76,7 @@ const AboutBountiSection = () => {
             >
               BOUNTI: Cultivating Growth for Restaurants, One Smart Solution at a Time
             </motion.h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center mb-8">
               <motion.div 
                 className="bg-white/10 backdrop-blur-sm p-6 rounded-xl"
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
@@ -100,6 +102,19 @@ const AboutBountiSection = () => {
                 <p className="text-sm text-white/90">We aim to be more than a software provider; we're your strategic ally in achieving greater profitability.</p>
               </motion.div>
             </div>
+            
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link to="/contact">
+                <Button
+                  className="bg-white text-bounty-orange hover:bg-gray-100 font-semibold px-8 py-3 text-lg"
+                >
+                  Explore Full Solutions
+                </Button>
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </div>

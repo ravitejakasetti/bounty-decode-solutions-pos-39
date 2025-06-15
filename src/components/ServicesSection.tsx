@@ -1,11 +1,15 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Coffee, Cake, Car, Coffee as DriveIn, Utensils, Wine, Cloud, Building, ChefHat, Users, IceCream, Pizza, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
+import DemoModal from './DemoModal';
 
 const ServicesSection = () => {
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+
   const services = [
     {
       icon: <Utensils className="w-12 h-12 text-bounty-orange" />,
@@ -164,93 +168,112 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-bounty-navy mb-6">
-            Bounty: Tailored for Every Restaurant Type
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From intimate fine dining to high-volume quick service, Bounty adapts to your unique restaurant needs with specialized features and workflows.
-          </p>
-        </motion.div>
+    <>
+      <section id="services" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-bounty-navy mb-6">
+              Bounty: Tailored for Every Restaurant Type
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From intimate fine dining to high-volume quick service, Bounty adapts to your unique restaurant needs with specialized features and workflows.
+            </p>
+          </motion.div>
 
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              initial="initial"
-              whileInView="inView"
-              whileHover="hover"
-              viewport={{ once: true, margin: "-50px" }}
-            >
-              <Card className="border-0 shadow-lg h-full overflow-hidden">
-                {service.image && (
-                  <div className="relative h-48 w-full">
-                    <img 
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  </div>
-                )}
-                <CardHeader className="text-center pb-4">
-                  <div className="flex justify-center mb-4">
-                    <motion.div
-                      initial={{ rotate: 0 }}
-                      whileHover={{ rotate: 10 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {service.icon}
-                    </motion.div>
-                  </div>
-                  <CardTitle className="text-xl font-bold text-bounty-navy mb-2">
-                    {service.title}
-                  </CardTitle>
-                  <p className="text-gray-600 text-sm">
-                    {service.description}
-                  </p>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-bounty-navy mb-2">Key Features:</h4>
-                    <ul className="space-y-1">
-                      {service.features.map((feature, idx) => (
-                        <motion.li 
-                          key={idx} 
-                          className="text-sm text-gray-600 flex items-start"
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: idx * 0.1 }}
-                        >
-                          <span className="text-bounty-orange mr-2">•</span>
-                          {feature}
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-bounty-navy mb-2">Example Workflow:</h4>
-                    <p className="text-sm text-gray-600 italic">
-                      {service.workflow}
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                initial="initial"
+                whileInView="inView"
+                whileHover="hover"
+                viewport={{ once: true, margin: "-50px" }}
+              >
+                <Card className="border-0 shadow-lg h-full overflow-hidden">
+                  {service.image && (
+                    <div className="relative h-48 w-full">
+                      <img 
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    </div>
+                  )}
+                  <CardHeader className="text-center pb-4">
+                    <div className="flex justify-center mb-4">
+                      <motion.div
+                        initial={{ rotate: 0 }}
+                        whileHover={{ rotate: 10 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {service.icon}
+                      </motion.div>
+                    </div>
+                    <CardTitle className="text-xl font-bold text-bounty-navy mb-2">
+                      {service.title}
+                    </CardTitle>
+                    <p className="text-gray-600 text-sm">
+                      {service.description}
                     </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-bounty-navy mb-2">Key Features:</h4>
+                      <ul className="space-y-1">
+                        {service.features.map((feature, idx) => (
+                          <motion.li 
+                            key={idx} 
+                            className="text-sm text-gray-600 flex items-start"
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1 }}
+                          >
+                            <span className="text-bounty-orange mr-2">•</span>
+                            {feature}
+                          </motion.li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-bounty-navy mb-2">Example Workflow:</h4>
+                      <p className="text-sm text-gray-600 italic">
+                        {service.workflow}
+                      </p>
+                    </div>
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="pt-4"
+                    >
+                      <Button
+                        onClick={() => setIsDemoModalOpen(true)}
+                        className="w-full bg-bounty-orange hover:bg-bounty-orange/90 text-white transition-all duration-300"
+                      >
+                        Book a Demo
+                      </Button>
+                    </motion.div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      
+      <DemoModal 
+        isOpen={isDemoModalOpen} 
+        onClose={() => setIsDemoModalOpen(false)} 
+      />
+    </>
   );
 };
 
