@@ -1,12 +1,41 @@
 
 import React from 'react';
 import Header from '@/components/Header';
-import AboutBountiSection from '@/components/AboutBountiSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
+import { Card, CardContent } from '@/components/ui/card';
+import { CheckCircle, TrendingUp, BarChart3, Users, Shield, Globe } from 'lucide-react';
 
 const About = () => {
+  const keyFeatures = [
+    {
+      icon: <CheckCircle className="w-6 h-6 text-bounty-orange" />,
+      title: "Integrated Billing & Orders",
+      description: "Fast, dependable billing for dine-in, takeout, delivery and online orders, all synced in real time."
+    },
+    {
+      icon: <BarChart3 className="w-6 h-6 text-bounty-orange" />,
+      title: "Inventory & Recipe Management",
+      description: "Automatic stock tracking and recipe costing to reduce waste and optimize margins."
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6 text-bounty-orange" />,
+      title: "Analytics & Reporting",
+      description: "Built‑in dashboards showing sales trends, peak hours, and best‑selling items – insights that empower restaurant owners to make data-driven decisions."
+    },
+    {
+      icon: <Users className="w-6 h-6 text-bounty-orange" />,
+      title: "Marketing & Loyalty",
+      description: "Tools for customer loyalty programs, digital menus, and targeted promotions to boost repeat business."
+    },
+    {
+      icon: <Globe className="w-6 h-6 text-bounty-orange" />,
+      title: "Multi-Outlet Support",
+      description: "Easily manage one or many outlets from a single account; expansion is seamless as you add locations or devices."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -45,7 +74,7 @@ const About = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-bounty-orange bg-clip-text text-transparent">
-              About BOUNTI
+              About Us
             </h1>
             <motion.p 
               className="text-xl md:text-2xl text-gray-200 max-w-3xl"
@@ -53,12 +82,89 @@ const About = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Revolutionizing restaurant management with cutting-edge technology and innovative solutions
+              Empowering India's restaurants with technology that streamlines operations and drives growth
             </motion.p>
           </motion.div>
         </div>
       </motion.div>
-      <AboutBountiSection />
+
+      {/* Main About Us Content */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="max-w-4xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-bounty-navy mb-8 text-center">
+              About BOUNTI
+            </h2>
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+              <p>
+                Bounti is a comprehensive, restaurant-first point-of-sale solution built exclusively for India's foodservice industry. Our mission is to empower restaurant owners – from cafes and QSRs to fine-dining venues – with technology that streamlines operations and drives growth. Bounti integrates billing, inventory management, loyalty programs, and sales analytics on a single, easy-to-use platform.
+              </p>
+              <p>
+                By providing real-time insights into sales, popular menu items, and customer preferences, Bounti helps restaurateurs make data-driven decisions. For example, modern POS analytics deliver "details on sales trends, customer behavior, and how well things are running," enabling owners to "improve performance and make smart choices".
+              </p>
+              <p>
+                With cloud-based flexibility, the platform scales with your business – you can add new terminals or locations as you grow, since "POS systems are scalable, accommodating a restaurant's growth". Bounti also automates reporting to simplify tax compliance and accounting; it can generate invoices and sales reports to help restaurants adhere to GST regulations and ensure financial transparency.
+              </p>
+              <p>
+                In short, Bounti positions itself as a trusted partner for Indian restaurants: connecting front-of-house and back-of-house teams on a single reliable platform so that operators can focus on serving great food and enriching the customer experience.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Key Features Section */}
+          <motion.div 
+            className="mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h3 className="text-3xl font-bold text-bounty-navy mb-8 text-center">Key Features</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {keyFeatures.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-6">
+                      <div className="flex items-center mb-4">
+                        {feature.icon}
+                        <h4 className="font-bold text-bounty-navy ml-3">{feature.title}</h4>
+                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Vision Statement */}
+          <motion.div 
+            className="bg-gradient-to-br from-bounty-orange to-orange-600 text-white p-12 rounded-2xl text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <h3 className="text-3xl font-bold mb-6">Our Vision</h3>
+            <p className="text-lg leading-relaxed max-w-3xl mx-auto">
+              Together, these capabilities make Bounti a powerful ally for restaurants seeking to increase efficiency and grow sales. Our vision is to help every Indian restaurant stay ahead in a rapidly evolving market – just as industry leaders note that an all-in-one restaurant platform lets operators "stay one step ahead of a rapidly evolving hospitality market".
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       <CTASection />
       <Footer />
     </div>

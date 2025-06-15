@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -31,7 +32,7 @@ const Footer = () => {
             <h4 className="font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><a href="#home" className="text-gray-300 hover:text-bounty-orange transition-colors">Home</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-bounty-orange transition-colors">About</a></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-bounty-orange transition-colors">About</Link></li>
               <li><a href="#services" className="text-gray-300 hover:text-bounty-orange transition-colors">Services</a></li>
               <li><a href="#features" className="text-gray-300 hover:text-bounty-orange transition-colors">Features</a></li>
             </ul>
@@ -53,8 +54,8 @@ const Footer = () => {
             &copy; 2025 Decode Solutions. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-300 hover:text-bounty-orange transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-300 hover:text-bounty-orange transition-colors">Terms of Service</a>
+            <Link to="/privacy-policy" className="text-gray-300 hover:text-bounty-orange transition-colors">Privacy Policy</Link>
+            <Link to="/terms-conditions" className="text-gray-300 hover:text-bounty-orange transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
