@@ -259,9 +259,9 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* Average Results Section - Properly Spaced */}
+          {/* Average Results Section */}
           <motion.div 
-            className="mt-24 text-center"
+            className="mt-20 text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}

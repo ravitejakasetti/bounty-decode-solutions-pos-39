@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Check, Star, Zap, Crown, Rocket } from 'lucide-react';
 import { motion } from 'framer-motion';
 import DemoModal from './DemoModal';
-import { Link } from 'react-router-dom';
 
 const PricingSection = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
@@ -207,11 +206,12 @@ const PricingSection = () => {
                       
                       {plan.isCustom ? (
                         <div className="mb-4">
-                          <Link to="/contact">
-                            <Button className="bg-bounty-orange hover:bg-bounty-orange/90 text-white px-6 py-2 rounded-lg font-semibold">
-                              Book a Demo
-                            </Button>
-                          </Link>
+                          <Button 
+                            onClick={() => setIsDemoModalOpen(true)}
+                            className="bg-bounty-orange hover:bg-bounty-orange/90 text-white px-6 py-2 rounded-lg font-semibold"
+                          >
+                            Book a Demo
+                          </Button>
                         </div>
                       ) : (
                         <motion.div 

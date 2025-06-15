@@ -40,12 +40,12 @@ const Contact = () => {
       if (cleanValue.length <= 10) {
         setFormData(prev => ({ ...prev, [name]: cleanValue }));
         
-        // Validate phone number
+        // Real-time validation for phone number
         if (cleanValue.length > 0) {
           if (validatePhone(cleanValue)) {
-            setValidationErrors(prev => ({ ...prev, phone: '' }));
+            setValidationErrors(prev => ({ ...prev, phone: 'Valid phone number' }));
           } else {
-            setValidationErrors(prev => ({ ...prev, phone: 'Phone number must be exactly 10 digits' }));
+            setValidationErrors(prev => ({ ...prev, phone: 'Invalid phone number (must be exactly 10 digits)' }));
           }
         } else {
           setValidationErrors(prev => ({ ...prev, phone: '' }));
@@ -58,6 +58,7 @@ const Contact = () => {
     if (name === 'email') {
       setFormData(prev => ({ ...prev, [name]: value }));
       
+      // Real-time validation for email
       if (value.length > 0) {
         if (validateEmail(value)) {
           setValidationErrors(prev => ({ ...prev, email: 'Valid email address' }));
@@ -171,7 +172,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-bounty-navy">Phone</h3>
-                    <p className="text-gray-600">+91 98765 43210</p>
+                    <p className="text-gray-600">+91 9704697947</p>
+                    <p className="text-gray-600">+91 6309897947</p>
                   </div>
                 </motion.div>
 
@@ -184,7 +186,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-bounty-navy">Email</h3>
-                    <p className="text-gray-600">info@bountisoftware.com</p>
+                    <p className="text-gray-600">Info@bountiapps.com</p>
                   </div>
                 </motion.div>
 
@@ -291,7 +293,11 @@ const Contact = () => {
                     maxLength={10}
                   />
                   {validationErrors.phone && (
-                    <p className="text-red-600 text-sm mt-1">
+                    <p className={`text-sm mt-1 ${
+                      validationErrors.phone === 'Valid phone number' 
+                        ? 'text-green-600' 
+                        : 'text-red-600'
+                    }`}>
                       {validationErrors.phone}
                     </p>
                   )}
