@@ -9,7 +9,7 @@ import { blogPosts } from '@/data/blogPosts';
 
 const BlogPost = () => {
   const { id } = useParams();
-  const post = blogPosts.find(p => p.id === id);
+  const post = blogPosts.find(p => p.id === Number(id));
 
   if (!post) {
     return (
