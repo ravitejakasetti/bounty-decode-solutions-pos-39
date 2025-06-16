@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Coffee, Cake, Car, Coffee as DriveIn, Utensils, Wine, Cloud, Building, ChefHat, Users, IceCream, Pizza, Zap } from 'lucide-react';
+import { Coffee, Cake, Car, Coffee as DriveIn, Utensils, Wine, Cloud, Building, ChefHat, Users, IceCream, Pizza, Zap, Truck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
@@ -136,6 +135,20 @@ const ServicesSection = () => {
       ],
       workflow: "Flavor selection ➝ Customization options ➝ Portion control ➝ Temperature maintenance ➝ Quick service delivery.",
       image: "/lovable-uploads/397daf7d-ed66-49be-a368-846ef97e67bd.png"
+    },
+    {
+      icon: <Truck className="w-12 h-12 text-bounty-orange" />,
+      title: "Food Trucks",
+      description: "Agile, mobile-friendly POS solutions tailored for dynamic environments with limited space and high foot traffic, enabling fast service and real-time inventory tracking.",
+      features: [
+        "Compact POS interface for small spaces",
+        "Offline mode for remote operations",
+        "Real-time inventory sync",
+        "Mobile payment support (QR, UPI, Tap-to-pay)",
+        "Location-based order management"
+      ],
+      workflow: "Quick order input ➝ Auto inventory deduction ➝ Swift prep in compact space ➝ On-the-go payment ➝ Customer served in seconds.",
+      image: "/lovable-uploads/d9337f66-4d47-4070-adee-4a73630863c8.png"
     },
     {
       icon: <Zap className="w-12 h-12 text-bounty-orange" />,
