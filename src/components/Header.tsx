@@ -44,6 +44,10 @@ const Header = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return <>
       <header className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'py-2' : 'py-4'}`}>
         <div className="container mx-auto px-4">
@@ -52,29 +56,22 @@ const Header = () => {
               ? 'bg-transparent backdrop-blur-xl shadow-2xl border border-white/20' 
               : 'shadow-2xl border border-white/30'
           }`}>
-            {/* Dynamic gradient background - stronger #03265c on the right */}
+            {/* Left side - lighter background for logo */}
             <div className={`absolute inset-0 transition-all duration-500 ${
               isScrolled
-                ? 'bg-gradient-to-r from-white/15 via-white/8 via-[#03265c]/20 to-[#03265c]/40'
-                : 'bg-gradient-to-r from-white/95 via-white/60 via-[#03265c]/30 to-[#03265c]/80'
+                ? 'bg-gradient-to-r from-white/15 via-white/10 to-[#03265c]/90'
+                : 'bg-gradient-to-r from-white/95 via-white/70 to-[#03265c]/95'
             }`} />
             
-            {/* Additional overlay for deeper right-side darkness */}
+            {/* Additional overlay for enhanced right-side darkness */}
             <div className={`absolute inset-0 transition-all duration-700 ${
               isScrolled
-                ? 'bg-gradient-to-r from-transparent via-transparent via-[#03265c]/15 to-[#03265c]/35'
-                : 'bg-gradient-to-r from-transparent via-transparent via-[#03265c]/20 to-[#03265c]/60'
-            }`} />
-            
-            {/* Third layer for maximum right-side intensity */}
-            <div className={`absolute inset-0 transition-all duration-1000 ${
-              isScrolled
-                ? 'bg-gradient-to-r from-transparent from-60% via-[#03265c]/10 to-[#03265c]/25'
-                : 'bg-gradient-to-r from-transparent from-50% via-[#03265c]/25 to-[#03265c]/70'
+                ? 'bg-gradient-to-r from-transparent from-50% to-[#03265c]/95'
+                : 'bg-gradient-to-r from-transparent from-50% to-[#03265c]/100'
             }`} />
             
             <div className="relative flex justify-between items-center px-6 py-4 backdrop-blur-sm">
-              <Link to="/">
+              <Link to="/" onClick={scrollToTop}>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -83,7 +80,7 @@ const Header = () => {
                   <img 
                     src="/lovable-uploads/309dfa71-bb72-4c85-9e37-44630e6897e0.png" 
                     alt="BOUNTI Software" 
-                    className="h-14 md:h-16 w-auto object-contain drop-shadow-2xl filter brightness-110"
+                    className="h-16 md:h-20 w-auto object-contain drop-shadow-2xl filter brightness-110"
                   />
                 </motion.div>
               </Link>
@@ -101,6 +98,7 @@ const Header = () => {
                   >
                     <Link 
                       to={link.path} 
+                      onClick={scrollToTop}
                       className={`relative font-semibold text-base transition-all duration-300 drop-shadow-sm text-white hover:text-[#ff7009] ${
                         isActive(link.path) ? 'text-[#ff7009]' : ''
                       }`}
@@ -181,7 +179,10 @@ const Header = () => {
                       className={`block text-white hover:text-[#ff7009] transition-colors duration-300 font-semibold text-lg py-2 px-4 rounded-lg hover:bg-white/10 ${
                         isActive(link.path) ? 'text-[#ff7009] bg-white/10' : ''
                       }`}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        scrollToTop();
+                      }}
                     >
                       {link.text}
                     </Link>

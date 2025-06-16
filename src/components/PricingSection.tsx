@@ -1,286 +1,218 @@
 
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Check, Star, Zap, Crown, Rocket } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Check, X, Star, Zap, Crown, Settings } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import DemoModal from './DemoModal';
 
 const PricingSection = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-  const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
 
-  const planIcons = [Star, Zap, Crown, Rocket];
-
-  const pricingPlans = [
+  const plans = [
     {
       name: "Starter",
-      price: "₹4,999",
+      price: "₹2,999",
       period: "/month",
-      description: "Perfect for small cafes and food trucks",
-      features: [
-        "Basic POS system",
-        "Up to 50 menu items",
-        "Basic reporting",
-        "Payment processing",
-        "Email support",
-        "Single location"
-      ],
-      popular: false,
+      description: "Perfect for small cafes and quick-service restaurants",
+      icon: Star,
       color: "from-blue-500 to-blue-600",
-      isCustom: false
+      features: [
+        "Basic POS System",
+        "Inventory Management",
+        "Sales Reports",
+        "Customer Database",
+        "Email Support",
+        "1 Terminal"
+      ],
+      limitations: [
+        "Advanced Analytics",
+        "Multi-location Support",
+        "Custom Integrations"
+      ],
+      popular: false
     },
     {
-      name: "Growth",
-      price: "₹6,999",
+      name: "Pro",
+      price: "₹5,999",
       period: "/month",
-      description: "Ideal for growing restaurants",
+      description: "Ideal for growing restaurants with multiple locations",
+      icon: Zap,
+      color: "from-orange-500 to-red-500",
       features: [
-        "Advanced POS system",
-        "Unlimited menu items",
-        "Advanced analytics",
-        "Inventory management",
-        "QR code integration",
-        "Priority support",
-        "Up to 2 locations"
+        "Advanced POS System",
+        "Multi-location Support",
+        "Advanced Analytics",
+        "Kitchen Display System",
+        "Online Ordering Integration",
+        "Staff Management",
+        "24/7 Phone Support",
+        "Up to 5 Terminals"
       ],
-      popular: true,
-      color: "from-bounty-orange to-orange-600",
-      isCustom: false
+      limitations: [
+        "Custom Branding",
+        "API Access"
+      ],
+      popular: true
     },
     {
-      name: "Professional",
-      price: "₹11,999",
+      name: "Elite",
+      price: "₹9,999",
       period: "/month",
-      description: "For established restaurant chains",
+      description: "Complete solution for large restaurant chains",
+      icon: Crown,
+      color: "from-purple-500 to-indigo-600",
       features: [
-        "Full feature POS suite",
-        "Customer loyalty program",
-        "Dynamic pricing",
-        "Staff management",
-        "Multi-location support",
-        "24/7 phone support",
-        "Up to 5 locations"
+        "Enterprise POS System",
+        "Unlimited Locations",
+        "Custom Branding",
+        "API Access",
+        "Advanced Reporting & Analytics",
+        "Dedicated Account Manager",
+        "Priority Support",
+        "Custom Integrations",
+        "Unlimited Terminals"
       ],
-      popular: false,
-      color: "from-purple-500 to-purple-600",
-      isCustom: false
+      limitations: [],
+      popular: false
     },
     {
-      name: "Customise",
-      price: "",
-      period: "",
-      description: "Tailored solutions for your specific business needs",
+      name: "Customise and Flex",
+      price: "Custom",
+      period: "pricing",
+      description: "Tailored solutions for unique business requirements",
+      icon: Settings,
+      color: "from-gray-700 to-gray-900",
       features: [
-        "Enterprise-grade features",
-        "Custom integrations",
-        "Advanced reporting suite",
-        "Dedicated account manager",
-        "Custom training",
-        "API access",
-        "Unlimited locations"
+        "Fully Customized Solution",
+        "Bespoke Feature Development",
+        "Custom Integrations",
+        "Dedicated Development Team",
+        "White-label Solutions",
+        "Enterprise-grade Security",
+        "Custom SLA",
+        "On-premise Deployment Options"
       ],
+      limitations: [],
       popular: false,
-      color: "from-emerald-500 to-emerald-600",
       isCustom: true
     }
   ];
 
   return (
     <>
-      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
-        {/* Dynamic Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div 
-            className="absolute top-10 left-10 w-72 h-72 bg-bounty-orange/5 rounded-full blur-3xl"
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3]
-            }}
-            transition={{ duration: 8, repeat: Infinity }}
-          />
-          <motion.div 
-            className="absolute bottom-10 right-10 w-96 h-96 bg-bounty-navy/5 rounded-full blur-3xl"
-            animate={{ 
-              scale: [1.2, 1, 1.2],
-              opacity: [0.2, 0.4, 0.2]
-            }}
-            transition={{ duration: 10, repeat: Infinity }}
-          />
-        </div>
-
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
             <motion.h2 
               className="text-4xl md:text-5xl font-bold text-bounty-navy mb-6"
-              animate={{ 
-                backgroundImage: [
-                  'linear-gradient(45deg, #03265c, #ff7009)',
-                  'linear-gradient(45deg, #ff7009, #03265c)',
-                  'linear-gradient(45deg, #03265c, #ff7009)'
-                ]
-              }}
-              transition={{ duration: 5, repeat: Infinity }}
-              style={{ 
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Simple, Transparent Pricing
+              Choose Your Perfect Plan
             </motion.h2>
             <motion.p 
               className="text-xl text-gray-600 max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Choose the plan that fits your restaurant's needs. All plans include core features with no hidden fees.
+              From startups to enterprise chains, we have the right solution to power your restaurant's success
             </motion.p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8">
-            {pricingPlans.map((plan, index) => {
-              const IconComponent = planIcons[index];
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {plans.map((plan, index) => {
+              const IconComponent = plan.icon;
               return (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative"
-                  onHoverStart={() => setHoveredPlan(index)}
-                  onHoverEnd={() => setHoveredPlan(null)}
-                  whileHover={{ 
-                    scale: 1.05,
-                    rotateY: 5,
-                    z: 50
-                  }}
-                  style={{ 
-                    transformStyle: 'preserve-3d',
-                    perspective: 1000
-                  }}
+                  key={plan.name}
+                  className={`relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 ${
+                    plan.popular ? 'ring-4 ring-bounty-orange ring-opacity-50' : ''
+                  }`}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.8 }}
+                  whileHover={{ y: -10 }}
                 >
-                  <Card className={`h-full transition-all duration-500 ${
-                    plan.popular 
-                      ? 'border-bounty-orange border-2 shadow-2xl shadow-bounty-orange/20' 
-                      : 'border-gray-200 hover:shadow-xl hover:shadow-gray-200/50'
-                  } ${hoveredPlan === index ? 'bg-gradient-to-br from-white to-gray-50' : 'bg-white'}`}>
-                    {plan.popular && (
-                      <motion.div 
-                        className="absolute -top-4 left-1/2 transform -translate-x-1/2"
-                        animate={{ 
-                          y: [-2, 2, -2],
-                          rotate: [-1, 1, -1]
-                        }}
-                        transition={{ duration: 3, repeat: Infinity }}
-                      >
-                        <span className="bg-gradient-to-r from-bounty-orange to-orange-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
-                          Most Popular
-                        </span>
-                      </motion.div>
-                    )}
-                    
-                    <CardHeader className="text-center pb-4 relative">
-                      <motion.div
-                        className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${plan.color} flex items-center justify-center`}
-                        animate={{ 
-                          rotate: hoveredPlan === index ? 360 : 0,
-                          scale: hoveredPlan === index ? 1.1 : 1
-                        }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        <IconComponent className="text-white" size={24} />
-                      </motion.div>
-                      
-                      <CardTitle className="text-xl font-bold text-bounty-navy mb-2">
-                        {plan.name}
-                      </CardTitle>
-                      {!plan.isCustom ? (
-                        <motion.div 
-                          className="mb-4"
-                          animate={hoveredPlan === index ? { scale: 1.1 } : { scale: 1 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <motion.span 
-                            className="text-3xl font-bold text-bounty-navy"
-                            animate={hoveredPlan === index ? {
-                              textShadow: [
-                                '0 0 5px rgba(3, 38, 92, 0.3)',
-                                '0 0 10px rgba(3, 38, 92, 0.5)',
-                                '0 0 5px rgba(3, 38, 92, 0.3)'
-                              ]
-                            } : {}}
-                            transition={{ duration: 1, repeat: Infinity }}
-                          >
-                            {plan.price}
-                          </motion.span>
-                          <span className="text-gray-600">{plan.period}</span>
-                        </motion.div>
-                      ) : (
-                        <div className="mb-4">
-                          <div className="text-lg font-semibold text-bounty-navy mb-2">
-                            Custom Pricing
-                          </div>
-                          <p className="text-sm text-gray-600">
-                            Book a demo to customize your price and requirements
-                          </p>
-                        </div>
-                      )}
+                  {plan.popular && (
+                    <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-bounty-orange to-orange-600 text-white text-center py-2 text-sm font-semibold">
+                      Most Popular
+                    </div>
+                  )}
+                  
+                  <div className={`h-2 bg-gradient-to-r ${plan.color}`}></div>
+                  
+                  <div className="p-8">
+                    <div className="text-center mb-8">
+                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${plan.color} text-white mb-4`}>
+                        <IconComponent className="w-8 h-8" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-bounty-navy mb-2">{plan.name}</h3>
+                      <div className="mb-4">
+                        <span className="text-4xl font-bold text-bounty-navy">{plan.price}</span>
+                        <span className="text-gray-500 ml-2">{plan.period}</span>
+                      </div>
                       <p className="text-gray-600 text-sm">{plan.description}</p>
-                    </CardHeader>
-                    
-                    <CardContent className="space-y-4">
-                      <ul className="space-y-3">
-                        {plan.features.map((feature, idx) => (
-                          <motion.li 
-                            key={idx} 
-                            className="flex items-start space-x-2"
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: (index * 0.1) + (idx * 0.05) }}
-                            whileHover={{ x: 5 }}
-                          >
-                            <motion.div
-                              whileHover={{ scale: 1.2, rotate: 360 }}
-                              transition={{ duration: 0.3 }}
-                            >
-                              <Check className="text-bounty-orange flex-shrink-0 mt-0.5" size={16} />
-                            </motion.div>
-                            <span className="text-sm text-gray-600">{feature}</span>
-                          </motion.li>
-                        ))}
-                      </ul>
-                      
-                      <motion.div
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <Button
-                          onClick={() => setIsDemoModalOpen(true)}
-                          className={`w-full mt-6 transition-all duration-300 ${
-                            plan.popular 
-                              ? 'bg-bounty-orange hover:bg-bounty-orange/90 shadow-lg hover:shadow-xl' 
-                              : 'bg-bounty-navy hover:bg-bounty-navy/90 hover:shadow-lg'
-                          }`}
-                          style={hoveredPlan === index ? {
-                            boxShadow: plan.popular 
-                              ? '0 10px 30px rgba(255, 112, 9, 0.4)' 
-                              : '0 10px 30px rgba(3, 38, 92, 0.4)'
-                          } : {}}
+                    </div>
+
+                    <div className="space-y-4 mb-8">
+                      {plan.features.map((feature, featureIndex) => (
+                        <motion.div 
+                          key={featureIndex}
+                          className="flex items-center space-x-3"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: (index * 0.1) + (featureIndex * 0.05) }}
                         >
-                          {plan.isCustom ? 'Book a Demo' : 'Get Started'}
-                        </Button>
-                      </motion.div>
-                    </CardContent>
-                  </Card>
+                          <div className="flex-shrink-0">
+                            <Check className="w-5 h-5 text-green-500" />
+                          </div>
+                          <span className="text-gray-700 text-sm">{feature}</span>
+                        </motion.div>
+                      ))}
+                      
+                      {plan.limitations.map((limitation, limitIndex) => (
+                        <motion.div 
+                          key={limitIndex}
+                          className="flex items-center space-x-3 opacity-50"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 0.5, x: 0 }}
+                          transition={{ delay: (index * 0.1) + ((plan.features.length + limitIndex) * 0.05) }}
+                        >
+                          <div className="flex-shrink-0">
+                            <X className="w-5 h-5 text-gray-400" />
+                          </div>
+                          <span className="text-gray-400 text-sm">{limitation}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Button 
+                        onClick={() => setIsDemoModalOpen(true)}
+                        className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
+                          plan.popular 
+                            ? 'bg-bounty-orange hover:bg-bounty-orange/90 text-white shadow-lg hover:shadow-xl' 
+                            : plan.isCustom
+                            ? 'bg-gray-800 hover:bg-gray-700 text-white'
+                            : 'bg-gray-100 hover:bg-gray-200 text-bounty-navy border-2 border-bounty-navy/20 hover:border-bounty-navy/40'
+                        }`}
+                      >
+                        {plan.isCustom ? 'Contact Sales' : 'Get Started'}
+                      </Button>
+                    </motion.div>
+                  </div>
                 </motion.div>
               );
             })}
@@ -289,37 +221,35 @@ const PricingSection = () => {
           <motion.div 
             className="text-center mt-16"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <motion.p 
-              className="text-gray-600 mb-4"
-              animate={{ opacity: [0.7, 1, 0.7] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              Need a custom solution? Contact us for enterprise pricing.
-            </motion.p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                onClick={() => setIsDemoModalOpen(true)}
-                variant="outline"
-                className="border-bounty-navy text-bounty-navy hover:bg-bounty-navy hover:text-white transition-all duration-300 hover:shadow-lg"
-              >
-                Contact Sales
-              </Button>
-            </motion.div>
+            <p className="text-gray-600 mb-6">
+              All plans include free setup, training, and 30-day money-back guarantee
+            </p>
+            <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-500">
+              <div className="flex items-center space-x-2">
+                <Check className="w-4 h-4 text-green-500" />
+                <span>No Setup Fees</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Check className="w-4 h-4 text-green-500" />
+                <span>24/7 Support</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Check className="w-4 h-4 text-green-500" />
+                <span>Regular Updates</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Check className="w-4 h-4 text-green-500" />
+                <span>Data Migration</span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
       
-      <DemoModal 
-        isOpen={isDemoModalOpen} 
-        onClose={() => setIsDemoModalOpen(false)} 
-      />
+      <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
     </>
   );
 };

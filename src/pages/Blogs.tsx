@@ -18,17 +18,19 @@ const Blogs = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <BlogHero />
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <CategoryFilter 
-            categories={categories}
-            selectedCategory={selectedCategory}
-            onCategoryChange={setSelectedCategory}
-          />
-          <BlogGrid posts={filteredPosts} />
-        </div>
-      </section>
+      <div className="pt-45">
+        <BlogHero />
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <CategoryFilter 
+              categories={categories}
+              selectedCategory={selectedCategory}
+              onCategoryChange={setSelectedCategory}
+            />
+            <BlogGrid posts={filteredPosts} />
+          </div>
+        </section>
+      </div>
       <CTASection />
       <Footer />
     </div>

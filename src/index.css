@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -196,6 +197,11 @@
 
 .to-orange-600 {
   --tw-gradient-to: #ea580c;
+}
+
+/* Custom padding classes */
+.pt-45 {
+  padding-top: 11.25rem; /* 180px */
 }
 
 /* Mobile responsiveness fixes */

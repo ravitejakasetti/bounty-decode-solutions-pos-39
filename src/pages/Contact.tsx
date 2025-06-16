@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
@@ -34,7 +33,6 @@ const Contact = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     
-    // Handle phone number validation and restriction
     if (name === 'phone') {
       const numericValue = value.replace(/\D/g, '').slice(0, 10);
       setFormData(prev => ({ ...prev, [name]: numericValue }));
@@ -65,7 +63,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log('Form submitted:', formData);
   };
 
@@ -75,7 +72,7 @@ const Contact = () => {
       
       {/* Hero Section */}
       <motion.div 
-        className="pt-24 pb-16 bg-gradient-to-br from-bounty-navy via-blue-900 to-bounty-navy text-white relative overflow-hidden"
+        className="pt-45 pb-16 bg-gradient-to-br from-bounty-navy via-blue-900 to-bounty-navy text-white relative overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -186,7 +183,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-bounty-navy">Address</h3>
-                    <p className="text-gray-600">123 Business District, Tech City, India</p>
+                    <p className="text-gray-600">3rd floor, Sreshta Marvel, Sy.No.136, Kondapur Main Road, Gachibowli, Telangana 500032</p>
                   </div>
                 </motion.div>
 
