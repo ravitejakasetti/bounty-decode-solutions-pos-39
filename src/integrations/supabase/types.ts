@@ -33,6 +33,30 @@ export type Database = {
         }
         Relationships: []
       }
+      leads: {
+        Row: {
+          email: string | null
+          id: string
+          inserted_at: string | null
+          name: string | null
+          phone: string | null
+        }
+        Insert: {
+          email?: string | null
+          id?: string
+          inserted_at?: string | null
+          name?: string | null
+          phone?: string | null
+        }
+        Update: {
+          email?: string | null
+          id?: string
+          inserted_at?: string | null
+          name?: string | null
+          phone?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
