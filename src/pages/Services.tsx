@@ -2,7 +2,6 @@
 import React from 'react';
 import Header from '@/components/Header';
 import ServicesSection from '@/components/ServicesSection';
-import FeaturesSection from '@/components/FeaturesSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -12,7 +11,7 @@ const Services = () => {
     <div className="min-h-screen">
       <Header />
       <motion.div 
-        className="pt-24 pb-16 bg-gradient-to-br from-bounty-navy via-blue-900 to-bounty-navy text-white relative overflow-hidden"
+        className="pt-32 pb-16 bg-gradient-to-br from-bounty-navy via-blue-900 to-bounty-navy text-white relative overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -78,7 +77,6 @@ const Services = () => {
         </div>
       </motion.div>
       <ServicesSection />
-      <FeaturesSection />
       <CTASection />
       <Footer />
     </div>

@@ -19,7 +19,7 @@ const Footer = () => {
                 <img 
                   src="/lovable-uploads/073bd684-06ff-415e-8d0e-89fec6e40584.png" 
                   alt="Decode Solutions" 
-                  className="h-12 w-auto"
+                  className="h-8 w-auto"
                 />
               </div>
             </div>
@@ -31,10 +31,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-300 hover:text-bounty-orange transition-colors">Home</a></li>
+              <li><Link to="/" className="text-gray-300 hover:text-bounty-orange transition-colors">Home</Link></li>
               <li><Link to="/about" className="text-gray-300 hover:text-bounty-orange transition-colors">About</Link></li>
-              <li><a href="#services" className="text-gray-300 hover:text-bounty-orange transition-colors">Services</a></li>
-              <li><a href="#features" className="text-gray-300 hover:text-bounty-orange transition-colors">Features</a></li>
+              <li><Link to="/services" className="text-gray-300 hover:text-bounty-orange transition-colors">Services</Link></li>
+              <li><Link to="/pricing" className="text-gray-300 hover:text-bounty-orange transition-colors">Pricing</Link></li>
             </ul>
           </div>
           

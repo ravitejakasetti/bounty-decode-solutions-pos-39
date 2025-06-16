@@ -40,7 +40,7 @@ const About = () => {
     <div className="min-h-screen">
       <Header />
       <motion.div 
-        className="pt-24 pb-16 bg-gradient-to-br from-bounty-navy via-blue-900 to-bounty-navy text-white relative overflow-hidden"
+        className="pt-32 pb-16 bg-gradient-to-br from-bounty-navy via-blue-900 to-bounty-navy text-white relative overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -99,20 +99,38 @@ const About = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-bounty-navy mb-8 text-center">
-              About BOUNTI
+              BOUNTI: Restaurant Billing Software that Drives Performance, Optimization, and Sales
             </h2>
             <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
               <p>
-                Bounti is a comprehensive, restaurant-first point-of-sale solution built exclusively for India's foodservice industry. Our mission is to empower restaurant owners – from cafes and QSRs to fine-dining venues – with technology that streamlines operations and drives growth. Bounti integrates billing, inventory management, loyalty programs, and sales analytics on a single, easy-to-use platform.
+                At BOUNTI, we're transforming how restaurants operate with a modern, performance-driven POS (Point of Sale) system designed to empower businesses of all sizes. More than just a billing tool, BOUNTI is built to streamline operations, optimize workflows, and maximize sales — all from a single, intuitive platform.
               </p>
               <p>
-                By providing real-time insights into sales, popular menu items, and customer preferences, Bounti helps restaurateurs make data-driven decisions. For example, modern POS analytics deliver "details on sales trends, customer behavior, and how well things are running," enabling owners to "improve performance and make smart choices".
+                Whether you're managing a bustling café or a fine-dining restaurant, BOUNTI gives you the clarity and control you need to run smarter and grow faster. Our software is designed to adapt to your needs — reducing wait times, preventing billing errors, and delivering real-time sales insights that help you make informed decisions.
               </p>
               <p>
-                With cloud-based flexibility, the platform scales with your business – you can add new terminals or locations as you grow, since "POS systems are scalable, accommodating a restaurant's growth". Bounti also automates reporting to simplify tax compliance and accounting; it can generate invoices and sales reports to help restaurants adhere to GST regulations and ensure financial transparency.
+                With BOUNTI, it's not just about transactions — it's about transformation. We're here to help you unlock your restaurant's full potential and serve success every day.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* The Decode Solutions Foundation */}
+          <motion.div 
+            className="max-w-4xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h3 className="text-3xl font-bold text-bounty-navy mb-6 text-center">
+              The Decode Solutions Foundation
+            </h3>
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+              <p>
+                BOUNTI is a proud offering from Decode Solutions, a company with a rich heritage of developing cutting-edge technological solutions for diverse industries and multinational corporations. This deep well of experience in software engineering, data analytics, and user-centric design is the bedrock upon which BOUNTI is built.
               </p>
               <p>
-                In short, Bounti positions itself as a trusted partner for Indian restaurants: connecting front-of-house and back-of-house teams on a single reliable platform so that operators can focus on serving great food and enriching the customer experience.
+                While Decode Solutions explores a wide spectrum of technological advancements for various sectors, BOUNTI represents our specialized commitment to revolutionizing the restaurant industry.
               </p>
             </div>
           </motion.div>
@@ -123,7 +141,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
           >
             <h3 className="text-3xl font-bold text-bounty-navy mb-8 text-center">Key Features</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -155,7 +173,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
           >
             <h3 className="text-3xl font-bold mb-6">Our Vision</h3>
             <p className="text-lg leading-relaxed max-w-3xl mx-auto">

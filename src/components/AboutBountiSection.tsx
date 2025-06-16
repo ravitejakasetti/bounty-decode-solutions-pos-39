@@ -1,10 +1,33 @@
 
 import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Award, Shield, TrendingUp, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 
 const AboutBountiSection = () => {
+  const benefits = [
+    {
+      icon: <Award className="w-8 h-8 text-bounty-orange" />,
+      title: "Industry Leading",
+      description: "Trusted by restaurants across India for reliable performance"
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-bounty-orange" />,
+      title: "Secure & Reliable",
+      description: "Bank-grade security with 99.9% uptime guarantee"
+    },
+    {
+      icon: <TrendingUp className="w-8 h-8 text-bounty-orange" />,
+      title: "Growth Focused",
+      description: "Features designed to help your business scale and succeed"
+    },
+    {
+      icon: <Users className="w-8 h-8 text-bounty-orange" />,
+      title: "Expert Support",
+      description: "24/7 customer support from restaurant industry experts"
+    }
+  ];
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -16,105 +39,56 @@ const AboutBountiSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-bounty-navy mb-6">
-            About BOUNTI: Engineering Your Restaurant's Success Story
+            Why Choose BOUNTI?
           </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Join thousands of restaurants that have transformed their operations with BOUNTI's comprehensive POS solution.
+          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-gray-50 p-8 rounded-2xl"
-          >
-            <h3 className="text-2xl font-bold text-bounty-navy mb-6">
-              BOUNTI: Restaurant Billing Software that Drives Performance, Optimization, and Sales
-            </h3>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              At BOUNTI, we're transforming how restaurants operate with a modern, performance-driven POS (Point of Sale) system designed to empower businesses of all sizes. More than just a billing tool, BOUNTI is built to streamline operations, optimize workflows, and maximize sales — all from a single, intuitive platform.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Whether you're managing a bustling café or a fine-dining restaurant, BOUNTI gives you the clarity and control you need to run smarter and grow faster. Our software is designed to adapt to your needs — reducing wait times, preventing billing errors, and delivering real-time sales insights that help you make informed decisions.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              With BOUNTI, it's not just about transactions — it's about transformation. We're here to help you unlock your restaurant's full potential and serve success every day.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gray-50 p-8 rounded-2xl"
-          >
-            <h3 className="text-2xl font-bold text-bounty-navy mb-6">
-              The Decode Solutions Foundation
-            </h3>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              BOUNTI is a proud offering from Decode Solutions, a company with a rich heritage of developing cutting-edge technological solutions for diverse industries and multinational corporations. This deep well of experience in software engineering, data analytics, and user-centric design is the bedrock upon which BOUNTI is built.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              While Decode Solutions explores a wide spectrum of technological advancements for various sectors, BOUNTI represents our specialized commitment to revolutionizing the restaurant industry.
-            </p>
-          </motion.div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {benefits.map((benefit, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card className="text-center h-full hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="flex justify-center mb-4">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="font-bold text-bounty-navy mb-3">{benefit.title}</h3>
+                  <p className="text-gray-600 text-sm">{benefit.description}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
 
-        <motion.div
-          className="text-center"
+        <motion.div 
+          className="flex justify-center items-center space-x-8 mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <div className="bg-gradient-to-br from-bounty-orange to-orange-600 text-white p-12 rounded-2xl shadow-2xl">
-            <motion.h3 
-              className="text-3xl md:text-4xl font-bold mb-8"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              BOUNTI: Cultivating Growth for Restaurants, One Smart Solution at a Time
-            </motion.h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center mb-8">
-              <motion.div 
-                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl"
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="text-white text-lg font-bold mb-3">Innovation that Serves</div>
-                <p className="text-sm text-white/90">We constantly explore new ways to make restaurant management smarter and more effective.</p>
-              </motion.div>
-              <motion.div 
-                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl"
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="text-white text-lg font-bold mb-3">Customer-Centric Growth</div>
-                <p className="text-sm text-white/90">Your success is our benchmark. We build tools that deliver tangible results for your business.</p>
-              </motion.div>
-              <motion.div 
-                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl md:col-span-2 lg:col-span-1"
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="text-white text-lg font-bold mb-3">Profitable Partnerships</div>
-                <p className="text-sm text-white/90">We aim to be more than a software provider; we're your strategic ally in achieving greater profitability.</p>
-              </motion.div>
+          <div className="flex items-center space-x-4">
+            <img 
+              src="/lovable-uploads/4070a0c5-b541-4558-a125-7b8bc650fc06.png" 
+              alt="Bounti Software" 
+              className="h-16 w-auto"
+            />
+            <div className="flex items-center space-x-2 text-lg text-gray-600">
+              <span>Powered by</span>
+              <img 
+                src="/lovable-uploads/073bd684-06ff-415e-8d0e-89fec6e40584.png" 
+                alt="Decode Solutions" 
+                className="h-12 w-auto"
+              />
             </div>
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link to="/contact">
-                <Button
-                  className="bg-white text-bounty-orange hover:bg-gray-100 font-semibold px-8 py-3 text-lg"
-                >
-                  Explore Full Solutions
-                </Button>
-              </Link>
-            </motion.div>
           </div>
         </motion.div>
       </div>
