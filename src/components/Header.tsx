@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -82,7 +83,7 @@ const Header = () => {
                   <img 
                     src="/lovable-uploads/309dfa71-bb72-4c85-9e37-44630e6897e0.png" 
                     alt="BOUNTI Software" 
-                    className="h-12 md:h-14 w-auto object-contain drop-shadow-2xl filter brightness-110"
+                    className="h-24 md:h-28 w-auto object-contain drop-shadow-2xl filter brightness-110"
                   />
                 </motion.div>
               </Link>
