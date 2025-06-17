@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import DemoModal from './DemoModal';
@@ -200,36 +201,39 @@ const HeroSection = () => {
             </motion.div>
           </div>
           
-          <motion.div 
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center space-x-2 text-sm text-white/90 bg-bounty-navy/80 px-3 py-1 rounded-full"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            <span>Powered by</span>
-            <img 
-              src="/lovable-uploads/2cb91fc4-f3da-490c-aafb-fd931d028671.png" 
-              alt="Decode Solutions" 
-              className="h-16 w-auto" 
-            />
-          </motion.div>
-
-          <motion.button 
-            onClick={scrollToFeatures}
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/70 hover:text-white transition-colors"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            whileHover={{ scale: 1.1 }}
-          >
-            <span className="text-sm mb-1">Discover More</span>
-            <motion.div
-              animate={{ y: [0, 5, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
+          {/* Bottom section with proper spacing and no overlap */}
+          <div className="flex flex-col md:flex-row items-center justify-between mt-20 space-y-4 md:space-y-0">
+            <motion.div 
+              className="flex items-center space-x-2 text-sm text-white/90 bg-bounty-navy/80 px-3 py-1 rounded-full order-2 md:order-1"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
             >
-              <ChevronDown size={20} />
+              <span>Powered by</span>
+              <img 
+                src="/lovable-uploads/2cb91fc4-f3da-490c-aafb-fd931d028671.png" 
+                alt="Decode Solutions" 
+                className="h-16 w-auto" 
+              />
             </motion.div>
-          </motion.button>
+
+            <motion.button 
+              onClick={scrollToFeatures}
+              className="flex flex-col items-center text-white/70 hover:text-white transition-colors order-1 md:order-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              whileHover={{ scale: 1.1 }}
+            >
+              <span className="text-sm mb-1">Discover More</span>
+              <motion.div
+                animate={{ y: [0, 5, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+              >
+                <ChevronDown size={20} />
+              </motion.div>
+            </motion.button>
+          </div>
         </div>
       </section>
       

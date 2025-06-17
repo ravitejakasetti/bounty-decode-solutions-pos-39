@@ -125,10 +125,10 @@ const Header = () => {
                 <motion.div
                   whileHover={{ 
                     scale: 1.1,
-                    rotate: [0, -1, 1, -1, 0],
+                    rotateY: [0, 5, -5, 0],
                     transition: { 
                       scale: { duration: 0.2 },
-                      rotate: { duration: 0.5, repeat: Infinity, ease: "easeInOut" }
+                      rotateY: { duration: 1, repeat: Infinity, ease: "easeInOut" }
                     }
                   }}
                   whileTap={{ scale: 0.95 }}
@@ -158,32 +158,47 @@ const Header = () => {
                       }}
                     />
                     
-                    {/* Button text with bounce animation */}
+                    {/* Button text with floating animation */}
                     <motion.span
                       className="relative z-10 flex items-center gap-2"
                       animate={{ 
-                        y: [0, -2, 0],
+                        y: [0, -3, 0],
+                        x: [0, 2, 0, -2, 0],
                       }}
                       transition={{ 
-                        duration: 2,
+                        duration: 3,
                         repeat: Infinity,
                         ease: "easeInOut"
                       }}
                     >
-                      📞 Book Demo
+                      Book Demo
                     </motion.span>
                     
-                    {/* Pulsing border effect */}
+                    {/* Multiple pulsing border effects */}
                     <motion.div
-                      className="absolute inset-0 rounded-full border-2 border-white/50"
+                      className="absolute inset-0 rounded-full border-2 border-white/30"
                       animate={{ 
-                        scale: [1, 1.1, 1],
-                        opacity: [0.5, 0.8, 0.5]
+                        scale: [1, 1.15, 1],
+                        opacity: [0.3, 0.7, 0.3]
                       }}
                       transition={{ 
-                        duration: 2,
+                        duration: 2.5,
                         repeat: Infinity,
                         ease: "easeInOut"
+                      }}
+                    />
+                    
+                    <motion.div
+                      className="absolute inset-0 rounded-full border border-orange-300/50"
+                      animate={{ 
+                        scale: [1, 1.25, 1],
+                        opacity: [0.2, 0.5, 0.2]
+                      }}
+                      transition={{ 
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 0.5
                       }}
                     />
                   </Button>
@@ -252,7 +267,7 @@ const Header = () => {
                     }} 
                     className="w-full bg-gradient-to-r from-[#ff7009] to-[#ff8533] hover:from-[#ff8533] hover:to-[#ff7009] text-white border-none shadow-md font-semibold py-3 rounded-full transition-all duration-300"
                   >
-                    📞 Book Demo
+                    Book Demo
                   </Button>
                 </motion.div>
               </div>

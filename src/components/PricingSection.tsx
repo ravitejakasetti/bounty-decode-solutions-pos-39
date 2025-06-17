@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, X, Star, Zap, Crown, Settings } from 'lucide-react';
@@ -11,7 +12,7 @@ const PricingSection = () => {
     {
       name: "Starter",
       price: "₹4,999",
-      period: "/month",
+      period: "/year",
       description: "Perfect for small cafes and quick-service restaurants",
       icon: Star,
       color: "from-blue-500 to-blue-600",
@@ -33,7 +34,7 @@ const PricingSection = () => {
     {
       name: "Pro",
       price: "₹6,999",
-      period: "/month",
+      period: "/year",
       description: "Ideal for growing restaurants with multiple locations",
       icon: Zap,
       color: "from-orange-500 to-red-500",
@@ -56,7 +57,7 @@ const PricingSection = () => {
     {
       name: "Elite",
       price: "₹11,999",
-      period: "/month",
+      period: "/year",
       description: "Complete solution for large restaurant chains",
       icon: Crown,
       color: "from-purple-500 to-indigo-600",
