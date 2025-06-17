@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -121,31 +122,37 @@ const Header = () => {
                   </motion.div>
                 ))}
                 
-                {/* Enhanced Book Demo Button with Match & Move Transition */}
+                {/* Enhanced Book Demo Button with Dynamic Match & Move Transitions */}
                 <motion.div
                   className="relative"
-                  initial={{ scale: 0, rotateY: 180 }}
+                  initial={{ scale: 0, x: 100, opacity: 0 }}
                   animate={{ 
                     scale: 1, 
-                    rotateY: 0,
+                    x: 0,
+                    opacity: 1,
                     transition: { 
                       type: "spring", 
-                      stiffness: 200, 
-                      damping: 15,
-                      delay: 0.5 
+                      stiffness: 150, 
+                      damping: 12,
+                      delay: 0.5,
+                      duration: 1.2
                     }
                   }}
                   whileHover={{ 
-                    scale: 1.15,
-                    rotateX: [0, 10, -10, 0],
-                    rotateY: [0, 5, -5, 0],
+                    scale: [1, 1.1, 1.05],
+                    y: [0, -8, -4],
+                    rotateX: [0, 15, 8],
+                    rotateY: [0, -10, -5],
                     transition: { 
-                      scale: { duration: 0.3 },
-                      rotateX: { duration: 1.5, repeat: Infinity },
-                      rotateY: { duration: 2, repeat: Infinity }
+                      duration: 0.6,
+                      ease: "easeInOut"
                     }
                   }}
-                  whileTap={{ scale: 0.9 }}
+                  whileTap={{ 
+                    scale: 0.95,
+                    rotateX: 5,
+                    transition: { duration: 0.1 }
+                  }}
                 >
                   <Button 
                     onClick={() => setIsDemoModalOpen(true)} 
@@ -156,63 +163,55 @@ const Header = () => {
                       boxShadow: '0 0 30px rgba(255, 112, 9, 0.6), 0 0 60px rgba(255, 112, 9, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
                     }}
                   >
-                    {/* Match & Move Background Animation */}
+                    {/* Dynamic Match & Move Background Wave */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent rounded-full"
-                      initial={{ x: '-100%', skewX: -20 }}
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-full"
+                      initial={{ x: '-120%', scaleX: 0.8 }}
                       animate={{ 
-                        x: ['200%', '-100%'],
-                        skewX: [-20, 20, -20]
+                        x: ['120%', '-120%'],
+                        scaleX: [0.8, 1.2, 0.8],
+                        skewX: [0, 20, -20, 0]
                       }}
                       transition={{ 
-                        duration: 3,
+                        duration: 2.5,
                         repeat: Infinity,
                         ease: "easeInOut",
-                        repeatDelay: 1
+                        repeatDelay: 0.5
                       }}
                     />
                     
-                    {/* Text with Match & Move Transition */}
+                    {/* Text with Dynamic Match & Move Animation */}
                     <motion.span
-                      className="relative z-10 flex items-center gap-2"
-                      initial={{ opacity: 0, y: 20 }}
+                      className="relative z-10"
+                      initial={{ opacity: 0, y: 20, x: -10 }}
                       animate={{ 
                         opacity: 1, 
                         y: 0,
-                        transition: { delay: 0.7 }
+                        x: 0,
+                        transition: { delay: 0.8, duration: 0.6 }
                       }}
                       whileHover={{
-                        y: [0, -8, 0],
-                        x: [0, 4, 0, -4, 0],
-                        rotateZ: [0, 5, -5, 0],
+                        y: [0, -6, 0],
+                        x: [0, 3, -3, 0],
+                        scale: [1, 1.05, 1],
                         transition: { 
-                          duration: 2,
+                          duration: 1.5,
                           repeat: Infinity,
                           ease: "easeInOut"
                         }
                       }}
                     >
-                      <motion.span
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ 
-                          opacity: 1, 
-                          scale: 1,
-                          transition: { delay: 0.9, type: "spring" }
-                        }}
-                      >
-                        📞
-                      </motion.span>
                       Book Demo
                     </motion.span>
                     
-                    {/* Multiple Pulsing Border Effects with Match & Move */}
+                    {/* Multiple Dynamic Ripple Effects */}
                     <motion.div
-                      className="absolute inset-0 rounded-full border-2 border-white/40"
-                      initial={{ scale: 0.8, opacity: 0 }}
+                      className="absolute inset-0 rounded-full border-2 border-white/50"
+                      initial={{ scale: 0.9, opacity: 0 }}
                       animate={{ 
-                        scale: [0.8, 1.3, 0.8],
-                        opacity: [0, 0.8, 0],
-                        rotate: [0, 180, 360]
+                        scale: [0.9, 1.4, 0.9],
+                        opacity: [0, 0.7, 0],
+                        rotate: [0, 360]
                       }}
                       transition={{ 
                         duration: 3,
@@ -223,12 +222,12 @@ const Header = () => {
                     />
                     
                     <motion.div
-                      className="absolute inset-0 rounded-full border border-orange-300/60"
-                      initial={{ scale: 1.2, opacity: 0 }}
+                      className="absolute inset-0 rounded-full border border-orange-300/40"
+                      initial={{ scale: 1.1, opacity: 0 }}
                       animate={{ 
-                        scale: [1.2, 1.6, 1.2],
-                        opacity: [0, 0.6, 0],
-                        rotate: [360, 180, 0]
+                        scale: [1.1, 1.8, 1.1],
+                        opacity: [0, 0.5, 0],
+                        rotate: [360, 0]
                       }}
                       transition={{ 
                         duration: 4,
@@ -238,29 +237,49 @@ const Header = () => {
                       }}
                     />
 
-                    {/* Floating Particles for Match & Move Effect */}
-                    {[...Array(6)].map((_, i) => (
+                    {/* Enhanced Floating Energy Particles */}
+                    {[...Array(8)].map((_, i) => (
                       <motion.div
                         key={i}
-                        className="absolute w-1 h-1 bg-white/60 rounded-full"
+                        className="absolute w-1.5 h-1.5 bg-white/70 rounded-full"
                         style={{
-                          left: `${20 + i * 12}%`,
-                          top: `${20 + (i % 2) * 60}%`
+                          left: `${15 + i * 10}%`,
+                          top: `${10 + (i % 3) * 30}%`
                         }}
+                        initial={{ scale: 0, opacity: 0 }}
                         animate={{
-                          y: [0, -20, 0],
-                          x: [0, Math.sin(i) * 10, 0],
-                          opacity: [0.3, 1, 0.3],
-                          scale: [0.5, 1.5, 0.5]
+                          y: [0, -25, 0],
+                          x: [0, Math.sin(i) * 15, 0],
+                          opacity: [0, 1, 0],
+                          scale: [0, 1.5, 0],
+                          rotate: [0, 180, 360]
                         }}
                         transition={{
-                          duration: 2 + i * 0.3,
+                          duration: 2.5 + i * 0.3,
                           repeat: Infinity,
                           ease: "easeInOut",
-                          delay: i * 0.2
+                          delay: i * 0.2 + 1
                         }}
                       />
                     ))}
+
+                    {/* Pulse Border Effect */}
+                    <motion.div
+                      className="absolute inset-0 rounded-full"
+                      style={{
+                        background: 'linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent)',
+                      }}
+                      initial={{ rotate: 0, scale: 1 }}
+                      animate={{
+                        rotate: [0, 360],
+                        scale: [1, 1.05, 1]
+                      }}
+                      transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "linear"
+                      }}
+                    />
                   </Button>
                 </motion.div>
               </nav>
