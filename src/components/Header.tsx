@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -122,85 +121,146 @@ const Header = () => {
                   </motion.div>
                 ))}
                 
+                {/* Enhanced Book Demo Button with Match & Move Transition */}
                 <motion.div
-                  whileHover={{ 
-                    scale: 1.1,
-                    rotateY: [0, 5, -5, 0],
+                  className="relative"
+                  initial={{ scale: 0, rotateY: 180 }}
+                  animate={{ 
+                    scale: 1, 
+                    rotateY: 0,
                     transition: { 
-                      scale: { duration: 0.2 },
-                      rotateY: { duration: 1, repeat: Infinity, ease: "easeInOut" }
+                      type: "spring", 
+                      stiffness: 200, 
+                      damping: 15,
+                      delay: 0.5 
                     }
                   }}
-                  whileTap={{ scale: 0.95 }}
-                  className="relative"
+                  whileHover={{ 
+                    scale: 1.15,
+                    rotateX: [0, 10, -10, 0],
+                    rotateY: [0, 5, -5, 0],
+                    transition: { 
+                      scale: { duration: 0.3 },
+                      rotateX: { duration: 1.5, repeat: Infinity },
+                      rotateY: { duration: 2, repeat: Infinity }
+                    }
+                  }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   <Button 
                     onClick={() => setIsDemoModalOpen(true)} 
                     className="relative overflow-hidden bg-gradient-to-r from-[#ff7009] via-[#ff8533] to-[#ff7009] hover:from-[#ff8533] hover:via-[#ff7009] hover:to-[#ff8533] text-white border-none shadow-2xl font-bold px-8 py-3 rounded-full transition-all duration-500 transform hover:shadow-orange-500/60 backdrop-blur-sm"
                     style={{
-                      backgroundSize: '200% 100%',
-                      animation: 'gradient-shift 3s ease infinite',
-                      boxShadow: '0 0 20px rgba(255, 112, 9, 0.4), 0 0 40px rgba(255, 112, 9, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                      backgroundSize: '300% 100%',
+                      animation: 'gradient-shift 4s ease infinite',
+                      boxShadow: '0 0 30px rgba(255, 112, 9, 0.6), 0 0 60px rgba(255, 112, 9, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
                     }}
                   >
-                    {/* Animated background shimmer */}
+                    {/* Match & Move Background Animation */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                      style={{ transform: 'translateX(-100%)' }}
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent rounded-full"
+                      initial={{ x: '-100%', skewX: -20 }}
                       animate={{ 
-                        transform: ['translateX(-100%)', 'translateX(200%)'] 
+                        x: ['200%', '-100%'],
+                        skewX: [-20, 20, -20]
                       }}
                       transition={{ 
-                        duration: 2,
+                        duration: 3,
                         repeat: Infinity,
                         ease: "easeInOut",
                         repeatDelay: 1
                       }}
                     />
                     
-                    {/* Button text with floating animation */}
+                    {/* Text with Match & Move Transition */}
                     <motion.span
                       className="relative z-10 flex items-center gap-2"
+                      initial={{ opacity: 0, y: 20 }}
                       animate={{ 
-                        y: [0, -3, 0],
-                        x: [0, 2, 0, -2, 0],
+                        opacity: 1, 
+                        y: 0,
+                        transition: { delay: 0.7 }
                       }}
-                      transition={{ 
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut"
+                      whileHover={{
+                        y: [0, -8, 0],
+                        x: [0, 4, 0, -4, 0],
+                        rotateZ: [0, 5, -5, 0],
+                        transition: { 
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }
                       }}
                     >
+                      <motion.span
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ 
+                          opacity: 1, 
+                          scale: 1,
+                          transition: { delay: 0.9, type: "spring" }
+                        }}
+                      >
+                        📞
+                      </motion.span>
                       Book Demo
                     </motion.span>
                     
-                    {/* Multiple pulsing border effects */}
+                    {/* Multiple Pulsing Border Effects with Match & Move */}
                     <motion.div
-                      className="absolute inset-0 rounded-full border-2 border-white/30"
+                      className="absolute inset-0 rounded-full border-2 border-white/40"
+                      initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ 
-                        scale: [1, 1.15, 1],
-                        opacity: [0.3, 0.7, 0.3]
-                      }}
-                      transition={{ 
-                        duration: 2.5,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    />
-                    
-                    <motion.div
-                      className="absolute inset-0 rounded-full border border-orange-300/50"
-                      animate={{ 
-                        scale: [1, 1.25, 1],
-                        opacity: [0.2, 0.5, 0.2]
+                        scale: [0.8, 1.3, 0.8],
+                        opacity: [0, 0.8, 0],
+                        rotate: [0, 180, 360]
                       }}
                       transition={{ 
                         duration: 3,
                         repeat: Infinity,
                         ease: "easeInOut",
-                        delay: 0.5
+                        delay: 1
                       }}
                     />
+                    
+                    <motion.div
+                      className="absolute inset-0 rounded-full border border-orange-300/60"
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ 
+                        scale: [1.2, 1.6, 1.2],
+                        opacity: [0, 0.6, 0],
+                        rotate: [360, 180, 0]
+                      }}
+                      transition={{ 
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 1.5
+                      }}
+                    />
+
+                    {/* Floating Particles for Match & Move Effect */}
+                    {[...Array(6)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-1 h-1 bg-white/60 rounded-full"
+                        style={{
+                          left: `${20 + i * 12}%`,
+                          top: `${20 + (i % 2) * 60}%`
+                        }}
+                        animate={{
+                          y: [0, -20, 0],
+                          x: [0, Math.sin(i) * 10, 0],
+                          opacity: [0.3, 1, 0.3],
+                          scale: [0.5, 1.5, 0.5]
+                        }}
+                        transition={{
+                          duration: 2 + i * 0.3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: i * 0.2
+                        }}
+                      />
+                    ))}
                   </Button>
                 </motion.div>
               </nav>
