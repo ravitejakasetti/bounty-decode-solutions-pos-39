@@ -123,18 +123,69 @@ const Header = () => {
                 ))}
                 
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: [0, -1, 1, -1, 0],
+                    transition: { 
+                      scale: { duration: 0.2 },
+                      rotate: { duration: 0.5, repeat: Infinity, ease: "easeInOut" }
+                    }
+                  }}
                   whileTap={{ scale: 0.95 }}
+                  className="relative"
                 >
                   <Button 
                     onClick={() => setIsDemoModalOpen(true)} 
-                    className="bg-[#ff7009] hover:bg-[#ff7009]/90 text-white border-none shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 font-bold px-8 py-3 rounded-full backdrop-blur-sm glow-effect"
+                    className="relative overflow-hidden bg-gradient-to-r from-[#ff7009] via-[#ff8533] to-[#ff7009] hover:from-[#ff8533] hover:via-[#ff7009] hover:to-[#ff8533] text-white border-none shadow-2xl font-bold px-8 py-3 rounded-full transition-all duration-500 transform hover:shadow-orange-500/60 backdrop-blur-sm"
                     style={{
-                      background: 'linear-gradient(45deg, #ff7009, #ff8533)',
-                      boxShadow: '0 0 30px rgba(255, 112, 9, 0.6), 0 0 60px rgba(255, 112, 9, 0.3)'
+                      backgroundSize: '200% 100%',
+                      animation: 'gradient-shift 3s ease infinite',
+                      boxShadow: '0 0 20px rgba(255, 112, 9, 0.4), 0 0 40px rgba(255, 112, 9, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
                     }}
                   >
-                    Book Demo
+                    {/* Animated background shimmer */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                      style={{ transform: 'translateX(-100%)' }}
+                      animate={{ 
+                        transform: ['translateX(-100%)', 'translateX(200%)'] 
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        repeatDelay: 1
+                      }}
+                    />
+                    
+                    {/* Button text with bounce animation */}
+                    <motion.span
+                      className="relative z-10 flex items-center gap-2"
+                      animate={{ 
+                        y: [0, -2, 0],
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      📞 Book Demo
+                    </motion.span>
+                    
+                    {/* Pulsing border effect */}
+                    <motion.div
+                      className="absolute inset-0 rounded-full border-2 border-white/50"
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                        opacity: [0.5, 0.8, 0.5]
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
                   </Button>
                 </motion.div>
               </nav>
@@ -199,9 +250,9 @@ const Header = () => {
                       setIsMenuOpen(false);
                       setIsDemoModalOpen(true);
                     }} 
-                    className="w-full bg-[#ff7009] hover:bg-[#ff7009]/90 text-white border-none shadow-md font-semibold py-3 rounded-full"
+                    className="w-full bg-gradient-to-r from-[#ff7009] to-[#ff8533] hover:from-[#ff8533] hover:to-[#ff7009] text-white border-none shadow-md font-semibold py-3 rounded-full transition-all duration-300"
                   >
-                    Book Demo
+                    📞 Book Demo
                   </Button>
                 </motion.div>
               </div>
