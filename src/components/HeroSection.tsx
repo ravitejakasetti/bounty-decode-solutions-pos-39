@@ -90,7 +90,7 @@ const HeroSection = () => {
                 variants={itemVariants}
               >
                 <motion.span 
-                  className="block text-4xl md:text-5xl lg:text-6xl"
+                  className="block text-6xl md:text-7xl lg:text-8xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
@@ -98,7 +98,7 @@ const HeroSection = () => {
                   <span className="text-bounty-orange">P</span>erformance
                 </motion.span>
                 <motion.span 
-                  className="block text-4xl md:text-5xl lg:text-6xl"
+                  className="block text-6xl md:text-7xl lg:text-8xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
@@ -106,7 +106,7 @@ const HeroSection = () => {
                   <span className="text-bounty-orange">O</span>ptimize
                 </motion.span>
                 <motion.span 
-                  className="block text-4xl md:text-5xl lg:text-6xl"
+                  className="block text-6xl md:text-7xl lg:text-8xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
@@ -114,7 +114,7 @@ const HeroSection = () => {
                   <span className="text-bounty-orange">S</span>ales
                 </motion.span>
                 <motion.span 
-                  className="block mt-4"
+                  className="block mt-4 text-3xl md:text-4xl lg:text-5xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.5 }}
