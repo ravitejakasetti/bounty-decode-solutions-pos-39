@@ -105,7 +105,7 @@ const FeaturesSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Explore the Power of BOUNTI
+            Advanced POS Billing Software Features
           </motion.h2>
           <motion.p 
             className="text-xl text-gray-600 max-w-4xl mx-auto"
@@ -114,7 +114,7 @@ const FeaturesSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Intelligent Features for Unstoppable Growth. BOUNTI isn't just software; it's your restaurant's central nervous system, intelligently connecting every aspect of your operation.
+            Discover why Bounti is the leading POS billing software for restaurants. Our intelligent point of sale system integrates seamlessly with your operations, providing comprehensive restaurant management, billing automation, and customer engagement tools.
           </motion.p>
         </div>
 
@@ -241,7 +241,7 @@ const FeaturesSection = () => {
                 >
                   <motion.img 
                     src={featureCategories[activeFeature].image}
-                    alt={featureCategories[activeFeature].title}
+                    alt={`${featureCategories[activeFeature].title} - Bounti POS billing software feature for restaurant management and point of sale operations`}
                     className="rounded-2xl shadow-2xl max-w-full max-h-80 object-cover border-4 border-bounty-orange/20"
                     whileHover={{ scale: 1.05, rotateY: 5 }}
                     transition={{ duration: 0.3 }}

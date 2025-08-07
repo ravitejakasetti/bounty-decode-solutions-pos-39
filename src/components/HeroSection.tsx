@@ -54,7 +54,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <section id="home" className="min-h-screen pt-20 gradient-primary text-white relative overflow-hidden">
+      <section id="home" className="min-h-screen pt-20 gradient-primary text-white relative overflow-hidden" aria-label="Hero Section - POS Billing Software">
         <div className="absolute inset-0 bg-black/20"></div>
         
         {/* Animated particles/elements */}
@@ -95,23 +95,17 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
                 >
-                  <span className="text-bounty-orange">P</span>erformance
+                  Bounti <span className="text-bounty-orange">POS</span> Billing Software
                 </motion.span>
                 <motion.span 
-                  className="block"
+                  className="block text-4xl md:text-5xl lg:text-6xl mt-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
                 >
-                  <span className="text-bounty-orange">O</span>ptimize
-                </motion.span>
-                <motion.span 
-                  className="block"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.5 }}
-                >
-                  <span className="text-bounty-orange">S</span>ales.
+                  <span className="text-bounty-orange">P</span>erformance
+                  <span className="text-bounty-orange"> O</span>ptimize
+                  <span className="text-bounty-orange"> S</span>ales
                 </motion.span>
               </motion.h1>
               
@@ -119,7 +113,7 @@ const HeroSection = () => {
                 className="text-xl md:text-2xl text-gray-200 leading-relaxed" 
                 variants={itemVariants}
               >
-                Step into the new era of restaurant management. BOUNTI, a specialized solution by Decode Solutions, empowers you with intelligent automation, dynamic customer engagement, and data-driven strategies to significantly boost your revenue and streamline operations.
+                The #1 POS billing software for restaurants. Bounti by Decode Solutions delivers intelligent automation, dynamic pricing, inventory management, and customer loyalty features. Transform your restaurant operations with the most advanced point of sale system available.
               </motion.p>
               
               <motion.div className="flex flex-col sm:flex-row gap-4" variants={itemVariants}>
@@ -144,7 +138,7 @@ const HeroSection = () => {
                   <motion.img
                     key={idx}
                     src={image}
-                    alt={`Restaurant billing system ${idx + 1}`}
+                    alt={`Bounti POS billing software interface showing ${idx === 0 ? 'restaurant billing dashboard' : idx === 1 ? 'inventory management system' : 'customer loyalty program features'} - Advanced restaurant point of sale system`}
                     className="w-full h-full object-cover"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: idx === currentImage ? 1 : 0 }}
@@ -231,7 +225,7 @@ const HeroSection = () => {
                 <span>Powered by</span>
                 <img 
                   src="/lovable-uploads/2cb91fc4-f3da-490c-aafb-fd931d028671.png" 
-                  alt="Decode Solutions" 
+                  alt="Decode Solutions - Leading provider of restaurant POS billing software and management systems" 
                   className="h-16 w-auto" 
                 />
               </motion.div>

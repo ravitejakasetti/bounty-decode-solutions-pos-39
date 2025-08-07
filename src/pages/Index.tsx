@@ -16,21 +16,37 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen w-full overflow-x-hidden">
+    <main className="min-h-screen w-full overflow-x-hidden" role="main">
       <Header />
       <HeroSection />
-      <BillingShowcaseSection />
-      <HardwareSoftwareSection />
+      <section id="billing-showcase" aria-label="Billing System Showcase">
+        <BillingShowcaseSection />
+      </section>
+      <section id="hardware-software" aria-label="Hardware and Software Solutions">
+        <HardwareSoftwareSection />
+      </section>
       <FeaturesSection />
-      <BenefitsSection />
-      <AnalyticsSection />
-      <RevenueGrowthSection />
-      <IntegrationsSection />
-      <AboutBountiSection />
-      <AboutSection />
+      <section id="benefits" aria-label="Business Benefits">
+        <BenefitsSection />
+      </section>
+      <section id="analytics" aria-label="Analytics and Reporting">
+        <AnalyticsSection />
+      </section>
+      <section id="revenue-growth" aria-label="Revenue Growth Solutions">
+        <RevenueGrowthSection />
+      </section>
+      <section id="integrations" aria-label="System Integrations">
+        <IntegrationsSection />
+      </section>
+      <section id="about-bounti" aria-label="About Bounti Platform">
+        <AboutBountiSection />
+      </section>
+      <section id="about-company" aria-label="About Our Company">
+        <AboutSection />
+      </section>
       <CTASection />
       <Footer />
-    </div>
+    </main>
   );
 };
 
