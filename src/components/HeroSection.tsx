@@ -90,22 +90,36 @@ const HeroSection = () => {
                 variants={itemVariants}
               >
                 <motion.span 
-                  className="block"
+                  className="block text-4xl md:text-5xl lg:text-6xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
                 >
-                  Bounti <span className="text-bounty-orange">POS</span> Billing Software
+                  <span className="text-bounty-orange">P</span>erformance
                 </motion.span>
                 <motion.span 
-                  className="block text-4xl md:text-5xl lg:text-6xl mt-4"
+                  className="block text-4xl md:text-5xl lg:text-6xl"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                >
+                  <span className="text-bounty-orange">O</span>ptimize
+                </motion.span>
+                <motion.span 
+                  className="block text-4xl md:text-5xl lg:text-6xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
                 >
-                  <span className="text-bounty-orange">P</span>erformance
-                  <span className="text-bounty-orange"> O</span>ptimize
-                  <span className="text-bounty-orange"> S</span>ales
+                  <span className="text-bounty-orange">S</span>ales
+                </motion.span>
+                <motion.span 
+                  className="block mt-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                >
+                  Bounti <span className="text-bounty-orange">POS</span> Billing Software
                 </motion.span>
               </motion.h1>
               
