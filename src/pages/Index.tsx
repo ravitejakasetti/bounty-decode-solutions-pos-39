@@ -11,6 +11,7 @@ import RevenueGrowthSection from '@/components/RevenueGrowthSection';
 import IntegrationsSection from '@/components/IntegrationsSection';
 import AboutBountiSection from '@/components/AboutBountiSection';
 import AboutSection from '@/components/AboutSection';
+import BestPOSSEOSection from '@/components/BestPOSSEOSection';
 import ConversionSection from '@/components/ConversionSection';
 import SEOTrustSection from '@/components/SEOTrustSection';
 import CTASection from '@/components/CTASection';
@@ -46,6 +47,9 @@ const Index = () => {
       </section>
       <section id="about-company" aria-label="About Our Company">
         <AboutSection />
+      </section>
+      <section id="best-pos-ranking" aria-label="Best Restaurant Billing POS Software Rankings">
+        <BestPOSSEOSection />
       </section>
       <section id="conversion" aria-label="Start Your Free Trial">
         <ConversionSection />

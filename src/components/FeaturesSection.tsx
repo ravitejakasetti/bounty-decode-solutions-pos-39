@@ -105,7 +105,7 @@ const FeaturesSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Best POS Billing Software in India - Restaurant Management System
+            Best Restaurant Billing POS Software in India - Bounti Apps
           </motion.h2>
           <motion.p 
             className="text-xl text-gray-600 max-w-4xl mx-auto mb-8"
@@ -114,7 +114,7 @@ const FeaturesSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Transform your restaurant business with India's #1 POS billing software. Get GST-compliant billing, inventory management, customer loyalty programs, and real-time analytics. Perfect for restaurants, cafes, cloud kitchens, and food businesses across Delhi, Mumbai, Bangalore, Chennai, Hyderabad, and all major Indian cities.
+            Experience the best restaurant billing POS software in India with Bounti Apps. Our industry-leading point of sale system delivers GST-compliant billing, advanced inventory management, customer loyalty programs, and real-time analytics. Perfect for restaurants, cafes, cloud kitchens, and food businesses across Delhi, Mumbai, Bangalore, Chennai, Hyderabad, and all major Indian cities. Join 5000+ successful restaurants using the best restaurant billing POS software for guaranteed revenue growth.
           </motion.p>
           
           {/* SEO-optimized key benefits highlight */}
@@ -126,10 +126,10 @@ const FeaturesSection = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             {[
-              "GST Billing Software",
-              "Restaurant POS India", 
-              "Inventory Management",
-              "Customer Loyalty CRM",
+              "Best Restaurant Billing POS Software",
+              "Bounti Apps - #1 POS India", 
+              "GST Compliant Billing System",
+              "Restaurant Management Suite",
               "Cloud Kitchen Solution"
             ].map((badge, index) => (
               <span key={index} className="bg-bounty-orange/10 text-bounty-orange px-4 py-2 rounded-full text-sm font-semibold border border-bounty-orange/20">
