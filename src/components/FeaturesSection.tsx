@@ -105,17 +105,38 @@ const FeaturesSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Advanced POS Billing Software Features
+            Best POS Billing Software in India - Restaurant Management System
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-600 max-w-4xl mx-auto"
+            className="text-xl text-gray-600 max-w-4xl mx-auto mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Discover why Bounti is the leading POS billing software for restaurants. Our intelligent point of sale system integrates seamlessly with your operations, providing comprehensive restaurant management, billing automation, and customer engagement tools.
+            Transform your restaurant business with India's #1 POS billing software. Get GST-compliant billing, inventory management, customer loyalty programs, and real-time analytics. Perfect for restaurants, cafes, cloud kitchens, and food businesses across Delhi, Mumbai, Bangalore, Chennai, Hyderabad, and all major Indian cities.
           </motion.p>
+          
+          {/* SEO-optimized key benefits highlight */}
+          <motion.div 
+            className="flex flex-wrap justify-center gap-4 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            {[
+              "GST Billing Software",
+              "Restaurant POS India", 
+              "Inventory Management",
+              "Customer Loyalty CRM",
+              "Cloud Kitchen Solution"
+            ].map((badge, index) => (
+              <span key={index} className="bg-bounty-orange/10 text-bounty-orange px-4 py-2 rounded-full text-sm font-semibold border border-bounty-orange/20">
+                {badge}
+              </span>
+            ))}
+          </motion.div>
         </div>
 
         {/* Enhanced Dynamic Feature Buttons */}
