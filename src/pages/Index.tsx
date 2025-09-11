@@ -12,6 +12,7 @@ import IntegrationsSection from '@/components/IntegrationsSection';
 import AboutBountiSection from '@/components/AboutBountiSection';
 import AboutSection from '@/components/AboutSection';
 import CTASection from '@/components/CTASection';
+import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -43,6 +44,9 @@ const Index = () => {
       </section>
       <section id="about-company" aria-label="About Our Company">
         <AboutSection />
+      </section>
+      <section id="faq" aria-label="Frequently Asked Questions">
+        <FAQSection />
       </section>
       <CTASection />
       <Footer />

@@ -2,38 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bountipos.com/</loc>
-    <lastmod>2024-01-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bountipos.com/pricing</loc>
-    <lastmod>2024-01-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bountipos.com/services</loc>
-    <lastmod>2024-01-07</lastmod>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/about</loc>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bountipos.com/about</loc>
-    <lastmod>2024-01-07</lastmod>
+    <loc>https://bountipos.com/contact</loc>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bountipos.com/contact</loc>
-    <lastmod>2024-01-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://bountipos.com/blogs</loc>
-    <lastmod>2024-01-07</lastmod>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/blog/best-pos-billing-software-restaurants-india</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/blog/restaurant-billing-software-price-india</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/blog/cloud-kitchen-pos-system-india</loc>
+    <lastmod>2024-12-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/blog/restaurant-management-software-india</loc>
+    <lastmod>2024-12-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/blog/gst-billing-software-restaurants-india</loc>
+    <lastmod>2024-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/blog/restaurant-chain-management-software</loc>
+    <lastmod>2024-12-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/pos-software-mumbai</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/pos-software-delhi</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/pos-software-bangalore</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/pos-software-hyderabad</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/privacy-policy</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bountipos.com/terms-conditions</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
