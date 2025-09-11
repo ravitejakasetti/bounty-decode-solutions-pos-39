@@ -37,6 +37,10 @@ const BestPOSSEOSection = () => {
   ];
 
   const testimonialKeywords = [
+    "Bounti restaurant software",
+    "Bounti POS system", 
+    "Bounti billing software",
+    "Bounti Apps restaurant management",
     "Best restaurant billing POS software for small restaurants",
     "Best restaurant billing POS software for chain restaurants", 
     "Best restaurant billing POS software with GST compliance",
