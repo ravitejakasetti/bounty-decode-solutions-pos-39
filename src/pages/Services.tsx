@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import ServicesSection from '@/components/ServicesSection';
+import TechPartnerSection from '@/components/TechPartnerSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -76,6 +77,7 @@ const Services = () => {
           </motion.div>
         </div>
       </motion.div>
+      <TechPartnerSection />
       <ServicesSection />
       <CTASection />
       <Footer />

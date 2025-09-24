@@ -192,7 +192,7 @@ const ServicesSection = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-bounty-navy mb-6">
-              Bounty: Tailored for Every Restaurant Type
+              We as Restaurant Billing Software POS
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From intimate fine dining to high-volume quick service, Bounty adapts to your unique restaurant needs with specialized features and workflows.
