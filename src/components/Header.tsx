@@ -63,11 +63,11 @@ const Header = () => {
                 : 'bg-[#03265c]/98'
             }`} />
             
-            {/* White background overlay for logo area - expanded for full logo visibility */}
-            <div className={`absolute left-0 top-0 bottom-0 w-48 md:w-56 transition-all duration-500 ${
+            {/* White background overlay extending to Home button */}
+            <div className={`absolute left-0 top-0 bottom-0 w-64 md:w-80 transition-all duration-500 ${
               isScrolled
-                ? 'bg-gradient-to-r from-white/95 via-white/80 to-transparent'
-                : 'bg-gradient-to-r from-white/98 via-white/85 to-transparent'
+                ? 'bg-gradient-to-r from-white/95 via-white/85 via-white/70 to-transparent'
+                : 'bg-gradient-to-r from-white/98 via-white/90 via-white/75 to-transparent'
             }`} />
             
             <div className="relative flex justify-between items-center px-6 py-4 backdrop-blur-sm">
