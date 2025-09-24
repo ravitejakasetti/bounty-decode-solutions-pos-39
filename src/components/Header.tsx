@@ -56,18 +56,11 @@ const Header = () => {
               ? 'bg-transparent backdrop-blur-xl shadow-2xl border border-white/20' 
               : 'shadow-2xl border border-white/30'
           }`}>
-            {/* Left side - lighter background for logo */}
+            {/* Blue background for better text visibility */}
             <div className={`absolute inset-0 transition-all duration-500 ${
               isScrolled
-                ? 'bg-gradient-to-r from-white/15 via-white/10 to-[#03265c]/90'
-                : 'bg-gradient-to-r from-white/95 via-white/70 to-[#03265c]/95'
-            }`} />
-            
-            {/* Additional overlay for enhanced right-side darkness */}
-            <div className={`absolute inset-0 transition-all duration-700 ${
-              isScrolled
-                ? 'bg-gradient-to-r from-transparent from-50% to-[#03265c]/95'
-                : 'bg-gradient-to-r from-transparent from-50% to-[#03265c]/100'
+                ? 'bg-[#03265c]/95 backdrop-blur-xl'
+                : 'bg-[#03265c]/98'
             }`} />
             
             <div className="relative flex justify-between items-center px-6 py-4 backdrop-blur-sm">
