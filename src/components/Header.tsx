@@ -5,14 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import DemoModal from './DemoModal';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const location = useLocation();
   const isMobile = useIsMobile();
 
@@ -32,13 +30,7 @@ const Header = () => {
     path: '/about'
   }, {
     text: 'Services',
-    path: '/services',
-    hasDropdown: true,
-    dropdownItems: [
-      { text: 'Restaurant Billing Software POS', path: '/restaurant-pos' },
-      { text: 'Our Core Services', path: '/core-services' },
-      { text: 'Industry Solutions', path: '/industry-solutions' }
-    ]
+    path: '/services'
   }, {
     text: 'Pricing',
     path: '/pricing'
@@ -109,84 +101,29 @@ const Header = () => {
                     }}
                     className="relative"
                   >
-                    {link.hasDropdown ? (
-                      <div 
-                        className="relative"
-                        onMouseEnter={() => setServicesDropdownOpen(true)}
-                        onMouseLeave={() => setServicesDropdownOpen(false)}
+                    <Link 
+                      to={link.path} 
+                      onClick={scrollToTop}
+                      className={`relative font-semibold text-base transition-all duration-300 drop-shadow-sm text-white hover:text-[#ff7009] ${
+                        isActive(link.path) ? 'text-[#ff7009]' : ''
+                      }`}
+                    >
+                      <motion.span
+                        whileHover={{ y: -1 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <button 
-                          className={`relative font-semibold text-base transition-all duration-300 drop-shadow-sm text-white hover:text-[#ff7009] flex items-center gap-1 ${
-                            isActive(link.path) || location.pathname.includes('restaurant-pos') || location.pathname.includes('core-services') || location.pathname.includes('industry-solutions') ? 'text-[#ff7009]' : ''
-                          }`}
-                        >
-                          <motion.span
-                            whileHover={{ y: -1 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                          >
-                            {link.text}
-                          </motion.span>
-                          <ChevronDown className="h-4 w-4" />
-                          
-                          <motion.span 
-                            className="absolute -bottom-1 left-0 h-0.5 rounded-full bg-[#ff7009] shadow-sm"
-                            initial={{ width: 0 }}
-                            animate={{ 
-                              width: isActive(link.path) || hoveredItem === link.path || location.pathname.includes('restaurant-pos') || location.pathname.includes('core-services') || location.pathname.includes('industry-solutions') ? '100%' : 0 
-                            }}
-                            transition={{ duration: 0.3 }}
-                          />
-                        </button>
-                        
-                        {/* Services Dropdown */}
-                        <AnimatePresence>
-                          {servicesDropdownOpen && (
-                            <motion.div
-                              initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                              animate={{ opacity: 1, y: 0, scale: 1 }}
-                              exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                              transition={{ duration: 0.2 }}
-                              className="absolute top-full left-0 mt-2 w-80 bg-[#03265c] backdrop-blur-xl rounded-xl shadow-2xl border border-white/30 overflow-hidden z-[100]"
-                            >
-                              {link.dropdownItems?.map((item, idx) => (
-                                <Link
-                                  key={item.path}
-                                  to={item.path}
-                                  onClick={scrollToTop}
-                                  className="block px-6 py-4 text-white hover:bg-bounty-orange hover:text-white transition-all duration-200 font-semibold border-b border-white/10 last:border-b-0"
-                                >
-                                  {item.text}
-                                </Link>
-                              ))}
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    ) : (
-                      <Link 
-                        to={link.path} 
-                        onClick={scrollToTop}
-                        className={`relative font-semibold text-base transition-all duration-300 drop-shadow-sm text-white hover:text-[#ff7009] ${
-                          isActive(link.path) ? 'text-[#ff7009]' : ''
-                        }`}
-                      >
-                        <motion.span
-                          whileHover={{ y: -1 }}
-                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        >
-                          {link.text}
-                        </motion.span>
-                        
-                        <motion.span 
-                          className="absolute -bottom-1 left-0 h-0.5 rounded-full bg-[#ff7009] shadow-sm"
-                          initial={{ width: 0 }}
-                          animate={{ 
-                            width: isActive(link.path) ? '100%' : hoveredItem === link.path ? '100%' : 0 
-                          }}
-                          transition={{ duration: 0.3 }}
-                        />
-                      </Link>
-                    )}
+                        {link.text}
+                      </motion.span>
+                      
+                      <motion.span 
+                        className="absolute -bottom-1 left-0 h-0.5 rounded-full bg-[#ff7009] shadow-sm"
+                        initial={{ width: 0 }}
+                        animate={{ 
+                          width: isActive(link.path) ? '100%' : hoveredItem === link.path ? '100%' : 0 
+                        }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </Link>
                   </motion.div>
                 ))}
                 
