@@ -5,9 +5,11 @@ import ServicesSection from '@/components/ServicesSection';
 
 const RestaurantPOS = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background w-full overflow-x-hidden">
       <Header />
-      <ServicesSection />
+      <div className="pt-20">
+        <ServicesSection />
+      </div>
       <Footer />
     </div>
   );

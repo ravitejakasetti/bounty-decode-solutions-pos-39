@@ -10,7 +10,7 @@ import operationsOptimization from '@/assets/operations-optimization.jpg';
 
 const CoreServices = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background w-full overflow-x-hidden">
       <Header />
       
       {/* Hero Section */}

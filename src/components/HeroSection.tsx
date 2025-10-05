@@ -85,6 +85,15 @@ const HeroSection = () => {
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center mt-16">
             <motion.div className="space-y-8" variants={containerVariants} initial="hidden" animate="visible">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                className="mb-4"
+              >
+                <span className="text-bounty-orange text-lg md:text-xl font-semibold">✨ You have a problem, We have a solution!</span>
+              </motion.div>
+
               <motion.h1 
                 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight" 
                 variants={itemVariants}
@@ -127,7 +136,7 @@ const HeroSection = () => {
                 className="text-xl md:text-2xl text-gray-200 leading-relaxed" 
                 variants={itemVariants}
               >
-                The #1 POS billing software for restaurants. Bounti by Decode Solutions delivers intelligent automation, dynamic pricing, inventory management, and customer loyalty features. Transform your restaurant operations with the most advanced point of sale system available.
+                The #1 POS billing software for restaurants. Bounti by Decode Solutions - Your Trusted Tech Partner delivers intelligent automation, dynamic pricing, inventory management, and customer loyalty features. Transform your restaurant operations with the most advanced point of sale system available.
               </motion.p>
               
               <motion.div className="flex flex-col sm:flex-row gap-4" variants={itemVariants}>
