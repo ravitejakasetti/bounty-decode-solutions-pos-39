@@ -59,7 +59,7 @@ const Header = () => {
   return <>
       <header className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'py-2' : 'py-4'}`}>
         <div className="container mx-auto px-4">
-          <div className={`relative rounded-2xl transition-all duration-500 overflow-hidden ${
+          <div className={`relative rounded-2xl transition-all duration-500 ${
             isScrolled 
               ? 'bg-transparent backdrop-blur-xl shadow-2xl border border-white/20' 
               : 'shadow-2xl border border-white/30'
@@ -78,7 +78,7 @@ const Header = () => {
                 : 'bg-gradient-to-r from-white/98 via-white/90 via-white/75 to-transparent'
             }`} />
             
-            <div className="relative flex justify-between items-center px-6 py-4 backdrop-blur-sm">
+            <div className="relative flex justify-between items-center px-6 py-4 backdrop-blur-sm rounded-2xl overflow-hidden">
               <Link to="/" onClick={scrollToTop}>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
