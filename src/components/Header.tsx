@@ -103,16 +103,18 @@ const Header = () => {
                     transition={{ delay: index * 0.1 }}
                     onHoverStart={() => {
                       setHoveredItem(link.path);
-                      if (link.hasDropdown) setServicesDropdownOpen(true);
                     }}
                     onHoverEnd={() => {
                       setHoveredItem(null);
-                      if (link.hasDropdown) setServicesDropdownOpen(false);
                     }}
                     className="relative"
                   >
                     {link.hasDropdown ? (
-                      <div className="relative">
+                      <div 
+                        className="relative"
+                        onMouseEnter={() => setServicesDropdownOpen(true)}
+                        onMouseLeave={() => setServicesDropdownOpen(false)}
+                      >
                         <button 
                           className={`relative font-semibold text-base transition-all duration-300 drop-shadow-sm text-white hover:text-[#ff7009] flex items-center gap-1 ${
                             isActive(link.path) || location.pathname.includes('restaurant-pos') || location.pathname.includes('core-services') || location.pathname.includes('industry-solutions') ? 'text-[#ff7009]' : ''
