@@ -144,14 +144,14 @@ const Header = () => {
                               animate={{ opacity: 1, y: 0, scale: 1 }}
                               exit={{ opacity: 0, y: 10, scale: 0.95 }}
                               transition={{ duration: 0.2 }}
-                              className="absolute top-full left-0 mt-2 w-72 bg-white/95 backdrop-blur-xl rounded-lg shadow-2xl border border-white/20 overflow-hidden z-50"
+                              className="absolute top-full left-0 mt-2 w-80 bg-[#03265c] backdrop-blur-xl rounded-xl shadow-2xl border border-white/30 overflow-hidden z-[100]"
                             >
                               {link.dropdownItems?.map((item, idx) => (
                                 <Link
                                   key={item.path}
                                   to={item.path}
                                   onClick={scrollToTop}
-                                  className="block px-6 py-3 text-gray-800 hover:bg-bounty-orange hover:text-white transition-all duration-200 font-medium"
+                                  className="block px-6 py-4 text-white hover:bg-bounty-orange hover:text-white transition-all duration-200 font-semibold border-b border-white/10 last:border-b-0"
                                 >
                                   {item.text}
                                 </Link>

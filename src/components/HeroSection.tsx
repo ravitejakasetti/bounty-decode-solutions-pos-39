@@ -91,7 +91,7 @@ const HeroSection = () => {
                 transition={{ delay: 0.1, duration: 0.5 }}
                 className="mb-4"
               >
-                <span className="text-bounty-orange text-lg md:text-xl font-semibold">✨ You have a problem, We have a solution!</span>
+                <span className="text-bounty-orange text-lg md:text-xl font-semibold">✨ Bounti Software is a Tech Partner - You have a problem, We have a solution!</span>
               </motion.div>
 
               <motion.h1 
